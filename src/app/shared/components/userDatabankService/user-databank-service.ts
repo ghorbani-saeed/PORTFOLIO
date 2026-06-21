@@ -6,7 +6,6 @@ export interface DeveloperProfile {
   location: string;
   street: string;
   githubUrl: string;
-  year: number;
 }
 
 export interface TechSkill {
@@ -58,7 +57,6 @@ export class UserDatabankService {
       location: '47546 Kalkar, Germany',
       mail: 'saeed.ghorbani@web.de',
       githubUrl: 'https://github.com/ghorbani-saeed',
-      year: new Date().getFullYear(),
     };
   }
 
