@@ -1,0 +1,122 @@
+@use '../../../styles/index' as styles;
+
+.skills {
+  padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
+  max-width: styles.$g-max-width;
+  width: 100%;
+  margin: 0 auto;
+  @include styles.setFlex($d: column);
+
+  &__separator-link {
+    margin-top: clamp(2rem, 9vw, 5rem);
+    left: 5%;
+    align-self: flex-start;
+
+    @include styles.tabletLarge {
+      left: 20%;
+    }
+
+    // DIESER NEUE BLOCK STOPPT DIE BEWEGUNG DER SEPARATOR-PFEILE:
+    app-divider-left-right,
+    svg,
+    img,
+    div {
+      animation: none !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
+  &__frame {
+    position: relative;
+    border: 0.3rem solid #000000;
+    border-radius: 1%;
+    padding: clamp(4.5rem, 9vw, 6rem) clamp(2rem, 6vw, 5rem) clamp(3rem, 6vw, 5rem);
+  }
+
+  &__headline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    @include styles.setFlex($gap: clamp(1rem, 3vw, 2rem));
+    padding: 0 clamp(1.6rem, 4vw, 3.5rem);
+  }
+
+  &__title {
+    min-width: 25rem;
+    padding: 0 clamp(0.5rem, 2vw, 2rem);
+    background: styles.$bg-color;
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: clamp(1.6em, 5vw, 5rem),
+      $weight: 800,
+      $line-height: 0.8,
+      $letter-spacing: -0.02em
+    );
+    text-align: center;
+    transition: color 240ms ease;
+  }
+
+  &__list {
+    margin-top: clamp(1.5rem, 6vw, 6rem);
+    list-style: none;
+    @include styles.setFlex($wrap: wrap);
+    row-gap: clamp(1.5rem, 5vw, 7rem);
+    column-gap: clamp(1.5rem, 6vw, 8rem);
+  }
+
+  &__item {
+    @include styles.setFlex($d: column, $gap: 0.8rem);
+    flex: 0 0 clamp(9rem, 13vw, 11rem);
+    // transition entfernt für 100% statischen Look
+
+    // Das rotierende "spin-horizontal" beim Hovern über die Skills wurde hier gelöscht!
+  }
+
+  &__icon {
+    display: block;
+    transform-style: preserve-3d;
+    width: auto;
+    height: auto;
+    max-width: 60%;
+    transition: filter 220ms ease;
+  }
+
+  &__label {
+    text-align: center;
+    @include styles.setFont($weight: 700);
+  }
+
+  &__cta {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+    @include styles.setFlex($gap: clamp(1rem, 3vw, 2rem));
+    text-align: center;
+  }
+
+  &__cta-icon {
+    width: auto;
+    height: clamp(6rem, 7vw, 7.5rem);
+  }
+
+  &__cta-text {
+    @include styles.setFont($size: clamp(1em, 2vw, 1.4em), $weight: 400);
+  }
+
+  &__cta-link {
+    text-decoration: none;
+    @include styles.setFont($weight: 400, $color: #00bc8f);
+  }
+}
+
+@include styles.tabletLarge {
+  .skills {
+    &__ headline {
+      padding: 0 clamp(1rem, 2vw, 2rem);
+    }
+  }
+}
