@@ -1,0 +1,107 @@
+@use '../../../../styles/index' as styles;
+
+.footer {
+  background: #000000;
+  height: styles.$footer-height;
+  clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+  width: 100%;
+
+  padding: clamp(2.5rem, 6vw, 4rem) styles.$g-pad-x clamp(2.4rem, 6vw, 3.5rem);
+  @include styles.setFlex($ai: flex-end);
+
+  &__inner {
+    max-width: styles.$g-max-width;
+    padding: 0 styles.$g-pad-x;
+    width: 100%;
+    margin: 0 auto;
+    @include styles.setFlex($jc: space-between, $gap: clamp(2rem, 6vw, 7rem));
+    flex-wrap: wrap;
+  }
+
+  &__brand {
+    @include styles.setFlex($d: column, $ai: flex-start, $gap: 0.6rem);
+  }
+
+  &__logo {
+    @include styles.setFlex();
+
+    img {
+      width: 6.6rem;
+      height: 3rem;
+      filter: invert(1);
+    }
+  }
+
+  &__copyright {
+    @include styles.setFont($size: 1em, $weight: 400, $color: #ffffff);
+  }
+
+  &__mail {
+    text-decoration: none;
+    @include styles.setFont($size: 1em, $weight: 400, $color: #ffffff);
+    display: none;
+  }
+
+  &__right {
+    @include styles.setFlex($d: column, $ai: center, $gap: 0.8rem);
+  }
+
+  &__social-links {
+    @include styles.setFlex($gap: 4.5rem);
+
+    a {
+      @include styles.setFlex();
+      text-decoration: none;
+
+      .footer__icon {
+        width: 2.5rem;
+        transition: transform 280ms ease, filter 280ms ease;
+
+        &:hover {
+          transform: translateY(-40%);
+          filter: brightness(1.15);
+        }
+      }
+    }
+  }
+
+  &__legal {
+    text-decoration: none;
+    @include styles.setFont($size: 1em, $weight: 400, $color: #ffffff);
+  }
+
+  @media (max-width: 768px) {
+    height: 25rem;
+
+    &__inner {
+      @include styles.setFlex($d: column, $gap: 1.7rem);
+      text-align: center;
+    }
+
+    &__right {
+      display: contents;
+    }
+
+    &__social-links {
+      order: 1;
+      justify-content: center;
+    }
+
+    &__brand {
+      order: 2;
+      @include styles.setFlex($d: column, $ai: center, $gap: 1.7rem);
+    }
+
+    &__mail {
+      display: block;
+    }
+
+    &__copyright {
+      display: none;
+    }
+
+    &__legal {
+      order: 3;
+    }
+  }
+}
