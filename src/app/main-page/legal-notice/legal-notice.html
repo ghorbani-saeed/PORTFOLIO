@@ -1,0 +1,64 @@
+<section class="legal-notice" id="legal" aria-labelledby="legal-notice-main-title">
+  <div class="legal-notice__frame">
+
+    <div class="legal-notice__back-wrap">
+      <a
+        class="legal-notice__back"
+        routerLink="/"
+        fragment="contact"
+        [attr.aria-label]="'LEGAL.BACK_ARIA' | translate"
+      >
+        <img src="/assets/img/icons/arrow-rl.svg" [attr.alt]="'LEGAL.BACK_ICON_ALT' | translate" />
+      </a>
+    </div>
+
+    <h1 class="legal-notice__main-title" id="legal-notice-main-title">Legal Notice</h1>
+
+    <h2 class="legal-notice__title">{{ 'LEGAL.TITLE' | translate }}</h2>
+
+    <section class="legal-notice__section" aria-labelledby="legal-imprint">
+      <h3 class="legal-notice__subtitle" id="legal-imprint">{{ 'LEGAL.IMPRINT_TITLE' | translate }}</h3>
+      <p class="legal-notice__text">{{ 'LEGAL.IMPRINT_TEXT' | translate }}</p>
+      <div class="legal-notice__person">
+        <p class="legal-notice__text">{{ userDBS.profileData.fullName }}</p>
+        <p class="legal-notice__text">{{ userDBS.profileData.street }}</p>
+        <p class="legal-notice__text">{{ userDBS.profileData.location }}</p>
+      </div>
+    </section>
+
+    <section class="legal-notice__section" aria-labelledby="legal-contact">
+      <h3 class="legal-notice__subtitle" id="legal-contact">{{ 'LEGAL.CONTACT_TITLE' | translate }}</h3>
+      <p class="legal-notice__text">
+        {{ 'LEGAL.CONTACT_TEXT' | translate: { email: userDBS.profileData.mail } }}
+      </p>
+    </section>
+
+    <section class="legal-notice__section" aria-labelledby="legal-responsible">
+      <h3 class="legal-notice__subtitle" id="legal-responsible">
+        {{ 'LEGAL.RESPONSIBLE_TITLE' | translate }}
+      </h3>
+      <div class="legal-notice__person">
+        <p class="legal-notice__text">{{ userDBS.profileData.fullName }}</p>
+        <p class="legal-notice__text">{{ userDBS.profileData.street }}</p>
+        <p class="legal-notice__text">{{ userDBS.profileData.location }}</p>
+      </div>
+    </section>
+
+    <section class="legal-notice__section" aria-labelledby="legal-dispute">
+      <h3 class="legal-notice__subtitle" id="legal-dispute">{{ 'LEGAL.DISPUTE_TITLE' | translate }}</h3>
+      <p class="legal-notice__text">{{ 'LEGAL.DISPUTE_TEXT' | translate }}</p>
+    </section>
+
+    <section class="legal-notice__section" aria-labelledby="legal-liability">
+      <h3 class="legal-notice__subtitle" id="legal-liability">{{ 'LEGAL.LIABILITY_TITLE' | translate }}</h3>
+      <p class="legal-notice__text">{{ 'LEGAL.LIABILITY_TEXT' | translate }}</p>
+    </section>
+
+    <section class="legal-notice__section" aria-labelledby="legal-copyright">
+      <h3 class="legal-notice__subtitle" id="legal-copyright">{{ 'LEGAL.COPYRIGHT_TITLE' | translate }}</h3>
+      <p class="legal-notice__text">{{ 'LEGAL.COPYRIGHT_TEXT' | translate }}</p>
+    </section>
+
+    <p class="legal-notice__meta">{{ 'LEGAL.DATE_TEXT' | translate }}</p>
+  </div>
+</section>
