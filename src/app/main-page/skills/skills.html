@@ -1,0 +1,36 @@
+<section class="skills" id="skills" aria-labelledby="skills-title">
+  <div class="skills__frame">
+    <div class="skills__headline">
+      <h2 class="skills__title" id="skills-title">{{ 'SKILLS.TITLE' | translate }}</h2>
+    </div>
+
+    <ul class="skills__list">
+      @for (item of userDBS.techStack; track item.title; let idx = $index) {
+        <li class="skills__item">
+          <img class="skills__icon" [src]="item.icon" [alt]="item.title + ' icon'" />
+          <span class="skills__label">{{ item.title }}</span>
+        </li>
+      }
+    </ul>
+
+    <div class="skills__cta">
+      <img
+        class="skills__cta-icon"
+        src="/assets/img/icons/skills-icons/continued-learning.svg"
+        [attr.alt]="'SKILLS.CTA_ICON_ALT' | translate"
+      />
+      <p class="skills__cta-text">
+        {{ 'SKILLS.CTA_TEXT_START' | translate }}
+        <a class="skills__cta-link" href="#contact">{{ 'SKILLS.CTA_LINK' | translate }}</a>
+        {{ 'SKILLS.CTA_TEXT_END' | translate }}
+      </p>
+    </div>
+  </div>
+  <a
+    class="skills__separator-link"
+    href="#portfolio"
+    [attr.aria-label]="'SKILLS.SEPARATOR_ARIA' | translate"
+  >
+    <app-divider-left-right />
+  </a>
+</section>
