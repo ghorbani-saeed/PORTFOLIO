@@ -1,0 +1,278 @@
+@use '../../../../styles/index' as styles;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: styles.$g-max-width;
+  margin: 0 auto;
+  background-color: styles.$bg-color;
+
+  &__inner {
+    height: styles.$header-height;
+    padding: 0 clamp(0rem, 4vmin, 13rem);
+    @include styles.setFlex($jc: space-between);
+  }
+
+  &__logo {
+    @include styles.setFlex();
+
+    img {
+      width: 6.6rem;
+      height: 3rem;
+    }
+  }
+
+  &__lang-and-menu {
+    @include styles.setFlex($gap: 2rem);
+  }
+
+  &__lang-buttons {
+    @include styles.setFlex($gap: 0.5rem);
+  }
+
+  &__lang-button {
+    border: 0.35rem solid transparent;
+    border-radius: 10%;
+    background: transparent;
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: 1em,
+      $weight: 700,
+      $line-height: 0.8
+    );
+    padding: 0.2rem 0.4rem;
+    cursor: pointer;
+    transition:
+      border-color 220ms ease,
+      color 220ms ease,
+      transform 220ms ease;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+    }
+
+    &--active {
+      border-color: #414a48;
+    }
+  }
+
+  &__burger-menu-btn {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  &__burger-frames {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &__burger-frames .frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &__burger-frames .f1 {
+    opacity: 1;
+  }
+
+  &__burger-menu-btn.is-open .f1 {
+    animation: menu-opening-for-f1 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn.is-open .f2 {
+    animation: menu-opening-for-f2 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn.is-open .f3 {
+    animation: menu-opening-for-f3 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn.is-open .f4 {
+    animation: menu-opening-for-f4 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn.is-open .f5 {
+    animation: menu-opening-for-f5 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn:not(.is-open) .f1 {
+    animation: menu-closing-for-f1 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn:not(.is-open) .f2 {
+    animation: menu-closing-for-f2 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn:not(.is-open) .f3 {
+    animation: menu-closing-for-f3 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn:not(.is-open) .f4 {
+    animation: menu-closing-for-f4 360ms steps(1, end) forwards;
+  }
+
+  &__burger-menu-btn:not(.is-open) .f5 {
+    animation: menu-closing-for-f5 360ms steps(1, end) forwards;
+  }
+}
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  height: calc(100dvh - styles.$header-height);
+  width: 100%;
+  margin: 0 auto;
+
+  z-index: 1;
+  top: styles.$header-height;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+
+  background-color: styles.$bg-color;
+
+  &__panel {
+    width: 100%;
+    height: 100%;
+    max-width: styles.$g-max-width;
+    margin: 0 auto;
+    @include styles.setFlex($d: column, $jc: flex-start, $ai: stretch);
+  }
+
+  &__nav {
+    flex: 1;
+    @include styles.setFlex($d: column, $gap: clamp(3rem, 5vw, 4rem));
+    text-align: center;
+    padding: clamp(2rem, 10vw, 5rem) styles.$g-pad-x 0;
+  }
+
+  &__nav-link {
+    display: block;
+    width: clamp(21rem, 40vmin, 64rem);
+    text-decoration: none;
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: styles.$menu-overlay-title-size,
+      $weight: 700
+    );
+    text-align: left;
+    transition: color 220ms ease;
+
+    &:hover {
+      color: #00bc8f;
+    }
+
+    &:hover .menu-overlay__nav-link-anim {
+      animation: nav-link-animation 300ms ease-in-out forwards;
+    }
+  }
+
+  &__nav-link-anim {
+    z-index: 1;
+    border-left: 3px solid black;
+    border-bottom: 3px solid black;
+    position: absolute;
+    width: 6%;
+    height: 40%;
+    transform: translate(-90%, -70%);
+    opacity: 1;
+  }
+
+  &__footer {
+    width: 100dvw;
+    margin: 0 calc(50% - 50dvw);
+    clip-path: polygon(0 0, 100% clamp(10%, 20vw, 25%), 100% 100%, 0 100%);
+    background: #000000;
+    @include styles.setFont($family: null, $size: null, $style: null, $color: #fff);
+  }
+
+  &__footer-inner {
+    max-width: styles.$g-max-width;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 styles.$g-pad-x clamp(2rem, 6vw, 5rem);
+    @include styles.setFlex($d: column);
+  }
+
+  &__contact {
+    margin: 20rem 0 5rem;
+    align-self: flex-start;
+
+    @include styles.setFlex($d: column, $jc: flex-start, $ai: flex-start);
+
+    h2 {
+      margin: 0;
+      @include styles.setFont(
+        $family: (
+          'Syne',
+          sans-serif,
+        ),
+        $size: styles.$menu-overlay-title-size,
+        $weight: 800,
+        $line-height: 0.9,
+        $color: #fffcf3
+      );
+      transition: color 220ms ease;
+
+      &:hover {
+        cursor: pointer;
+        @include styles.setFont($family: null, $size: null, $style: null, $color: #00bc8f);
+      }
+    }
+
+    .menu-overlay__mail {
+      display: inline-block;
+      margin-top: 1rem;
+      text-decoration: none;
+      @include styles.setFont(
+        $size: clamp(1em, calc(0.9em + 0.4vw), 1.3em),
+        $weight: 300,
+        $color: #ffffffd6
+      );
+      transition: color 220ms ease;
+
+      &:hover {
+        @include styles.setFont($family: null, $size: null, $style: null, $color: #fff);
+      }
+    }
+  }
+
+  &__social-links {
+    align-self: flex-end;
+    @include styles.setFlex($gap: 4.5rem);
+  }
+
+  &__social-link {
+    text-decoration: none;
+    @include styles.setFlex();
+
+    .menu-overlay__icon {
+      width: 2.5rem;
+      transition: transform 360ms ease;
+
+      &:hover {
+        transform: translateY(-40%);
+      }
+    }
+  }
+}
