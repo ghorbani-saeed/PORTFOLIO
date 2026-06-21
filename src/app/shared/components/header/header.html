@@ -1,0 +1,160 @@
+<header class="header">
+  <section class="header__inner">
+    <a
+      class="header__logo"
+      [routerLink]="['/']"
+      fragment="hero"
+      (click)="closeMenu()"
+      [attr.aria-label]="'HEADER.LOGO_ARIA' | translate"
+    >
+      <img src="/assets/img/logo/logo5.png" [attr.alt]="'HEADER.LOGO_ALT' | translate" />
+    </a>
+    <div class="header__lang-and-menu" [attr.aria-label]="'HEADER.CONTROLS_ARIA' | translate">
+      <div
+        class="header__lang-buttons"
+        [attr.aria-label]="'HEADER.LANG_SELECTION_ARIA' | translate"
+      >
+        <button
+          type="button"
+          class="header__lang-button"
+          (click)="setLang('en')"
+          [class.header__lang-button--active]="lang === 'en'"
+        >
+          EN
+        </button>
+
+        <button
+          type="button"
+          class="header__lang-button"
+          (click)="setLang('de')"
+          [class.header__lang-button--active]="lang === 'de'"
+        >
+          DE
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="header__burger-menu-btn"
+        (click)="toggleMenu()"
+        [class.is-open]="isMenuOpen"
+        [attr.aria-expanded]="isMenuOpen"
+        aria-controls="mobile-menu"
+        [attr.aria-label]="
+          isMenuOpen
+            ? ('HEADER.BURGER_CLOSE_ARIA' | translate)
+            : ('HEADER.BURGER_OPEN_ARIA' | translate)
+        "
+      >
+        <span class="header__burger-frames" aria-hidden="true">
+          <img class="frame f1" src="/assets/img/icons/anim-icons/anim-burger/burger1.svg" alt="" />
+          <img class="frame f2" src="/assets/img/icons/anim-icons/anim-burger/burger2.svg" alt="" />
+          <img class="frame f3" src="/assets/img/icons/anim-icons/anim-burger/burger3.svg" alt="" />
+          <img class="frame f4" src="/assets/img/icons/anim-icons/anim-burger/burger4.svg" alt="" />
+          <img class="frame f5" src="/assets/img/icons/anim-icons/anim-burger/burger5.svg" alt="" />
+        </span>
+      </button>
+    </div>
+  </section>
+
+  @if (isMenuOpen) {
+    <section
+      id="mobile-menu"
+      class="menu-overlay"
+      role="dialog"
+      aria-modal="true"
+      [attr.aria-label]="'HEADER.MENU_ARIA' | translate"
+    >
+      <div class="menu-overlay__panel">
+        <nav class="menu-overlay__nav" [attr.aria-label]="'HEADER.NAV_ARIA' | translate">
+          <a
+            class="menu-overlay__nav-link"
+            [routerLink]="['/']"
+            fragment="about"
+            (click)="closeMenu()"
+          >
+            <span>{{ 'HEADER.NAV_ABOUT' | translate }}</span>
+            <div class="menu-overlay__nav-link-anim"></div>
+          </a>
+          <a
+            class="menu-overlay__nav-link"
+            [routerLink]="['/']"
+            fragment="skills"
+            (click)="closeMenu()"
+          >
+            <span>{{ 'HEADER.NAV_SKILLS' | translate }}</span>
+            <div class="menu-overlay__nav-link-anim"></div>
+          </a>
+          <a
+            class="menu-overlay__nav-link"
+            [routerLink]="['/']"
+            fragment="portfolio"
+            (click)="closeMenu()"
+          >
+            <span>{{ 'HEADER.NAV_PORTFOLIO' | translate }}</span>
+            <div class="menu-overlay__nav-link-anim"></div>
+          </a>
+        </nav>
+
+        <section class="menu-overlay__footer" [attr.aria-label]="'HEADER.FOOTER_ARIA' | translate">
+          <div class="menu-overlay__footer-inner">
+            <div
+              class="menu-overlay__contact"
+              routerLink="/"
+              fragment="contact"
+              (click)="closeMenu()"
+              role="link"
+              tabindex="0"
+            >
+              <h2>{{ 'HEADER.CONTACT_TITLE' | translate }}</h2>
+              <span class="menu-overlay__mail">
+                {{ userDBS.profileData.mail}}
+              </span>
+            </div>
+
+            <div class="menu-overlay__social-links">
+              <a
+                class="menu-overlay__social-link"
+                [href]="userDBS.profileData.githubUrl"
+                target="_blank"
+                rel="noreferrer"
+                [attr.aria-label]="'HEADER.SOCIAL_GITHUB_ARIA' | translate"
+              >
+                <img
+                  class="menu-overlay__icon"
+                  src="/assets/img/icons/github.svg"
+                  [attr.alt]="'HEADER.SOCIAL_GITHUB_ALT' | translate"
+                />
+              </a>
+              <a
+                class="menu-overlay__social-link"
+                [routerLink]="['/']"
+                fragment="contact"
+                (click)="closeMenu()"
+                [attr.aria-label]="'HEADER.SOCIAL_MAIL_ARIA' | translate"
+              >
+                <img
+                  class="menu-overlay__icon"
+                  src="/assets/img/icons/mail.svg"
+                  [attr.alt]="'HEADER.SOCIAL_MAIL_ALT' | translate"
+                />
+              </a>
+              <a
+                class="menu-overlay__social-link"
+                href="#"
+                (click)="$event.preventDefault()"
+                [attr.aria-label]="'HEADER.SOCIAL_LINKEDIN_ARIA' | translate"
+              >
+                <img
+                  class="menu-overlay__icon"
+                  src="/assets/img/icons/linkedIn.svg"
+                  [attr.alt]="'HEADER.SOCIAL_LINKEDIN_ALT' | translate"
+                />
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  }
+</header>
