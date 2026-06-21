@@ -1,0 +1,225 @@
+@use '../../../styles/index' as styles;
+
+.portfolio {
+  &__frame {
+    max-width: styles.$g-max-width;
+    padding: calc(1.5 * styles.$header-height) styles.$g-pad-x calc(1 * styles.$header-height);
+    width: 100%;
+    margin: 0 auto;
+    @include styles.setFlex($d: column, $gap: clamp(3rem, 5vw, 7rem));
+  }
+
+  &__header {
+    @include styles.setFlex($d: column, $gap: clamp(1.2rem, 3vw, 2rem));
+    text-align: center;
+  }
+
+  &__title {
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: clamp(3.4rem, 7vw, 7.5rem),
+      $weight: 800,
+      $line-height: 0.8,
+      $letter-spacing: -0.01em
+    );
+    transition: color 240ms ease;
+  }
+
+  &__subtitle {
+    margin-bottom: 2rem;
+    max-width: 47rem;
+    @include styles.setFont($size: clamp(1em, 2vw, 1.4em), $weight: 400, $line-height: 1.2);
+  }
+
+  &__list {
+    @include styles.setFlex($d: column, $gap: clamp(3rem, 9vw, 11rem));
+    width: 100%;
+  }
+
+  &__project {
+    @include styles.setFlex($jc: space-between, $gap: clamp(2.5rem, 8vw, 9rem));
+    width: 100%;
+  }
+
+  &__project--reverse {
+    flex-direction: row-reverse;
+
+  }
+
+  &__media-link {
+    width: 50%;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__media {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 2.5%;
+  }
+  
+  &__image {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 0.3rem solid transparent;
+    border-radius: 2.5%;
+    
+    filter: grayscale(0) !important; 
+    
+    transition: transform 0.3s ease;
+  }
+
+
+  &__hover-arrow-icon {
+    display: none !important;
+  }
+
+  &__details {
+    width: 50%;
+    opacity: 1;
+    transform: none;
+    @include styles.setFlex($d: column, $ai: flex-start);
+    padding-top: 5%;
+    overflow: hidden;
+  }
+
+  &__name {
+    margin: 0 0 1rem;
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: clamp(1.5em, 4.5vw, 2.5em),
+      $weight: 800,
+      $line-height: 0.8
+    );
+    letter-spacing: -0.01em;
+  }
+
+  &__stack {
+    margin: 0 0 1.4rem;
+    @include styles.setFont($size: clamp(1em, 2vmin, 1.3em), $weight: 400, $color: #00bc8f);
+    letter-spacing: 0.02em;
+  }
+
+  &__description {
+    margin: 0 0 1rem;
+    width: 80%;
+    @include styles.setFont($size: clamp(1em, 2vmin, 1.3em), $line-height: 1.35);
+  }
+
+  &__link {
+    padding: 0.1rem 3rem;
+    border: 0.35rem solid #000000;
+    border-radius: 7%;
+
+    @include styles.setFont($size: 1em, $weight: 500);
+    transition:
+      transform 220ms ease,
+      box-shadow 220ms ease,
+      background-color 220ms ease,
+      border-color 220ms ease,
+      color 220ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.18);
+    }
+  }
+
+  &__counter {
+    position: absolute;
+    top: -10%;
+    right: 0%;
+  }
+
+  &__project--reverse &__counter {
+    text-align: left;
+    left: 0%;
+  }
+
+  &__counter-value {
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: clamp(2rem, 4.5vw, 4.8rem),
+      $weight: 700
+    );
+  }
+
+  // NUR EIN SCHLICHTER, MODERNER ZOOM OHNE JEGLICHE FARBVERÄNDERUNG ODER RÄNDER
+  &__project:hover &__image {
+    transform: scale(1.03); 
+    filter: grayscale(0) !important; // Erzwingt, dass die echten Farben stabil bleiben
+  }
+}
+
+@include styles.tabletLarge {
+  .portfolio {
+    &__subtitle {
+      text-align: left;
+    }
+
+    &__list {
+      gap: clamp(3rem, 13vw, 9rem);
+    }
+
+    &__project,
+    &__project--reverse {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__project {
+      align-items: flex-start;
+    }
+
+    &__project--reverse {
+      align-items: flex-end;
+
+      .portfolio__details {
+        transform: none;
+      }
+
+      .portfolio__details {
+        align-items: flex-end;
+      }
+
+      .portfolio__description {
+        text-align: right;
+      }
+    }
+
+    &__media {
+      width: 100%;
+    }
+
+    &__media-link {
+      width: 91%;
+    }
+
+    &__details {
+      width: 95%;
+      transform: none;
+    }
+  }
+}
+
+@include styles.mobileSmall {
+  .portfolio {
+    &__frame {
+      padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
+    }
+  }
+}
