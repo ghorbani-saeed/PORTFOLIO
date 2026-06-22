@@ -1,0 +1,100 @@
+@use '../../../styles/index' as styles;
+
+.references {
+  padding: calc(1 * styles.$header-height) styles.$g-pad-x calc(0.1 * styles.$header-height);
+  max-width: styles.$g-max-width;
+  width: 100%;
+  margin: 0 auto;
+  @include styles.setFlex($d: column);
+
+  &__separator-link {
+    margin-top: clamp(2rem, 9vw, 5rem);
+    right: 5%;
+    align-self: flex-end;
+
+    @include styles.tabletLarge {
+      right: 20%;
+    }
+  }
+
+  &__frame {
+    padding: 0 styles.$g-pad-x;
+    max-width: styles.$g-max-width;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    @include styles.setFlex($d: column, $gap: clamp(2rem, 4vw, 3.5rem));
+  }
+
+  &__title {
+    margin: 0;
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: clamp(1.9em, 7vw, 5em),
+      $weight: 800,
+      $line-height: 0.7,
+      $letter-spacing: -0.03em
+    );
+    transition: color 220ms ease;
+  }
+
+  &__intro {
+    max-width: 65rem;
+    text-align: left;
+    @include styles.setFont($size: clamp(1.2em, 2.2vw, 1.7em), $weight: 400, $line-height: 1.3);
+  }
+
+  &__list {
+    width: 100%;
+    @include styles.setFlex($wrap: wrap, $ai: stretch, $gap: clamp(1.5rem, 3.6vw, 3rem));
+  }
+
+  &__card {
+    border: 0.35rem solid #000000;
+    border-radius: 3%;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    text-align: left;
+    @include styles.setFlex($d: column, $jc: flex-start, $gap: clamp(0.8rem, 1.8vw, 1.3rem));
+    flex: 1 1 clamp(15rem, 30vw, 22rem);
+    transition:
+      border-color 240ms ease,
+      transform 240ms ease,
+      box-shadow 240ms ease;
+
+    &:hover {
+      transform: translateY(-0.18rem);
+      box-shadow: 0 0.8rem 1.6rem #0000001f;
+    }
+  }
+
+  &__quote {
+    width: 4rem;
+    transition: filter 240ms ease;
+  }
+
+  &__name {
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: clamp(1.4em, 2.4vw, 1.8em),
+      $weight: 700
+    );
+    text-align: center;
+  }
+
+  &__role {
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    @include styles.setFont($size: 1em, $weight: 400);
+  }
+
+  &__text {
+    margin: 0;
+    @include styles.setFont($size: clamp(1em, 2vw, 1.2em), $line-height: 1.1);
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "POLICY": {
+    "TITLE": "Datenschutzerklärung",
+    "BACK_ARIA": "Zur Hauptseite",
+    "BACK_ICON_ALT": "Pfeil nach links",
+    "SECTION_1_TITLE": "1. Verantwortliche Stelle",
+    "SECTION_1_TEXT": "Verantwortlich für die Datenverarbeitung auf dieser Website ist {{name}}, {{address}}, {{city}}. Kontakt: {{email}}.",
+    "SECTION_2_TITLE": "2. Hosting und Server-Logfiles",
+    "SECTION_2_TEXT": "Beim Besuch dieser Website werden technisch erforderliche Daten automatisch erfasst (z. B. IP-Adresse, Datum/Uhrzeit, angefragte Seite, Referrer, Browser und Betriebssystem). Die Verarbeitung erfolgt zur Gewährleistung von Sicherheit und Stabilität des Webangebots auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.",
+    "SECTION_3_TITLE": "3. Kontaktformular",
+    "SECTION_3_TEXT": "Wenn Sie das Kontaktformular nutzen, verarbeite ich die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Nachricht), um Ihre Anfrage zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Kommunikation) und, soweit einschlägig, Art. 6 Abs. 1 lit. f DSGVO.",
+    "SECTION_4_TITLE": "4. Speicherdauer",
+    "SECTION_4_TEXT": "Personenbezogene Daten werden nur so lange gespeichert, wie es für die genannten Zwecke erforderlich ist. Danach werden die Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.",
+    "SECTION_5_TITLE": "5. Weitergabe von Daten",
+    "SECTION_5_TEXT": "Eine Weitergabe an Dritte erfolgt nur, wenn dies gesetzlich erlaubt oder erforderlich ist. Soweit externe Dienstleister für den technischen Betrieb eingesetzt werden, erfolgt dies im Rahmen der datenschutzrechtlichen Vorgaben.",
+    "SECTION_6_TITLE": "6. Ihre Rechte",
+    "SECTION_6_TEXT": "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer Daten. Sie haben außerdem das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. Für Datenschutzanfragen kontaktieren Sie bitte {{email}}.",
+    "SECTION_7_TITLE": "7. Datensicherheit",
+    "SECTION_7_TEXT": "Diese Website nutzt angemessene technische und organisatorische Maßnahmen, um Ihre Daten vor Verlust, Missbrauch oder unberechtigtem Zugriff zu schützen. Die Übertragung erfolgt verschlüsselt über HTTPS.",
+    "SECTION_8_TITLE": "8. Stand und Änderungen dieser Datenschutzerklärung",
+    "SECTION_8_TEXT": "Stand: 18. Februar 2026. Ich behalte mir vor, diese Datenschutzerklärung bei rechtlichen, technischen oder inhaltlichen Änderungen zu aktualisieren."
+  },
+  "LEGAL": {
+    "TITLE": "Impressum",
+    "BACK_ARIA": "Zur Hauptseite",
+    "BACK_ICON_ALT": "Pfeil nach links",
+    "IMPRINT_TITLE": "Angaben gemäß § 5 DDG",
+    "IMPRINT_TEXT": "Diensteanbieter dieser Website:",
+    "CONTACT_TITLE": "Kontakt",
+    "CONTACT_TEXT": "E-Mail: {{email}}",
+    "RESPONSIBLE_TITLE": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+    "DISPUTE_TITLE": "Verbraucherstreitbeilegung (§ 36 VSBG)",
+    "DISPUTE_TEXT": "Ich bin nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",
+    "LIABILITY_TITLE": "Haftung für Inhalte",
+    "LIABILITY_TEXT": "Als Diensteanbieter bin ich gemäß den allgemeinen Gesetzen für eigene Inhalte auf diesen Seiten verantwortlich. Nach den gesetzlichen Vorschriften bin ich jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.",
+    "COPYRIGHT_TITLE": "Urheberrecht",
+    "COPYRIGHT_TEXT": "Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der vorherigen schriftlichen Zustimmung des jeweiligen Rechteinhabers.",
+    "DATE_TEXT": "Stand: xxx.2026"
+  },
+  "HEADER": {
+    "LOGO_ARIA": "Zur Startseite",
+    "LOGO_ALT": "Logo",
+    "CONTROLS_ARIA": "Sprach- und Menüsteuerung",
+    "LANG_SELECTION_ARIA": "Sprachauswahl",
+    "BURGER_OPEN_ARIA": "Navigationsmenü öffnen",
+    "BURGER_CLOSE_ARIA": "Navigationsmenü schließen",
+    "MENU_ARIA": "Hauptmenü",
+    "NAV_ARIA": "Hauptnavigation",
+    "NAV_ABOUT": "Über mich",
+    "NAV_SKILLS": "Meine Skills",
+    "NAV_PORTFOLIO": "Portfolio",
+    "FOOTER_ARIA": "Footer mit Kontaktinformationen",
+    "CONTACT_TITLE": "Sag hallo!",
+    "SOCIAL_GITHUB_ARIA": "GitHub-Profil",
+    "SOCIAL_GITHUB_ALT": "GitHub-Icon",
+    "SOCIAL_MAIL_ARIA": "E-Mail senden",
+    "SOCIAL_MAIL_ALT": "Mail-Icon",
+    "SOCIAL_LINKEDIN_ARIA": "LinkedIn-Profil",
+    "SOCIAL_LINKEDIN_ALT": "LinkedIn-Icon"
+  },
+  "HERO": {
+    "ARIA_LABEL": "Einleitung",
+    "TITLE_FRONTEND": "Frontend",
+    "TITLE_DEVELOPER": "Entwickler",
+    "SCROLL_TEXT": "Scroll nach unten",
+    "ARROW_ALT": "Pfeil-Icon"
+  },
+  "ABOUT": {
+    "ARIA_LABEL": "Über mich",
+    "TITLE": "Über mich",
+    "DESCRIPTION_LINE_1": "Frontend-Entwickler mit System-DNA: Bevor ich mich durch eine intensive Weiterbildung komplett auf Angular und TypeScript spezialisiert habe, lag mein Schwerpunkt in der Systemintegration.",
+    "DESCRIPTION_LINE_2": "Dieses Know-how über Server, Schnittstellen und IT-Infrastrukturen gibt mir heute in der Webentwicklung einen enormen Vorteil beim Lösen komplexer Probleme.",
+    "DESCRIPTION_LINE_3": "Ich konzentriere mich auf den Aufbau modularer, klar strukturierter Komponenten und habe den Anspruch, mich mit jedem neuen Projekt technisch selbst zu übertreffen.",
+    "HOUSE_ICON_ALT": "Haus-Icon",
+    "LAPTOP_ICON_ALT": "Laptop-Icon",
+    "HIGHLIGHT_LOCATION": "Wohnhaft in Kalkar, NRW",
+    "HIGHLIGHT_REMOTE": "Offen für Remote-Arbeit",
+    "CTA": "Lass uns reden",
+    "PORTRAIT_ALT": "Porträtfoto",
+    "SEPARATOR_ARIA": "Zum Skills-Bereich"
+  },
+  "SKILLS": {
+    "TITLE": "Meine Skills",
+    "CTA_ICON_ALT": "Icon für kontinuierliches Lernen",
+    "CTA_TEXT_START": "Du findest den Skill nicht, den du brauchst?",
+    "CTA_LINK": "Kontaktiere mich",
+    "CTA_TEXT_END": "Ich lerne immer gerne dazu!",
+    "SEPARATOR_ARIA": "Zum Portfolio-Bereich"
+  },
+  "PORTFOLIO": {
+    "ARIA_LABEL": "Portfolio",
+    "TITLE": "Portfolio",
+    "SUBTITLE": "Entdecke eine Auswahl meiner Arbeiten – interagiere mit Projekten, um meine Skills in Aktion zu sehen.",
+    "ARROW_ALT": "Pfeil-Icon",
+    "GITHUB_LINK": "GitHub",
+    "PROJECTS": {
+      "JOIN": {
+        "DESCRIPTION": "Dieses mit HTML, CSS und JavaScript entwickelte Projekt zeigt eine Liste von Pokémon mit einer Suchfunktion, farblicher Kennzeichnung basierend auf dem Pokémon-Typ, Overlays für detaillierte Statistiken und einem responsiven Design"
+      },
+      "EL_POLLO_LOCO": {
+        "DESCRIPTION": "🎮 Ein unterhaltsames 2D-Action-Spiel, bei dem der Spieler als Huhn durch verschiedene Levels läuft, Hindernisse überwindet, Münzen sammelt und gegen Gegner kämpft. Das Spiel enthält Animationen, Soundeffekte, Hintergrundmusik und einfache Levelmechaniken – entwickelt mit HTML, CSS und JavaScript."
+      }
+      
+    }
+  },
+  "REFERENCES": {
+    "TITLE": "Referenzen",
+    "INTRO": "Großartige Software entsteht selten im Alleingang. Wenn unterschiedliche Perspektiven und starke Code-Qualität aufeinandertreffen, entstehen die besten Lösungen. So wurde die gemeinsame Projektarbeit bisher erlebt:",
+    "QUOTE_ALT": "Zitat-Icon",
+    "SEPARATOR_ARIA": "Zum Kontaktbereich",
+    "LIST": {
+      "USER_1": {
+        "ROLE": "Team-Partnerin",
+        "TEXT": "Saeed hat ein echtes Händchen dafür, komplexe Design-Konzepte sauber in responsive und performante Angular-Komponenten zu verwandeln. Die Kommunikation lief absolut reibungslos, und er hat bei Herausforderungen im Projekt immer direkt proaktiv clevere Lösungen vorgeschlagen. Ein fantastischer Teamplayer!"
+      },
+      "USER_2": {
+        "ROLE": "Team-Partner",
+        "TEXT": "Die Zusammenarbeit mit Saeed war absolut großartig. Er bringt eine bemerkenswerte Struktur in seine Arbeit und hat unser Frontend-Projekt nicht nur pünktlich, sondern auch in hervorragender Code-Qualität abgeliefert. Auf sein Wort und seine technische Expertise kann man sich jederzeit vollkommen verlassen."
+      },
+      "USER_3": {
+        "ROLE": "Frontend-Entwickler",
+        "TEXT": "Von der ersten Minute an war die Kooperation von hoher Professionalität geprägt. Saeed denkt über den Tellerrand hinaus und legt großen Wert auf sauberen, wartbaren TypeScript-Code. Die Zusammenarbeit war ein voller Erfolg, und ich würde jederzeit wieder ein Projekt mit ihm starten."
+      }
+    }
+  },
+  "CONTACT": {
+    "ARIA_LABEL": "Kontakt",
+    "TITLE": "Sag Hallo!",
+    "HEADLINE": "Aus einer Skizze etwas Echtes bauen?",
+    "SUBHEADLINE": "Wenn du Unterstützung bei der digitalen Umsetzung suchst oder technische Verstärkung brauchst, lass uns unverbindlich connecten.",
+    "LABEL_NAME": "Dein Name",
+    "LABEL_EMAIL": "Deine E-Mail",
+    "LABEL_MESSAGE": "Deine Nachricht",
+    "ERROR_NAME": "Dein Name ist erforderlich",
+    "ERROR_EMAIL": "Eine gültige E-Mail ist erforderlich",
+    "ERROR_MESSAGE": "Deine Nachricht ist leer",
+    "ERROR_PRIVACY": "Bitte akzeptiere die Datenschutzbestimmungen.",
+    "CHECK_ICON_ALT": "Haken-Icon",
+    "PRIVACY_TEXT_START": "Ich habe die",
+    "PRIVACY_LINK": "Datenschutzerklärung",
+    "PRIVACY_TEXT_END": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
+    "SUBMIT": "Nachricht senden"
+  },
+  "FOOTER": {
+    "LOGO_ARIA": "Zur Startseite",
+    "LOGO_ALT": "Logo",
+    "SOCIAL_ARIA": "Social Links",
+    "SOCIAL_GITHUB_ARIA": "GitHub-Profil",
+    "SOCIAL_GITHUB_ALT": "GitHub-Icon",
+    "SOCIAL_MAIL_ARIA": "E-Mail senden",
+    "SOCIAL_MAIL_ALT": "Mail-Icon",
+    "SOCIAL_LINKEDIN_ARIA": "LinkedIn-Profil",
+    "SOCIAL_LINKEDIN_ALT": "LinkedIn-Icon",
+    "LEGAL_NOTICE": "Impressum"
+  }
+}

@@ -1,0 +1,42 @@
+@use '../../../../styles/index' as styles;
+
+.section-seperator {
+  width: clamp(20rem, 17vw, 24rem);
+  height: clamp(20rem, 17vw, 24rem);
+  transform: scaleX(-1); 
+  position: relative; 
+  &:hover {
+    img {
+      animation: arrowBounceGlobal 0.8s ease-in-out infinite;
+    }
+  }  
+
+  &__icon {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  #icon1 {
+    display: block;
+    width: 100%;
+    top: -15%;
+    left: -15%;
+  }
+  
+  #icon2 {
+    display: block;
+    width: 100%;
+    top: -15%;
+    left: -15%;
+    opacity: 0; 
+  }
+  
+  #icon3 {
+    display: block;
+    width: 100%;
+    top: 17%;
+    left: 17%;
+    opacity: 0; 
+  }
+
+}

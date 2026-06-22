@@ -1,0 +1,54 @@
+<!-- <section class="hero" id="hero" [attr.aria-label]="'HERO.ARIA_LABEL' | translate">
+  <div class="hero__content">
+    <div class="hero__title-group">
+      <h1 class="hero__title">
+        <span class="hero__title-line">{{ 'HERO.TITLE_FRONTEND' | translate }}</span>
+        <span class="hero__title-line">{{ 'HERO.TITLE_DEVELOPER' | translate }}</span>
+      </h1>
+      <div class="hero__down">
+        <span class="hero__line" aria-hidden="true"></span>
+        <span class="hero__name">{{ displayName }}</span>
+      </div>
+    </div>
+  </div>
+
+  <a class="hero__email" [href]="'mailto:' + userDBS.profileData.mail">
+    {{ userDBS.profileData.mail }}
+  </a>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <div class="hero__arrow-wrapper">
+      <img
+        class="hero__arrow-icon"
+        src="/assets/img/icons/arrow.svg"
+        [attr.alt]="'HERO.ARROW_ALT' | translate"
+      />
+    </div>
+    <span class="hero__scroll-text">{{ 'HERO.SCROLL_TEXT' | translate }}</span>
+  </div>
+</section> -->
+
+<section class="welcome" id="hero" [attr.aria-label]="'HERO.ARIA_LABEL' | translate">
+  <div class="welcome__content">
+    <div class="welcome__title-group">
+      <h1 class="welcome__title">
+        <span class="welcome__title-line">{{ 'HERO.TITLE_FRONTEND' | translate }}</span>
+        <span class="welcome__title-line">{{ 'HERO.TITLE_DEVELOPER' | translate }}</span>
+      </h1>
+      <div class="welcome__down">
+        <span class="welcome__line" aria-hidden="true"></span>
+        <span class="welcome__name">{{ displayName }}</span>
+      </div>
+    </div>
+  </div>
+
+  <a class="welcome__email" [href]="'mailto:' + userDBS.profileData.mail">
+    {{ userDBS.profileData.mail }}
+  </a>
+  <a class="welcome__scroll" href="#about" style="text-decoration: none; color: inherit">
+    <div class="welcome__arrow-wrapper">
+      <img class="welcome__arrow-icon" src="assets/img/icons/anim-icons/amin-arrow-seperator/lr/arrow.png" [attr.alt]="'HERO.ARROW_ALT' | translate" />
+    </div>
+    <span class="welcome__scroll-text">{{ 'HERO.SCROLL_TEXT' | translate }}</span>
+  </a>
+</section>

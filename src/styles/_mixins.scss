@@ -1,0 +1,32 @@
+@mixin setFlex($display: flex, $d: row, $jc: center, $ai: center, $wrap: nowrap, $gap: 0) {
+  display: $display;
+  flex-direction: $d;
+  justify-content: $jc;
+  align-items: $ai;
+  flex-wrap: $wrap;
+  gap: $gap;
+}
+
+@mixin setFont(
+  $family: (
+    'Overpass',
+    sans-serif,
+  ),
+  $size: 1em,
+  $weight: null,
+  $line-height: null,
+  $letter-spacing: null,
+  $style: normal,
+  $color: #000000,
+  $hyphens: auto
+) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+  font-style: $style;
+  color: $color;
+  hyphens: $hyphens;
+}
+

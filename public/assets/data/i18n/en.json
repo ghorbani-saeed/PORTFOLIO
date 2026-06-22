@@ -1,0 +1,158 @@
+{
+  "POLICY": {
+    "TITLE": "Privacy Policy",
+    "BACK_ARIA": "Back to main page",
+    "BACK_ICON_ALT": "Arrow Right to Links",
+    "SECTION_1_TITLE": "1. Data Controller",
+    "SECTION_1_TEXT": "The data controller for this website is {{name}}, {{address}}, {{city}}. Contact: {{email}}.",
+    "SECTION_2_TITLE": "2. Hosting and Server Log Files",
+    "SECTION_2_TEXT": "When you visit this website, technically necessary data is automatically processed (e.g. IP address, date/time, requested page, referrer, browser and operating system). This processing is required to ensure security and stability of the website and is based on Art. 6(1)(f) GDPR.",
+    "SECTION_3_TITLE": "3. Contact Form",
+    "SECTION_3_TEXT": "If you use the contact form, I process the data you provide (name, email address, message) in order to handle your request. The legal basis is Art. 6(1)(b) GDPR (pre-contractual communication) and, where applicable, Art. 6(1)(f) GDPR.",
+    "SECTION_4_TITLE": "4. Storage Period",
+    "SECTION_4_TEXT": "Personal data is stored only for as long as necessary for the stated purposes. Afterwards, data is deleted unless statutory retention obligations apply.",
+    "SECTION_5_TITLE": "5. Data Sharing",
+    "SECTION_5_TEXT": "Your data is shared with third parties only if legally permitted or required. If external service providers are used for technical operation, this is done in compliance with applicable data protection law.",
+    "SECTION_6_TITLE": "6. Your Rights",
+    "SECTION_6_TEXT": "You have the right to access, rectify, erase, restrict processing, and transfer your data, as well as the right to object to processing. You also have the right to lodge a complaint with a supervisory authority. For privacy-related requests, please contact {{email}}.",
+    "SECTION_7_TITLE": "7. Data Security",
+    "SECTION_7_TEXT": "This website uses appropriate technical and organizational measures to protect your data against loss, misuse, or unauthorized access. Data transmission is encrypted via HTTPS.",
+    "SECTION_8_TITLE": "8. Updates to This Privacy Policy",
+    "SECTION_8_TEXT": "Updated: February 18, 2026. I reserve the right to update this privacy policy due to legal, technical, or content-related changes."
+  },
+  "LEGAL": {
+    "TITLE": "Imprint",
+    "BACK_ARIA": "Back to main page",
+    "BACK_ICON_ALT": "Arrow Right to Links",
+    "IMPRINT_TITLE": "Information according to Section 5 DDG",
+    "IMPRINT_TEXT": "Service provider of this website:",
+    "CONTACT_TITLE": "Contact",
+    "CONTACT_TEXT": "Email: {{email}}",
+    "RESPONSIBLE_TITLE": "Responsible for content according to Section 18 (2) MStV",
+    "DISPUTE_TITLE": "Consumer dispute resolution (Section 36 VSBG)",
+    "DISPUTE_TEXT": "I am neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board.",
+    "LIABILITY_TITLE": "Liability for content",
+    "LIABILITY_TEXT": "For the content of my portfolio website, I am personally responsible according to German law.",
+    "COPYRIGHT_TITLE": "Copyright",
+    "COPYRIGHT_TEXT": "All images, texts and designs on this portfolio are protected by copyright. Any unauthorized duplication or use requires my prior permission",
+    "DATE_TEXT": "Date: xxx 2026"
+  },
+  "HEADER": {
+    "LOGO_ARIA": "Go to homepage",
+    "LOGO_ALT": "Logo",
+    "CONTROLS_ARIA": "Language and menu controls",
+    "LANG_SELECTION_ARIA": "Language selection",
+    "BURGER_OPEN_ARIA": "Open navigation menu",
+    "BURGER_CLOSE_ARIA": "Close navigation menu",
+    "MENU_ARIA": "Main navigation menu",
+    "NAV_ARIA": "Main navigation",
+    "NAV_ABOUT": "About me",
+    "NAV_SKILLS": "My skills",
+    "NAV_PORTFOLIO": "Portfolio",
+    "FOOTER_ARIA": "Footer with contact information",
+    "CONTACT_TITLE": "Say hi!",
+    "SOCIAL_GITHUB_ARIA": "GitHub profile",
+    "SOCIAL_GITHUB_ALT": "GitHub icon",
+    "SOCIAL_MAIL_ARIA": "Send email",
+    "SOCIAL_MAIL_ALT": "Mail icon",
+    "SOCIAL_LINKEDIN_ARIA": "LinkedIn profile",
+    "SOCIAL_LINKEDIN_ALT": "LinkedIn icon"
+  },
+  "HERO": {
+    "ARIA_LABEL": "Intro",
+    "TITLE_FRONTEND": "Frontend",
+    "TITLE_DEVELOPER": "Developer",
+    "SCROLL_TEXT": "Scroll Down",
+    "ARROW_ALT": "Arrow icon"
+  },
+  "ABOUT": {
+    "ARIA_LABEL": "About me",
+    "TITLE": "About me",
+    "DESCRIPTION_LINE_1": "Frontend developer with system DNA: Before dedicating myself fully to Angular and TypeScript through an intensive training program, my main focus was on system integration.",
+    "DESCRIPTION_LINE_2": "This expertise in servers, interfaces, and IT infrastructure gives me a massive advantage in web development today when it comes to solving complex problems.",
+    "DESCRIPTION_LINE_3": "I focus on building modular, clearly structured components and strive to technically outdo myself with every new project.",
+    "HOUSE_ICON_ALT": "House icon",
+    "LAPTOP_ICON_ALT": "Laptop icon",
+    "HIGHLIGHT_LOCATION": "Wohnhaft in Kalkar, NRW",
+    "HIGHLIGHT_REMOTE": "Open to work Remote",
+    "CTA": "Let's talk",
+    "PORTRAIT_ALT": "Portrait photo",
+    "SEPARATOR_ARIA": "Go to skills section"
+  },
+  "SKILLS": {
+    "TITLE": "My skills",
+    "CTA_ICON_ALT": "Continued learning icon",
+    "CTA_TEXT_START": "Don't see the skill you need?",
+    "CTA_LINK": "Contact me",
+    "CTA_TEXT_END": "I'm always ready to learn!",
+    "SEPARATOR_ARIA": "Go to portfolio section"
+  },
+  "PORTFOLIO": {
+    "ARIA_LABEL": "Portfolio",
+    "TITLE": "Portfolio",
+    "SUBTITLE": "Explore a selection of my work here - interact with projects to see my skills in action.",
+    "ARROW_ALT": "Arrow icon",
+    "GITHUB_LINK": "GitHub",
+    "PROJECTS": {
+      "Pokedex": {
+        "DESCRIPTION": "Developed with HTML, CSS, and JavaScript, this project displays a list of Pokémon with search functionality, type-based color coding, overlays for detailed stats, and a responsive design."
+      },
+      "EL_POLLO_LOCO": {
+        "DESCRIPTION": "🎮 A fun 2D action game developed with HTML, CSS, and JavaScript, where the player controls a chicken running through various levels, overcoming obstacles, collecting coins, and fighting enemies. The game features animations, sound effects, background music, and simple level mechanics."
+      },
+      "DA_BUBBLE": {
+        "DESCRIPTION": "Slack-style team messenger with channels, threads, and emoji reactions for seamless collaboration."
+      }
+    }
+  },
+  "REFERENCES": {
+    "TITLE": "References",
+    "INTRO": "I thrive both independently and as part of a team. Here's what my colleagues have to say about working with me.",
+    "QUOTE_ALT": "Quote icon",
+    "SEPARATOR_ARIA": "Go to contact section",
+    "LIST": {
+      "USER_1": {
+        "ROLE": "Team Partner",
+        "TEXT": "aeed has a real knack for cleanly transforming complex design concepts into responsive, high-performance Angular components. Communication was completely seamless, and he always proactively suggested clever solutions whenever project challenges arose. A fantastic team player!"
+      },
+      "USER_2": {
+        "ROLE": "Team Partner",
+        "TEXT": "Working with Saeed was an absolute pleasure. He brings remarkable structure to his work and delivered our frontend project not only on time, but also with outstanding code quality. You can completely rely on his word and his technical expertise at all times."
+      },
+      "USER_3": {
+        "ROLE": "Frontend Engineer",
+        "TEXT": "From the very first minute, our collaboration was defined by a high level of professionalism. Saeed thinks outside the box and places great value on clean, maintainable TypeScript code. The partnership was a complete success, and I would happily start another project with him anytime."
+      }
+    }
+  },
+  "CONTACT": {
+    "ARIA_LABEL": "Contact me",
+    "TITLE": "Say Hi!",
+    "HEADLINE": "Building something real from a simple sketch?",
+    "SUBHEADLINE": "If you are looking for support with digital implementation or need technical reinforcement, let’s connect with no strings attached.",
+    "LABEL_NAME": "Your name",
+    "LABEL_EMAIL": "Your email",
+    "LABEL_MESSAGE": "Your message",
+    "ERROR_NAME": "Your name is required",
+    "ERROR_EMAIL": "Your valid email is required",
+    "ERROR_MESSAGE": "Your message is empty",
+    "ERROR_PRIVACY": "Please accept the privacy policy.",
+    "CHECK_ICON_ALT": "Check icon",
+    "PRIVACY_TEXT_START": "I have read the",
+    "PRIVACY_LINK": "privacy policy",
+    "PRIVACY_TEXT_END": "and agree to the processing of my data as outlined.",
+    "SUBMIT": "Send message"
+  },
+  "FOOTER": {
+    "LOGO_ARIA": "Go to homepage",
+    "LOGO_ALT": "Logo",
+    "SOCIAL_ARIA": "Social links",
+    "SOCIAL_GITHUB_ARIA": "GitHub profile",
+    "SOCIAL_GITHUB_ALT": "GitHub icon",
+    "SOCIAL_MAIL_ARIA": "Send email",
+    "SOCIAL_MAIL_ALT": "Mail icon",
+    "SOCIAL_LINKEDIN_ARIA": "LinkedIn profile",
+    "SOCIAL_LINKEDIN_ALT": "LinkedIn icon",
+    "LEGAL_NOTICE": "Legal notice"
+  }
+}
