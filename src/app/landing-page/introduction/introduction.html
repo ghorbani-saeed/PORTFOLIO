@@ -1,0 +1,57 @@
+
+<section class="introduction" id="about" [attr.aria-label]="'ABOUT.ARIA_LABEL' | translate">
+  <div class="introduction__content">
+    <div class="introduction__body-left">
+      <h2 class="introduction__title" id="about-me-title">{{ 'ABOUT.TITLE' | translate }}</h2>
+
+      <div class="introduction__text">
+        <p class="introduction__description">
+          {{ 'ABOUT.DESCRIPTION_LINE_1' | translate }}<br />
+          {{ 'ABOUT.DESCRIPTION_LINE_2' | translate }}<br />
+          {{ 'ABOUT.DESCRIPTION_LINE_3' | translate }}
+        </p>
+
+        <ul class="introduction__highlights">
+          <li class="introduction__highlight">
+            <span class="introduction__icon" aria-hidden="true">
+              <img
+                src="/assets/img/icons/house.svg"
+                [attr.alt]="'ABOUT.HOUSE_ICON_ALT' | translate"
+              />
+            </span>
+            <span>{{ 'ABOUT.HIGHLIGHT_LOCATION' | translate }}</span>
+          </li>
+          <li class="introduction__highlight">
+            <span class="introduction__icon" aria-hidden="true">
+              <img
+                src="/assets/img/icons/laptop.svg"
+                [attr.alt]="'ABOUT.LAPTOP_ICON_ALT' | translate"
+              />
+            </span>
+            <span>{{ 'ABOUT.HIGHLIGHT_REMOTE' | translate }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <a class="introduction__cta" href="#contact">{{ 'ABOUT.CTA' | translate }}</a>
+    </div>
+
+    <div class="introduction__body-right">
+      <div class="introduction__image-wrap">
+        <img
+          class="introduction__image"
+          src="/assets/img/misc/headshot.jpg"
+          [attr.alt]="'ABOUT.PORTRAIT_ALT' | translate"
+        />
+      </div>
+    </div>
+  </div>
+
+  <a
+    class="introduction__separator-link"
+    href="#skills"
+    [attr.aria-label]="'ABOUT.SEPARATOR_ARIA' | translate"
+  >
+    <app-divider-right-left />
+  </a>
+</section>
