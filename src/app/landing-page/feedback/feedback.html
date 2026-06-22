@@ -1,0 +1,175 @@
+<section
+  class="feedback"
+  id="contact"
+  [attr.aria-label]="'CONTACT.ARIA_LABEL' | translate"
+  [class.contact-me--toast-open]="toastVisible"
+>
+  <div class="feedback__frame">
+    <h2 class="feedback__title" id="contact-title">{{ 'CONTACT.TITLE' | translate }}</h2>
+
+    <div class="feedback__content">
+      <p class="feedback__headline">{{ 'CONTACT.HEADLINE' | translate }}</p>
+      <p class="feedback__subheadline">{{ 'CONTACT.SUBHEADLINE' | translate }}</p>
+
+       <form
+        class="feedback__form"
+        aria-labelledby="contact-title"
+        #contactForm="ngForm"
+        (ngSubmit)="onSubmit(contactForm)"
+       >
+        <div class="feedback__input-field">
+          <div class="feedback__input-box">
+            <input
+              class="feedback__input"
+              type="text"
+              name="name"
+              id="contact-name"
+              placeholder=" "
+              required
+              #nameModel="ngModel"
+              [(ngModel)]="formData.senderName"
+            />
+            <label class="contact-me__label" for="contact-name">{{
+              'CONTACT.LABEL_NAME' | translate
+            }}</label>
+            <span class="contact-me__status-icon-container" aria-hidden="true"></span>
+          </div>
+          <p
+            class="feedback__input-error"
+            [class.feedback__input-error--visible]="nameModel.invalid && nameModel.touched"
+            [attr.aria-hidden]="!(nameModel.invalid && nameModel.touched)"
+          >
+            {{ 'CONTACT.ERROR_NAME' | translate }}
+          </p>
+        </div>
+
+        <div class="feedback__input-field">
+          <div class="feedback__input-box">
+            <input
+              class="feedback__input"
+              type="email"
+              name="email"
+              id="contact-email"
+              placeholder=" "
+              required
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+              #emailModel="ngModel"
+              [(ngModel)]="formData.senderEmail"
+            />
+            <label class="contact-me__label" for="contact-email">{{
+              'CONTACT.LABEL_EMAIL' | translate
+            }}</label>
+            <span class="feedback__status-icon-container" aria-hidden="true"></span>
+          </div>
+          <p
+            class="feedback__input-error"
+            [class.feedback__input-error--visible]="
+              emailModel.invalid &&
+              (emailModel.dirty || emailModel.touched || contactForm.submitted)
+            "
+            [attr.aria-hidden]="
+              !(
+                emailModel.invalid &&
+                (emailModel.dirty || emailModel.touched || contactForm.submitted)
+              )
+            "
+          >
+            {{ 'CONTACT.ERROR_EMAIL' | translate }}
+          </p>
+        </div>
+
+        <div class="feedback__input-field">
+          <div class="feedback__input-box">
+            <textarea
+              class="feedback__textarea"
+              name="message"
+              id="contact-message"
+              rows=""
+              required
+              #msgModel="ngModel"
+              [(ngModel)]="formData.textMessage"
+              placeholder=" "
+            ></textarea>
+            <label class="feedback__label" for="contact-message">{{
+              'CONTACT.LABEL_MESSAGE' | translate
+            }}</label>
+            <span class="feedback__status-icon-container" aria-hidden="true"></span>
+          </div>
+          <p
+            class="feedback__input-error"
+            [class.feedback__input-error--visible]="msgModel.invalid && msgModel.touched"
+            [attr.aria-hidden]="!(msgModel.invalid && msgModel.touched)"
+          >
+            {{ 'CONTACT.ERROR_MESSAGE' | translate }}
+          </p>
+        </div>
+
+        <div class="feedback__input-field">
+          <div class="feedback__checkbox">
+            <div class="feedback__checkbox-input-container">
+              <input
+                class="feedback__checkbox-input"
+                type="checkbox"
+                name="privacy"
+                required
+                #privacyModel="ngModel"
+                [(ngModel)]="formData.acceptedTerms"
+              />
+              <img
+                class="feedback__checkbox-input-check-icon"
+                src="/assets/img/icons/check.svg"
+                [attr.alt]="'CONTACT.CHECK_ICON_ALT' | translate"
+              />
+            </div>
+            <span class="feedback__checkbox-text">
+              {{ 'CONTACT.PRIVACY_TEXT_START' | translate }}
+              <a class="feedback__link" routerLink="/privacy-policy" fragment="policy">{{
+                'CONTACT.PRIVACY_LINK' | translate
+              }}</a>
+              {{ 'CONTACT.PRIVACY_TEXT_END' | translate }}
+            </span>
+          </div>
+          <p
+            class="feedback__input-error"
+            [class.feedback__input-error--visible]="
+              nameModel.valid &&
+              emailModel.valid &&
+              msgModel.valid &&
+              privacyModel.invalid &&
+              contactForm.submitted
+            "
+            [attr.aria-hidden]="
+              !(
+                nameModel.valid &&
+                emailModel.valid &&
+                msgModel.valid &&
+                privacyModel.invalid &&
+                contactForm.submitted
+              )
+            "
+          >
+            {{ 'CONTACT.ERROR_PRIVACY' | translate }}
+          </p>
+        </div>
+
+        <button
+          class="feedback__submit"
+          type="submit"
+          [class.feedback__submit--ready]="contactForm.valid"
+        >
+          <!-- [disabled]="!contactForm.valid" -->
+          {{ 'CONTACT.SUBMIT' | translate }}
+        </button>
+
+        <!-- @if(true){ -->
+        @if (toastVisible) {
+          <div class="feedback__toast-backdrop" aria-hidden="true"></div>
+          <p class="feedback__toast" role="status" aria-live="polite">
+            {{ toastMessage }}
+          </p>
+        }
+      </form>
+    </div>
+    <a class="feedback__jump-top" href="#top" aria-hidden="true"> </a>
+  </div>
+</section>
