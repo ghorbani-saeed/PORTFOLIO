@@ -1,23 +1,23 @@
-<section class="welcome" id="hero" [attr.aria-label]="'HERO.ARIA_LABEL' | translate">
+<section class="welcome" id="hero">
   <div class="welcome__content">
-    <div class="welcome__title-group">
-      <h1 class="welcome__title">
-        <span class="welcome__title-line">{{ 'HERO.TITLE_FRONTEND' | translate }}</span>
-        <span class="welcome__title-line">{{ 'HERO.TITLE_DEVELOPER' | translate }}</span>
-      </h1>
-      <div class="welcome__down">
-        <span class="welcome__line" aria-hidden="true"></span>
-        <span class="welcome__name">{{ displayName }}</span>
-      </div>
+    <h1 class="welcome__title">
+      <span class="welcome__title-line">Frontend</span>
+      <span class="welcome__title-line">Entwickler</span>
+    </h1>
+
+    <div class="welcome__down">
+      <span class="welcome__line" aria-hidden="true"></span>
+      <span class="welcome__name">Saeed Ghorbani</span>
     </div>
   </div>
 
-  <a class="welcome__email" [href]="'mailto:' + userDBS.profileData.mail">
-    {{ userDBS.profileData.mail }}
-  </a>
   <a class="welcome__scroll" href="#about" style="text-decoration: none; color: inherit">
     <div class="welcome__arrow-wrapper">
-      <img class="welcome__arrow-icon" src="assets/img/icons/02-welcome/arrow-to-down.svg" [attr.alt]="'HERO.ARROW_ALT' | translate" />
+      <img
+        class="welcome__arrow-icon"
+        src="assets/img/icons/02-welcome/arrow-to-down.svg"
+        [attr.alt]="'HERO.ARROW_ALT' | translate"
+      />
     </div>
     <span class="welcome__scroll-text">{{ 'HERO.SCROLL_TEXT' | translate }}</span>
   </a>
