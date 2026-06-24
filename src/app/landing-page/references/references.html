@@ -8,7 +8,7 @@
     <div class="references__list">
       @for(item of userDBS.userReviews; track item.authorName; let idx=$index){
       <article class="references__card">
-        <img class="references__quote" src="/assets/img/icons/quote.svg"
+        <img class="references__quote" src="/assets/img/icons/10-references/quote.svg"
           [attr.alt]="'REFERENCES.QUOTE_ALT' | translate" />
         <h3 class="references__name">{{ item.authorName }}</h3>
         <p class="references__role">{{ item.translationRoleKey | translate }}</p>

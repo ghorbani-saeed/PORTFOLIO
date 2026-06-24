@@ -60,18 +60,21 @@ export class UserDatabankService {
     };
   }
 
-  private initTechStack(): void {
-    this.techStack = [
-      { title: 'JavaScript', icon: '/assets/img/icons/skills-icons/js.svg' },
-      { title: 'TypeScript', icon: '/assets/img/icons/skills-icons/ts.svg' },
-      { title: 'Angular', icon: '/assets/img/icons/skills-icons/angular.svg' },
-      { title: 'HTML', icon: '/assets/img/icons/skills-icons/html.svg' },
-      { title: 'CSS', icon: '/assets/img/icons/skills-icons/css.svg' },
-      { title: 'Firebase', icon: '/assets/img/icons/skills-icons/firebase.svg' },
-      { title: 'Git', icon: '/assets/img/icons/skills-icons/git.svg' },
-      { title: 'REST-API', icon: '/assets/img/icons/skills-icons/api.svg' },
-    ];
-  }
+private initTechStack(): void {
+  this.techStack = [
+    // Angular ist jetzt an erster Stelle
+    { title: 'Angular', icon: '/assets/img/icons/04-skills/angular.svg' },
+    { title: 'TypeScript', icon: '/assets/img/icons/04-skills/ts.svg' },
+    { title: 'JavaScript', icon: '/assets/img/icons/04-skills/js.svg' },
+    { title: 'HTML', icon: '/assets/img/icons/04-skills/html.svg' },
+    { title: 'CSS', icon: '/assets/img/icons/04-skills/css.svg' },
+    { title: 'REST-API', icon: '/assets/img/icons/04-skills/api.svg' },
+    { title: 'Firebase', icon: '/assets/img/icons/04-skills/firebase.svg' },
+    { title: 'Git', icon: '/assets/img/icons/04-skills/git.svg' },
+    { title: 'Git', icon: '/assets/img/icons/04-skills/continued-learning.svg' },
+
+  ];
+}
 
   private initReviews(): void {
     this.userReviews = [

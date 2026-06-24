@@ -223,3 +223,35 @@
     }
   }
 }
+
+// Speziell für kleine Bildschirme ab 370px abwärts
+@media (max-width: 370px) {
+  .portfolio {
+    &__project {
+      // Erhöht den globalen Abstand zwischen den Projekten, falls sie untereinander stehen
+      gap: 5rem !important; 
+    }
+
+    &__details {
+      // Gibt den Details-Boxen nach unten hin extra Luft, 
+      // damit der Counter des nächsten Projekts nicht in den Button knallt
+      padding-bottom: 3.5rem !important; 
+    }
+
+    &__counter {
+      // Schiebt den Counter etwas weiter nach oben aus der Gefahrenzone
+      top: -18% !important; 
+    }
+
+    &__project--reverse &__counter {
+      // Falls der Counter links sitzt, passen wir ihn hier ebenfalls an
+      top: -18% !important;
+    }
+    
+    &__link {
+      // Verhindert, dass der Button zu nah am unteren Rand klebt
+      margin-bottom: 1.5rem; 
+    }
+  }
+}
+

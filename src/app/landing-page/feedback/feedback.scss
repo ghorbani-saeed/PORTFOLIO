@@ -1,334 +1,3 @@
-// @use '../../../styles/index' as styles;
-
-// .feedback {
-//   background: #000000;
-//   width: 100%;
-//   margin: 0;
-//   padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
-//   z-index: 1;
-//   @include styles.setFont($color: #ffffff);
-//   top: calc(styles.$footer-height / 3.8);
-//   clip-path: polygon(0 0, 100% clamp(10%, 20vw, 15%), 100% 100%, 0 100%);
-
-//   &--toast-open {
-//     clip-path: none;
-//   }
-
-//   &__frame {
-//     padding: 0 styles.$g-pad-x;
-//     max-width: styles.$g-max-width;
-//     width: 100%;
-//     height: 100%;
-//     margin: clamp(2rem, 9vmin, 7rem) auto 0;
-//     @include styles.setFlex($d: column, $jc: space-around, $gap: clamp(2rem, 6vw, 7rem));
-//   }
-
-//   &__title {
-//     align-self: flex-start;
-//     @include styles.setFont(
-//       $family: (
-//         'Syne',
-//         sans-serif,
-//       ),
-//       $size: clamp(3em, 9vw, 5.5em),
-//       $weight: 800,
-//       $line-height: 1,
-//       $color: inherit
-//     );
-//     transition: color 240ms ease;
-//   }
-
-//   &__content {
-//     @include styles.setFlex($d: column, $ai: center, $gap: clamp(1.2rem, 3vw, 2rem));
-//   }
-
-//   &__headline {
-//     @include styles.setFont($size: clamp(1em, 3vw, 1.7em), $weight: 800, $color: #00bc8f);
-//   }
-
-//   &__subheadline {
-//     margin-bottom: clamp(1rem, 2.6vw, 2rem);
-//     @include styles.setFont($size: clamp(1em, 3vw, 1.4em), $color: inherit, $weight: 400);
-//   }
-
-//   &__form {
-//     width: 100%;
-//     @include styles.setFlex($d: column, $ai: stretch, $gap: clamp(1.4rem, 4vw, 2.4rem));
-//   }
-
-//   &__input,
-//   &__textarea {
-//     width: 100%;
-//     min-height: 3.6rem;
-//     padding: 0.9rem 2.8rem 0.9rem 0.8rem;
-//     background: transparent;
-//     border: 0.2rem solid transparent;
-//     border-bottom: 0.2rem solid #ffffffcd;
-//     @include styles.setFont($size: 1em, $weight: 400, $color: inherit);
-//     transition:
-//       border-color 220ms ease,
-//       box-shadow 220ms ease;
-
-//     &:hover {
-//       border-color: #ffffff;
-//       box-shadow: 0 0 0.8rem #ffffff26;
-//     }
-//   }
-
-//   &__input.ng-touched,
-//   &__textarea.ng-touched {
-//     border: 0.2rem solid #ffffff;
-//   }
-
-//   &__textarea {
-//     min-height: 10.5rem;
-//     resize: vertical;
-//   }
-
-//   &__input::placeholder,
-//   &__textarea::placeholder {
-//     color: #ffffff;
-//   }
-
-//   &__input-field {
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     gap: 0.4rem;
-//   }
-
-//   &__input-box {
-//     position: relative;
-//     width: 100%;
-//   }
-
-//   &__label {
-//     position: absolute;
-//     top: 50%;
-//     left: 1rem;
-//     transform: translateY(-50%);
-//     background: #000000;
-//     @include styles.setFont($size: 1em, $weight: 100, $color: #ffffff);
-//     transition:
-//       top 0.2s ease,
-//       transform 360ms ease,
-//       font-size 0.2s ease;
-//   }
-
-//   &__status-icon-container {
-//     position: absolute;
-//     right: 0.9rem;
-//     top: 50%;
-//     transform: translateY(-50%);
-//     width: 1.6rem;
-//     height: 1.6rem;
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: contain;
-//     opacity: 0;
-//     pointer-events: none;
-//     transition: opacity 0.2s ease;
-//   }
-
-//   &__input.ng-invalid.ng-touched ~ &__status-icon-container,
-//   &__textarea.ng-invalid.ng-touched ~ &__status-icon-container {
-//     opacity: 1;
-//     background-image: url('/assets/img/icons/exclamation.svg');
-//   }
-
-//   &__input.ng-valid.ng-touched ~ &__status-icon-container,
-//   &__textarea.ng-valid.ng-touched ~ &__status-icon-container {
-//     opacity: 1;
-//     background-image: url('/assets/img/icons/correct.svg');
-//   }
-
-//   &__input:focus + &__label,
-//   &__input:not(:placeholder-shown) + &__label,
-//   &__textarea:focus + &__label,
-//   &__textarea:not(:placeholder-shown) + &__label {
-//     top: 0;
-//     transform: translateY(-50%);
-//     font-size: 1em;
-//     padding: 0 0.5rem;
-//   }
-
-//   &__input-error {
-//     margin: 0;
-//     min-height: 1.9rem;
-//     padding: 0.5rem 0 0;
-//     opacity: 0;
-//     visibility: hidden;
-//     @include styles.setFont($size: 1em, $weight: 400, $color: red);
-//   }
-
-//   &__input-error--visible {
-//     opacity: 1;
-//     visibility: visible;
-//   }
-
-//   &__checkbox {
-//     @include styles.setFlex($jc: flex-start, $gap: 0.7rem);
-//   }
-
-//   &__checkbox-input-container {
-//     width: 2.4rem;
-//     height: 2.4rem;
-//     @include styles.setFlex();
-//     transition:
-//       background-color 220ms ease,
-//       border-radius 220ms ease,
-//       transform 220ms ease;
-//   }
-
-//   &__checkbox-input {
-//     appearance: none;
-//     background: transparent;
-//     width: 2rem;
-//     height: 2rem;
-//     border: 2px solid #ffffff;
-//     cursor: pointer;
-//   }
-
-//   &__checkbox-input-check-icon {
-//     position: absolute;
-//     margin: auto;
-//     padding: 0.2rem;
-//     width: 1.6rem;
-//     display: none;
-//     filter: invert(1);
-//     pointer-events: none;
-//   }
-
-//   &__checkbox-input:checked + &__checkbox-input-check-icon {
-//     display: block;
-//   }
-
-//   &__checkbox-text {
-//     @include styles.setFont($size: 1em, $weight: 400, $color: inherit, $line-height: 1.5);
-//   }
-
-//   &__link {
-//     display: inline-block;
-//     margin: 0 0.3ch;
-//     color: #00bc8f;
-//     text-decoration: none;
-//     text-decoration-color: transparent;
-//     text-underline-offset: 0.14em;
-//     transform-origin: center;
-//     transition:
-//       color 220ms ease,
-//       text-decoration-color 220ms ease,
-//       transform 220ms ease;
-//   }
-
-//   &__checkbox:hover .contact-me__checkbox-input-container {
-//     border-radius: 50%;
-//     transform: scale(1.5);
-//   }
-
-//   &__link:hover,
-//   &__link:focus-visible {
-//     color: #7ff3d4;
-//     text-decoration-color: currentColor;
-//     transform: scale(1.04);
-//   }
-
-//   &__submit {
-//     margin-bottom: 3rem;
-//     align-self: center;
-//     width: 20rem;
-//     padding: 1rem 2rem;
-//     border: 0.2rem solid #4d4d4d;
-//     background: transparent;
-//     @include styles.setFont(
-//       $family: (
-//         'Syne',
-//         sans-serif,
-//       ),
-//       $size: clamp(1em, 9vw, 1.1em),
-//       $weight: 500,
-//       $color: #7a7a7a
-//     );
-
-//     transition:
-//       width 240ms ease,
-//       transform 240ms ease,
-//       box-shadow 240ms ease,
-//       border-color 240ms ease,
-//       color 240ms ease;
-//   }
-
-//   &__submit--ready {
-//     border: 0.3rem solid #ffffff;
-//     color: inherit;
-//     cursor: pointer;
-
-//     &:hover {
-//       width: 22rem;
-//       transform: translateY(-0.12rem);
-//       box-shadow: 0 0.6rem 1.5rem #00000066;
-//     }
-//   }
-
-//   &__toast {
-//     position: fixed;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     margin: 0;
-//     padding: 1rem 1.6rem;
-//     border: 0.1rem solid #ffffff;
-//     border-radius: 0.8rem;
-//     background: #000000;
-//     color: #ffffff;
-//     z-index: 1200;
-//     text-align: center;
-//     @include styles.setFont($size: 20px, $weight: 600, $line-height: 1.3, $color: #ffffff);
-//   }
-
-//   &__toast-backdrop {
-//     position: fixed;
-//     inset: 0;
-//     background: #232323db;
-//     z-index: 1100;
-//   }
-
-//   &__jump-top {
-//     position: absolute;
-//     right: 0;
-//     bottom: 0;
-//     width: 10rem;
-//     height: 10rem;
-//     z-index: 1;
-//     @include styles.setFlex();
-//     object-fit: fill;
-//     background-image: url('/assets/img/icons/anim-icons/anim-arrow-go-top/arrow1.png');
-//     background-repeat: no-repeat;
-//     background-position: center;
-//     background-size: contain;
-//     transition:
-//     transform 220ms ease,
-//     filter 220ms ease;
-//   }
-// }
-
-// @media (max-width: 768px) {
-//   .contact-me {
-//     padding: clamp(9rem, 16vw, 12rem) styles.$g-pad-x 0;
-
-//     &__frame {
-//       flex-direction: column;
-//     }
-
-//     &__title {
-//       width: 100%;
-//     }
-
-//     &__jump-top {
-//       display: none;
-//     }
-//   }
-// }
 @use '../../../styles/index' as styles;
 
 .feedback {
@@ -470,7 +139,7 @@
   &__input.ng-valid.ng-touched ~ &__status-icon-container,
   &__textarea.ng-valid.ng-touched ~ &__status-icon-container {
     opacity: 1;
-    background-image: url('/assets/img/icons/correct.svg');
+    background-image: url('/assets/img/icons/06-feedback/correct.svg');
   }
 
   &__input:focus + &__label,
@@ -552,7 +221,8 @@
       transform 220ms ease;
   }
 
-  &__checkbox:hover .contact-me__checkbox-input-container {
+  // HIER KORRIGIERT: contact-me zu feedback geändert
+  &__checkbox:hover .feedback__checkbox-input-container {
     border-radius: 50%;
     transform: scale(1.5);
   }
@@ -633,16 +303,16 @@
     z-index: 1;
     @include styles.setFlex();
     object-fit: fill;
-    background-image: url('/assets/img/icons/anim-icons/anim-arrow-go-top/arrow1.png');
+    background-image: url('/assets/img/icons/09-arrows/feedback-arrows/arrow-to-up-white.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    // Weiche Transition für die Rückkehr aus dem Hover/Klick-Zustand
-    transition: transform 0.2s ease, filter 0.2s ease;
+    transition:
+      transform 0.2s ease,
+      filter 0.2s ease;
 
     &:hover {
       filter: brightness(1.2) drop-shadow(0px 0px 8px rgba(0, 188, 143, 0.4));
-      // SCHALTET NUN DIE GLOBALE ANIMATION AUS DER STYLES.SCSS EIN
       animation: arrowBounceGlobal 0.8s ease-in-out infinite;
     }
 
@@ -652,8 +322,9 @@
   }
 }
 
+// HIER KORRIGIERT: contact-me zu feedback geändert
 @media (max-width: 768px) {
-  .contact-me {
+  .feedback {
     padding: clamp(9rem, 16vw, 12rem) styles.$g-pad-x 0;
 
     &__frame {
@@ -665,7 +336,39 @@
     }
 
     &__jump-top {
-      display: none;
+      display: flex;
+      width: 6rem;
+      height: 6rem;
+      bottom: 1rem;
+      right: 1rem;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .feedback {
+    &__frame {
+      // Wir geben dem Frame unten extra Platz (Padding), damit der Pfeil Platz hat
+      padding-bottom: 8rem;
+    }
+
+    &__jump-top {
+      right: auto; // Setzt den alten Rechts-Abstand zurück
+      bottom: 1rem; // Abstand ganz unten vom Frame
+      left: 50%; // Setzt den Startpunkt genau in die Mitte (50%)
+      transform: translateX(
+        -50%
+      ); // Verschiebt den Pfeil um die eigene Hälfte zurück -> exakt zentriert!
+
+      &:hover {
+        filter: none; // Entfernt das Leuchten (oder lass es drin, wenn du magst)
+        animation: none !important; // DEAKTIVIERT DIE ANIMATION (Pfeil steht absolut still!)
+      }
+
+      &:active {
+        // Da wir oben transform nutzen, müssen wir das scale() für den Klick hier kombinieren
+        transform: translateX(-50%) scale(0.9);
+      }
     }
   }
 }

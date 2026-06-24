@@ -2,7 +2,7 @@
   <div class="footer__inner">
     <div class="footer__brand">
       <a class="footer__logo" routerLink="/" fragment="hero" [attr.aria-label]="'FOOTER.LOGO_ARIA' | translate">
-        <img src="/assets/img/logo/logo5.png" [attr.alt]="'FOOTER.LOGO_ALT' | translate" />
+        <img src="/assets/img/icons/00-logo/brand-identity-logos/personal-brand-header-footer.png" [attr.alt]="'FOOTER.LOGO_ALT' | translate" />
       </a>
       <span class="footer__copyright">
         © {{ userDBS.profileData.fullName }} 2026
@@ -16,11 +16,11 @@
       <div class="footer__social-links" [attr.aria-label]="'FOOTER.SOCIAL_ARIA' | translate">
         <a [href]="userDBS.profileData.githubUrl" target="_blank" rel="noreferrer"
           [attr.aria-label]="'FOOTER.SOCIAL_GITHUB_ARIA' | translate">
-          <img class="footer__icon" src="/assets/img/icons/github.svg"
+          <img class="footer__icon" src="/assets/img/icons/07-footer/github.svg"
             [attr.alt]="'FOOTER.SOCIAL_GITHUB_ALT' | translate" />
         </a>
         <a [routerLink]="['/']" fragment="contact" [attr.aria-label]="'FOOTER.SOCIAL_MAIL_ARIA' | translate">
-          <img class="footer__icon" src="/assets/img/icons/mail.svg"
+          <img class="footer__icon" src="/assets/img/icons/07-footer/mail.svg"
             [attr.alt]="'FOOTER.SOCIAL_MAIL_ALT' | translate" />
         </a>
         <a
@@ -28,7 +28,7 @@
           (click)="$event.preventDefault()"
           [attr.aria-label]="'FOOTER.SOCIAL_LINKEDIN_ARIA' | translate"
         >
-          <img class="footer__icon" src="/assets/img/icons/linkedIn.svg"
+          <img class="footer__icon" src="/assets/img/icons/07-footer/linkedIn.svg"
             [attr.alt]="'FOOTER.SOCIAL_LINKEDIN_ALT' | translate" />
         </a>
       </div>
