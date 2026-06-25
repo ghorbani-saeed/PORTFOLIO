@@ -3,7 +3,7 @@ import { WelcomeComponent } from './welcome/welcome';
 import { Interoduction } from './introduction/introduction';
 import { Skills } from './skills/skills';
 import { Portfolio } from './portfolio/portfolio';
-import { References } from './references/references';
+import { ReferencesComponent } from './references/references';
 import { FeedbackComponent } from './feedback/feedback';
 
 @Component({
@@ -13,7 +13,7 @@ import { FeedbackComponent } from './feedback/feedback';
     Interoduction, 
     Skills, 
     Portfolio,
-    References,
+    ReferencesComponent,
     FeedbackComponent,
   ],
   templateUrl: './landing-page.html',

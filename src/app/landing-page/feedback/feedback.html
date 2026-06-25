@@ -32,7 +32,7 @@
             <label class="contact-me__label" for="contact-name">{{
               'CONTACT.LABEL_NAME' | translate
             }}</label>
-            <span class="contact-me__status-icon-container" aria-hidden="true"></span>
+            <span class="feedback__status-icon-container" aria-hidden="true"></span>
           </div>
           <p
             class="feedback__input-error"
@@ -117,7 +117,7 @@
               />
               <img
                 class="feedback__checkbox-input-check-icon"
-                src="/assets/img/icons/08-privacy-policy/check.svg"
+                src="/assets/img/icons/06-feedback/confirm.svg"
                 [attr.alt]="'CONTACT.CHECK_ICON_ALT' | translate"
               />
             </div>
@@ -157,11 +157,9 @@
           type="submit"
           [class.feedback__submit--ready]="contactForm.valid"
         >
-          <!-- [disabled]="!contactForm.valid" -->
           {{ 'CONTACT.SUBMIT' | translate }}
         </button>
 
-        <!-- @if(true){ -->
         @if (toastVisible) {
           <div class="feedback__toast-backdrop" aria-hidden="true"></div>
           <p class="feedback__toast" role="status" aria-live="polite">

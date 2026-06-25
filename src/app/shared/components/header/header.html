@@ -7,7 +7,7 @@
       (click)="closeMenu()"
       [attr.aria-label]="'HEADER.LOGO_ARIA' | translate"
     >
-      <img src="/assets/img/icons/00-logo/brand-identity-logos/personal-brand-header-footer.png" [attr.alt]="'HEADER.LOGO_ALT' | translate" />
+      <img src="/assets/img/icons/00-logo/brand-identity-logos/personal-brand-header-footer.svg" [attr.alt]="'HEADER.LOGO_ALT' | translate" />
     </a>
     <div class="header__lang-and-menu" [attr.aria-label]="'HEADER.CONTROLS_ARIA' | translate">
       <div
@@ -65,33 +65,19 @@
     >
       <div class="menu-overlay__panel">
         <nav class="menu-overlay__nav" [attr.aria-label]="'HEADER.NAV_ARIA' | translate">
-          <a
-            class="menu-overlay__nav-link"
-            [routerLink]="['/']"
-            fragment="about"
-            (click)="closeMenu()"
-          >
-            <span>{{ 'HEADER.NAV_ABOUT' | translate }}</span>
-            <div class="menu-overlay__nav-link-anim"></div>
-          </a>
-          <a
-            class="menu-overlay__nav-link"
-            [routerLink]="['/']"
-            fragment="skills"
-            (click)="closeMenu()"
-          >
-            <span>{{ 'HEADER.NAV_SKILLS' | translate }}</span>
-            <div class="menu-overlay__nav-link-anim"></div>
-          </a>
-          <a
-            class="menu-overlay__nav-link"
-            [routerLink]="['/']"
-            fragment="portfolio"
-            (click)="closeMenu()"
-          >
-            <span>{{ 'HEADER.NAV_PORTFOLIO' | translate }}</span>
-            <div class="menu-overlay__nav-link-anim"></div>
-          </a>
+
+         <a class="menu-overlay__nav-link" [routerLink]="['/']" fragment="about" (click)="closeMenu()">
+           <span>{{ 'HEADER.NAV_ABOUT' | translate }}</span>
+         </a>
+
+         <a class="menu-overlay__nav-link" [routerLink]="['/']" fragment="skills" (click)="closeMenu()">
+           <span>{{ 'HEADER.NAV_SKILLS' | translate }}</span>
+         </a>
+
+         <a class="menu-overlay__nav-link" [routerLink]="['/']" fragment="portfolio" (click)="closeMenu()">
+           <span>{{ 'HEADER.NAV_PORTFOLIO' | translate }}</span>
+         </a>
+
         </nav>
 
         <section class="menu-overlay__footer" [attr.aria-label]="'HEADER.FOOTER_ARIA' | translate">
@@ -120,7 +106,7 @@
               >
                 <img
                   class="menu-overlay__icon"
-                  src="/assets/img/icons/github.svg"
+                  src="/assets/img/icons/07-footer/github.svg"
                   [attr.alt]="'HEADER.SOCIAL_GITHUB_ALT' | translate"
                 />
               </a>
@@ -133,7 +119,7 @@
               >
                 <img
                   class="menu-overlay__icon"
-                  src="/assets/img/icons/mail.svg"
+                  src="/assets/img/icons/07-footer/mail.svg"
                   [attr.alt]="'HEADER.SOCIAL_MAIL_ALT' | translate"
                 />
               </a>
@@ -145,7 +131,7 @@
               >
                 <img
                   class="menu-overlay__icon"
-                  src="/assets/img/icons/linkedIn.svg"
+                  src="/assets/img/icons/07-footer/linkedIn.svg"
                   [attr.alt]="'HEADER.SOCIAL_LINKEDIN_ALT' | translate"
                 />
               </a>

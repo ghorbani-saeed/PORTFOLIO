@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { DividerRightLeftComponent } from '../../shared/components/divider-right-left/divider-right-left';
+import { DividerRightLeftComponent } from '../../shared/components/divider-to-left/divider-to-left';
 
 @Component({
   selector: 'app-interoduction',

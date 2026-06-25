@@ -139,7 +139,7 @@
   &__input.ng-valid.ng-touched ~ &__status-icon-container,
   &__textarea.ng-valid.ng-touched ~ &__status-icon-container {
     opacity: 1;
-    background-image: url('/assets/img/icons/06-feedback/correct.svg');
+    background-image: url('/assets/img/icons/06-feedback/confirm.svg');
   }
 
   &__input:focus + &__label,
@@ -322,7 +322,6 @@
   }
 }
 
-// HIER KORRIGIERT: contact-me zu feedback geändert
 @media (max-width: 768px) {
   .feedback {
     padding: clamp(9rem, 16vw, 12rem) styles.$g-pad-x 0;
@@ -344,6 +343,7 @@
     }
   }
 }
+
 
 @media (max-width: 500px) {
   .feedback {

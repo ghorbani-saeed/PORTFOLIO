@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-divider-right-left',
+  selector: 'app-divider-to-left',
   imports: [],
-  templateUrl: './divider-right-left.html',
-  styleUrl: './divider-right-left.scss',
+  templateUrl: './divider-to-left.html',
+  styleUrl: './divider-to-left.scss',
 })
 /**
  * Represents the SectionSeperatorRightLeft class.
