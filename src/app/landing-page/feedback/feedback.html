@@ -2,25 +2,25 @@
   class="feedback"
   id="contact"
   [attr.aria-label]="'CONTACT.ARIA_LABEL' | translate"
-  [class.contact-me--toast-open]="toastVisible"
+  [class.contact-me--pop-up]="toastVisible"
 >
-  <div class="feedback__frame">
-    <h2 class="feedback__title" id="contact-title">{{ 'CONTACT.TITLE' | translate }}</h2>
+  <div class="feedback__wrapper">
+    <h2 class="feedback__heading" id="contact-title">{{ 'CONTACT.TITLE' | translate }}</h2>
 
     <div class="feedback__content">
       <p class="feedback__headline">{{ 'CONTACT.HEADLINE' | translate }}</p>
       <p class="feedback__subheadline">{{ 'CONTACT.SUBHEADLINE' | translate }}</p>
 
-       <form
-        class="feedback__form"
+      <form
+        class="feedback__holder"
         aria-labelledby="contact-title"
         #contactForm="ngForm"
         (ngSubmit)="onSubmit(contactForm)"
-       >
-        <div class="feedback__input-field">
-          <div class="feedback__input-box">
+      >
+        <div class="feedback__group">
+          <div class="feedback__container">
             <input
-              class="feedback__input"
+              class="feedback__field"
               type="text"
               name="name"
               id="contact-name"
@@ -35,18 +35,18 @@
             <span class="feedback__status-icon-container" aria-hidden="true"></span>
           </div>
           <p
-            class="feedback__input-error"
-            [class.feedback__input-error--visible]="nameModel.invalid && nameModel.touched"
+            class="feedback__field-error"
+            [class.feedback__field-error--active]="nameModel.invalid && nameModel.touched"
             [attr.aria-hidden]="!(nameModel.invalid && nameModel.touched)"
           >
             {{ 'CONTACT.ERROR_NAME' | translate }}
           </p>
         </div>
 
-        <div class="feedback__input-field">
-          <div class="feedback__input-box">
+        <div class="feedback__group">
+          <div class="feedback__container">
             <input
-              class="feedback__input"
+              class="feedback__field"
               type="email"
               name="email"
               id="contact-email"
@@ -62,8 +62,8 @@
             <span class="feedback__status-icon-container" aria-hidden="true"></span>
           </div>
           <p
-            class="feedback__input-error"
-            [class.feedback__input-error--visible]="
+            class="feedback__field-error"
+            [class.feedback__field-error--active]="
               emailModel.invalid &&
               (emailModel.dirty || emailModel.touched || contactForm.submitted)
             "
@@ -78,8 +78,8 @@
           </p>
         </div>
 
-        <div class="feedback__input-field">
-          <div class="feedback__input-box">
+        <div class="feedback__group">
+          <div class="feedback__container">
             <textarea
               class="feedback__textarea"
               name="message"
@@ -96,15 +96,15 @@
             <span class="feedback__status-icon-container" aria-hidden="true"></span>
           </div>
           <p
-            class="feedback__input-error"
-            [class.feedback__input-error--visible]="msgModel.invalid && msgModel.touched"
+            class="feedback__field-error"
+            [class.feedback__field-error--active]="msgModel.invalid && msgModel.touched"
             [attr.aria-hidden]="!(msgModel.invalid && msgModel.touched)"
           >
             {{ 'CONTACT.ERROR_MESSAGE' | translate }}
           </p>
         </div>
 
-        <div class="feedback__input-field">
+        <div class="feedback__group">
           <div class="feedback__checkbox">
             <div class="feedback__checkbox-input-container">
               <input
@@ -130,8 +130,8 @@
             </span>
           </div>
           <p
-            class="feedback__input-error"
-            [class.feedback__input-error--visible]="
+            class="feedback__field-error"
+            [class.feedback__field-error--active]="
               nameModel.valid &&
               emailModel.valid &&
               msgModel.valid &&
@@ -153,21 +153,21 @@
         </div>
 
         <button
-          class="feedback__submit"
+          class="feedback__action-btn"
           type="submit"
-          [class.feedback__submit--ready]="contactForm.valid"
+          [class.feedback__action-btn--enabled]="contactForm.valid"
         >
           {{ 'CONTACT.SUBMIT' | translate }}
         </button>
 
         @if (toastVisible) {
-          <div class="feedback__toast-backdrop" aria-hidden="true"></div>
-          <p class="feedback__toast" role="status" aria-live="polite">
+          <div class="feedback__overlay" aria-hidden="true"></div>
+          <p class="feedback__alert-box" role="status" aria-live="polite">
             {{ toastMessage }}
           </p>
         }
       </form>
     </div>
-    <a class="feedback__jump-top" href="#top" aria-hidden="true"> </a>
+    <a class="feedback__scroll-btn" href="#top" aria-hidden="true"> </a>
   </div>
 </section>

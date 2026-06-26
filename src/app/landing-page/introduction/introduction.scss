@@ -1,4 +1,3 @@
-
 @use '../../../styles/index' as styles;
 
 .introduction {
@@ -8,7 +7,7 @@
   margin: 0 auto;
   @include styles.setFlex($d: column);
 
-  &__separator-link {
+  &__section-divider {
     margin-top: clamp(2rem, 9vw, 5rem);
     right: 5%;
     align-self: flex-end;
@@ -18,7 +17,7 @@
     }
   }
 
-  &__content {
+  &__inner {
     @include styles.setFlex($d: row, $jc: space-between, $ai: flex-start, $gap: 5rem);
     width: 100%;
     height: 100%;
@@ -30,13 +29,8 @@
     }
   }
 
-  &__body-left {
-    @include styles.setFlex(
-      $d: column,
-      $ai: flex-start,
-      $jc: flex-start,
-      $gap: 0
-    );
+  &__main-content {
+    @include styles.setFlex($d: column, $ai: flex-start, $jc: flex-start, $gap: 0);
     flex: 1 1 auto;
     max-width: 65rem;
 
@@ -51,10 +45,10 @@
     }
   }
 
-  &__title {
+  &__heading {
     margin: 0 0 2.5rem 0;
-    white-space: nowrap; 
-    
+    white-space: nowrap;
+
     @include styles.setFont(
       $family: (
         'Syne',
@@ -67,7 +61,7 @@
     );
   }
 
-  &__text {
+  &__textbox {
     @include styles.setFlex($d: column, $ai: flex-start, $gap: clamp(1.6rem, 2.8vw, 2.6rem));
     width: 100%;
 
@@ -78,24 +72,24 @@
     }
   }
 
-  &__description {
+  &__summary {
     margin: 0;
     @include styles.setFont($size: clamp(1.1em, 2vw, 1.4em), $line-height: 1.2);
   }
 
-  &__highlights {
+  &__feature-list {
     list-style: none;
     @include styles.setFlex($d: column, $ai: flex-start, $gap: 1.8rem);
     margin: 0;
     padding: 0;
   }
 
-  &__highlight {
+  &__feature-item {
     @include styles.setFlex($jc: flex-start, $ai: center, $gap: 1.4rem);
     @include styles.setFont($size: clamp(1em, 2vw, 1.2em), $weight: 400);
   }
 
-  &__icon {
+  &__badge {
     width: 3rem;
     height: 3rem;
 
@@ -104,7 +98,7 @@
     }
   }
 
-  &__cta {
+  &__action-link {
     @include styles.setFlex();
     width: 20rem;
     padding: 1rem clamp(2rem, 3vw, 3rem);
@@ -113,11 +107,11 @@
     text-decoration: none;
     @include styles.setFont($size: 1em, $weight: 400);
     margin-top: clamp(2rem, 4vw, 3rem);
-    
-    transition: 
-      transform 200ms ease, 
-      border-color 200ms ease, 
-      color 200ms ease, 
+
+    transition:
+      transform 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease,
       box-shadow 200ms ease;
 
     &:hover {
@@ -138,7 +132,7 @@
     }
   }
 
-  &__body-right {
+  &__media-aside {
     flex: 0 0 clamp(28rem, 30vw, 45rem);
     width: 100%;
 
@@ -157,13 +151,13 @@
     }
   }
 
-  &__image-wrap {
+  &__avatar-holder {
     position: relative;
     border-radius: 1.5rem;
-    overflow: hidden; 
+    overflow: hidden;
     width: 100%;
 
-    &:hover .about-me__image {
+    &:hover .about-me__portrait {
       transform: scale(1.04);
     }
 
@@ -171,16 +165,18 @@
       width: 100% !important;
       aspect-ratio: 3 / 4;
       border-radius: 1.5rem;
-      &:hover .introduction__image { transform: none; }
+      &:hover .introduction__portrait {
+        transform: none;
+      }
     }
   }
 
-  &__image {
+  &__portrait {
     width: 100%;
     height: auto;
-    aspect-ratio: 3 / 4; 
-    object-fit: cover;   
-    object-position: center top; 
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: center top;
     border-radius: 1.5rem;
     display: block;
     border: none;

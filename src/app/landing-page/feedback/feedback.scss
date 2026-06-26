@@ -10,11 +10,11 @@
   top: calc(styles.$footer-height / 3.8);
   clip-path: polygon(0 0, 100% clamp(10%, 20vw, 15%), 100% 100%, 0 100%);
 
-  &--toast-open {
+  &--pop-up {
     clip-path: none;
   }
 
-  &__frame {
+  &__wrapper {
     padding: 0 styles.$g-pad-x;
     max-width: styles.$g-max-width;
     width: 100%;
@@ -23,7 +23,7 @@
     @include styles.setFlex($d: column, $jc: space-around, $gap: clamp(2rem, 6vw, 7rem));
   }
 
-  &__title {
+  &__heading {
     align-self: flex-start;
     @include styles.setFont(
       $family: (
@@ -51,12 +51,12 @@
     @include styles.setFont($size: clamp(1em, 3vw, 1.4em), $color: inherit, $weight: 400);
   }
 
-  &__form {
+  &__holder {
     width: 100%;
     @include styles.setFlex($d: column, $ai: stretch, $gap: clamp(1.4rem, 4vw, 2.4rem));
   }
 
-  &__input,
+  &__field,
   &__textarea {
     width: 100%;
     min-height: 3.6rem;
@@ -75,7 +75,7 @@
     }
   }
 
-  &__input.ng-touched,
+  &__field.ng-touched,
   &__textarea.ng-touched {
     border: 0.2rem solid #ffffff;
   }
@@ -85,19 +85,19 @@
     resize: vertical;
   }
 
-  &__input::placeholder,
+  &__field::placeholder,
   &__textarea::placeholder {
     color: #ffffff;
   }
 
-  &__input-field {
+  &__group {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
   }
 
-  &__input-box {
+  &__container {
     position: relative;
     width: 100%;
   }
@@ -130,19 +130,19 @@
     transition: opacity 0.2s ease;
   }
 
-  &__input.ng-invalid.ng-touched ~ &__status-icon-container,
+  &__field.ng-invalid.ng-touched ~ &__status-icon-container,
   &__textarea.ng-invalid.ng-touched ~ &__status-icon-container {
     opacity: 1;
   }
 
-  &__input.ng-valid.ng-touched ~ &__status-icon-container,
+  &__field.ng-valid.ng-touched ~ &__status-icon-container,
   &__textarea.ng-valid.ng-touched ~ &__status-icon-container {
     opacity: 1;
     background-image: url('/assets/img/icons/06-feedback/confirm.svg');
   }
 
-  &__input:focus + &__label,
-  &__input:not(:placeholder-shown) + &__label,
+  &__field:focus + &__label,
+  &__field:not(:placeholder-shown) + &__label,
   &__textarea:focus + &__label,
   &__textarea:not(:placeholder-shown) + &__label {
     top: 0;
@@ -151,7 +151,7 @@
     padding: 0 0.5rem;
   }
 
-  &__input-error {
+  &__field-error {
     margin: 0;
     min-height: 1.9rem;
     padding: 0.5rem 0 0;
@@ -160,7 +160,7 @@
     @include styles.setFont($size: 1em, $weight: 400, $color: red);
   }
 
-  &__input-error--visible {
+  &__field-error--active {
     opacity: 1;
     visibility: visible;
   }
@@ -233,7 +233,7 @@
     transform: scale(1.04);
   }
 
-  &__submit {
+  &__action-btn {
     margin-bottom: 3rem;
     align-self: center;
     width: 20rem;
@@ -258,7 +258,7 @@
       color 240ms ease;
   }
 
-  &__submit--ready {
+  &__action-btn--enabled {
     border: 0.3rem solid #ffffff;
     color: inherit;
     cursor: pointer;
@@ -325,11 +325,11 @@
   .feedback {
     padding: clamp(9rem, 16vw, 12rem) styles.$g-pad-x 0;
 
-    &__frame {
+    &__wrapper {
       flex-direction: column;
     }
 
-    &__title {
+    &__heading {
       width: 100%;
     }
 
@@ -346,7 +346,7 @@
 
 @media (max-width: 500px) {
   .feedback {
-    &__frame {
+    &__wrapper {
       // Wir geben dem Frame unten extra Platz (Padding), damit der Pfeil Platz hat
       padding-bottom: 8rem;
     }
