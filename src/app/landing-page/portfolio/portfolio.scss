@@ -165,7 +165,7 @@
   }
 }
 
-@include styles.tabletLarge {
+@include styles.view-lg {
   .portfolio {
     &__subtitle {
       text-align: left;
@@ -216,7 +216,7 @@
   }
 }
 
-@include styles.mobileSmall {
+@include styles.view-xs {
   .portfolio {
     &__frame {
       padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;

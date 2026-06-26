@@ -12,7 +12,7 @@
     left: 5%;
     align-self: flex-start;
 
-    @include styles.tabletLarge {
+    @include styles.view-lg {
       left: 20%;
     }
 
@@ -113,7 +113,7 @@
   }
 }
 
-@include styles.tabletLarge {
+@include styles.view-lg {
   .skills {
     &__ headline {
       padding: 0 clamp(1rem, 2vw, 2rem);

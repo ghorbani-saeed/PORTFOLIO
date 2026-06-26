@@ -12,7 +12,7 @@
     right: 5%;
     align-self: flex-end;
 
-    @include styles.tabletLarge {
+    @include styles.view-lg {
       right: 20%;
     }
   }

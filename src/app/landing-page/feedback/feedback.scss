@@ -133,7 +133,6 @@
   &__input.ng-invalid.ng-touched ~ &__status-icon-container,
   &__textarea.ng-invalid.ng-touched ~ &__status-icon-container {
     opacity: 1;
-    background-image: url('/assets/img/icons/exclamation.svg');
   }
 
   &__input.ng-valid.ng-touched ~ &__status-icon-container,

@@ -13,7 +13,7 @@
     right: 5%;
     align-self: flex-end;
 
-    @include styles.tabletLarge {
+    @include styles.view-lg {
       right: 20%;
     }
   }
@@ -22,6 +22,12 @@
     @include styles.setFlex($d: row, $jc: space-between, $ai: flex-start, $gap: 5rem);
     width: 100%;
     height: 100%;
+
+    @include styles.view-lg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__body-left {
@@ -33,6 +39,16 @@
     );
     flex: 1 1 auto;
     max-width: 65rem;
+
+    @include styles.view-lg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      gap: 2rem;
+    }
   }
 
   &__title {
@@ -54,6 +70,12 @@
   &__text {
     @include styles.setFlex($d: column, $ai: flex-start, $gap: clamp(1.6rem, 2.8vw, 2.6rem));
     width: 100%;
+
+    @include styles.view-lg {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__description {
@@ -92,7 +114,6 @@
     @include styles.setFont($size: 1em, $weight: 400);
     margin-top: clamp(2rem, 4vw, 3rem);
     
-    // Einheitliche Transition für alle veränderten Eigenschaften
     transition: 
       transform 200ms ease, 
       border-color 200ms ease, 
@@ -100,7 +121,6 @@
       box-shadow 200ms ease;
 
     &:hover {
-      // Schlichter, edler Effekt: Hebt sich leicht ab und wechselt die Farbe zum Akzent-Grün
       transform: translateY(-0.2rem);
       border-color: #00bc8f;
       color: #00bc8f;
@@ -108,15 +128,33 @@
     }
 
     &:active {
-      // Klick-Feedback
       transform: translateY(-0.05rem);
       box-shadow: 0 0.2rem 0.4rem rgba(0, 188, 143, 0.1);
+    }
+
+    @include styles.view-lg {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
     }
   }
 
   &__body-right {
-    flex: 0 1 clamp(28rem, 30vw, 45rem);
+    flex: 0 0 clamp(28rem, 30vw, 45rem);
     width: 100%;
+
+    @include styles.view-lg {
+      order: unset;
+      width: 280px !important;
+      min-width: 280px !important;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include styles.view-sm {
+      width: 220px !important;
+      min-width: 220px !important;
+    }
   }
 
   &__image-wrap {
@@ -127,6 +165,13 @@
 
     &:hover .about-me__image {
       transform: scale(1.04);
+    }
+
+    @include styles.view-lg {
+      width: 100% !important;
+      aspect-ratio: 3 / 4;
+      border-radius: 1.5rem;
+      &:hover .introduction__image { transform: none; }
     }
   }
 
@@ -141,94 +186,12 @@
     border: none;
     outline: none;
     transition: transform 0.3s ease;
-  }
-}
 
-@media (max-width: 900px) {
-  .about-me {
-    &__content {
-      flex-direction: column; 
-      align-items: stretch;
-      gap: clamp(2rem, 6vw, 3rem);
-    }
-
-    &__body-left {
-      width: 100%;
-      max-width: 100%;
-    }
-
-    &__title {
-      white-space: normal; 
-    }
-
-    &__body-right {
-      margin: auto;
-      width: 100%;
-      max-width: 40rem;
-    }
-
-    &__cta {
-      align-self: center;
-    }
-  }
-
-  
-}
-
-@media (max-width: 600px) {
-  .introduction {
-    &__content {
-      display: flex;
-      flex-direction: column;
-      align-items: center; // Zentriert die Hauptblöcke horizontal
-    }
-
-    &__body-left {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;       // Erlaubt dem Text, über Button & Bild zu stehen
-      align-items: center;   // Zentriert Button und Bild vertikal zueinander
-      justify-content: center; // ZENTRIERT BEIDE ELEMENTE IN DER MITTE DES BILDSCHIRMS
-      width: 100%;
-      max-width: 100%;
-      gap: 2rem;             // Abstand zwischen Button und Foto
-    }
-
-    &__text {
-      width: 100%;
-      align-items: center;   // Falls Text (Description) auch mittig sein soll
-      text-align: center;    // Macht den Text zentriert (optional, sieht oft besser aus)
-    }
-
-    &__cta {
-      margin-top: 0;         // Entfernt den Abstand, da sie jetzt nebeneinander stehen
-      margin-bottom: 0;
-    }
-
-    &__body-right {
-      order: unset;          // Hebt die Standard-Reihenfolge auf
-      width: auto;
-      max-width: unset;
-      margin: 0;             // Entfernt automatische Margins
-      display: flex;
-      justify-content: center;
-    }
-
-    &__image-wrap {
-      width: 150px !important;
-      height: 200px !important;
-      border-radius: 0.5rem;
-      
-      &:hover .introduction__image {
-        transform: none;     // Keine Skalierung auf Mobilgeräten
-      }
-    }
-
-    &__image {
-      width: 150px !important;
-      height: 200px !important;
-      aspect-ratio: unset;
-      border-radius: 0.5rem;
+    @include styles.view-lg {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
+      border-radius: 1.5rem;
       transition: none;
     }
   }
