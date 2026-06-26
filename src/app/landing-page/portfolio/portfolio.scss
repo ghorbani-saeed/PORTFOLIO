@@ -1,7 +1,7 @@
 @use '../../../styles/index' as styles;
 
 .portfolio {
-  &__frame {
+  &__container {
     max-width: styles.$g-max-width;
     padding: calc(1.5 * styles.$header-height) styles.$g-pad-x calc(1 * styles.$header-height);
     width: 100%;
@@ -9,12 +9,12 @@
     @include styles.setFlex($d: column, $gap: clamp(3rem, 5vw, 7rem));
   }
 
-  &__header {
+  &__top-bar {
     @include styles.setFlex($d: column, $gap: clamp(1.2rem, 3vw, 2rem));
     text-align: center;
   }
 
-  &__title {
+  &__caption {
     @include styles.setFont(
       $family: (
         'Syne',
@@ -28,13 +28,13 @@
     transition: color 240ms ease;
   }
 
-  &__subtitle {
+  &__subheading {
     margin-bottom: 2rem;
     max-width: 47rem;
     @include styles.setFont($size: clamp(1em, 2vw, 1.4em), $weight: 400, $line-height: 1.2);
   }
 
-  &__list {
+  &__group-list {
     @include styles.setFlex($d: column, $gap: clamp(3rem, 9vw, 11rem));
     width: 100%;
   }
@@ -46,7 +46,6 @@
 
   &__project--reverse {
     flex-direction: row-reverse;
-
   }
 
   &__media-link {
@@ -63,7 +62,7 @@
     overflow: hidden;
     border-radius: 2.5%;
   }
-  
+
   &__image {
     position: relative;
     width: 100%;
@@ -71,12 +70,11 @@
     display: block;
     border: 0.3rem solid transparent;
     border-radius: 2.5%;
-    
-    filter: grayscale(0) !important; 
-    
+
+    filter: grayscale(0) !important;
+
     transition: transform 0.3s ease;
   }
-
 
   &__hover-arrow-icon {
     display: none !important;
@@ -117,7 +115,7 @@
     @include styles.setFont($size: clamp(1em, 2vmin, 1.3em), $line-height: 1.35);
   }
 
-  &__link {
+  &____anchor {
     padding: 0.1rem 3rem;
     border: 0.35rem solid #000000;
     border-radius: 7%;
@@ -160,18 +158,18 @@
 
   // NUR EIN SCHLICHTER, MODERNER ZOOM OHNE JEGLICHE FARBVERÄNDERUNG ODER RÄNDER
   &__project:hover &__image {
-    transform: scale(1.03); 
+    transform: scale(1.03);
     filter: grayscale(0) !important; // Erzwingt, dass die echten Farben stabil bleiben
   }
 }
 
 @include styles.view-lg {
   .portfolio {
-    &__subtitle {
+    &__subheading {
       text-align: left;
     }
 
-    &__list {
+    &__group-list {
       gap: clamp(3rem, 13vw, 9rem);
     }
 
@@ -218,7 +216,7 @@
 
 @include styles.view-xs {
   .portfolio {
-    &__frame {
+    &__container {
       padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
     }
   }
@@ -229,29 +227,28 @@
   .portfolio {
     &__project {
       // Erhöht den globalen Abstand zwischen den Projekten, falls sie untereinander stehen
-      gap: 5rem !important; 
+      gap: 5rem !important;
     }
 
     &__details {
-      // Gibt den Details-Boxen nach unten hin extra Luft, 
+      // Gibt den Details-Boxen nach unten hin extra Luft,
       // damit der Counter des nächsten Projekts nicht in den Button knallt
-      padding-bottom: 3.5rem !important; 
+      padding-bottom: 3.5rem !important;
     }
 
     &__counter {
       // Schiebt den Counter etwas weiter nach oben aus der Gefahrenzone
-      top: -18% !important; 
+      top: -18% !important;
     }
 
     &__project--reverse &__counter {
       // Falls der Counter links sitzt, passen wir ihn hier ebenfalls an
       top: -18% !important;
     }
-    
-    &__link {
+
+    &____anchor {
       // Verhindert, dass der Button zu nah am unteren Rand klebt
-      margin-bottom: 1.5rem; 
+      margin-bottom: 1.5rem;
     }
   }
 }
-

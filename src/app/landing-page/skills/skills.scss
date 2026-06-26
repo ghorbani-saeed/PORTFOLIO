@@ -27,7 +27,7 @@
     }
   }
 
-  &__frame {
+  &__container {
     position: relative;
     border: 0.3rem solid #000000;
     border-radius: 1%;
@@ -44,7 +44,7 @@
     padding: 0 clamp(1.6rem, 4vw, 3.5rem);
   }
 
-  &__title {
+  &__caption {
     min-width: 25rem;
     padding: 0 clamp(0.5rem, 2vw, 2rem);
     background: styles.$bg-color;
@@ -62,7 +62,7 @@
     transition: color 240ms ease;
   }
 
-  &__list {
+  &__group-list {
     margin-top: clamp(1.5rem, 6vw, 6rem);
     list-style: none;
     @include styles.setFlex($wrap: wrap);
@@ -70,7 +70,7 @@
     column-gap: clamp(1.5rem, 6vw, 8rem);
   }
 
-  &__item {
+  &__group-item {
     @include styles.setFlex($d: column, $gap: 0.8rem);
     flex: 0 0 clamp(9rem, 13vw, 11rem);
     // transition entfernt für 100% statischen Look

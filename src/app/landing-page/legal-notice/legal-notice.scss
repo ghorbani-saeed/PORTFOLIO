@@ -1,81 +1,42 @@
 @use '../../../styles/index' as styles;
 
-/* clamp(minimum, preferred, maximum)
-   - minimum: The smallest size the element will ever reach.
-   - preferred: The ideal size, typically based on a viewport unit (vw, vmin).
-   - maximum: The largest size the element will reach.
-*/
 .legal-notice {
   min-height: calc(100dvh - styles.$header-height - styles.$footer-height);
-  // Fluid vertical padding: scales based on 7vw, but capped between 1.5rem and 7rem.
-  padding: clamp(1.5rem, 7vw, 7rem) 0 clamp(6rem, 10vw, 9rem);
+  padding: clamp(1.5rem, 7vw, 7rem) styles.$g-pad-x clamp(6rem, 10vw, 9rem);
   width: 100%;
 
-  &__frame {
-    // Fluid horizontal padding: scales based on 4vmin, 
-    // ensuring content stays aligned without overflowing or getting too cramped.
+  &__container {
     max-width: styles.$g-max-width;
     padding: 0 clamp(0rem, 4vmin, 13rem);
     margin: auto;
-    @include styles.setFlex($d: column, $ai: flex-start, $gap: 1.8rem);
-  }
+    @include styles.setFlex($d: column, $ai: flex-start, $gap: clamp(1.4rem, 3vw, 2.4rem));
 
-  &__main-title {
-    text-align: left;
-    width: 100%;
-    margin: 2rem 0;
-    @include styles.setFont(
-      $family: (
-        'Syne',
-        sans-serif,
-      ),
-      $size: clamp(2.5rem, 8vmin, 4.5rem),
-      $weight: 800
-    );
-  }
-
-  &__section {
-    @include styles.setFlex($d: column, $ai: stretch, $gap: 0.8rem);
-    margin-bottom: 0.5rem;
-  }
-
-  &__subtitle {
-    @include styles.setFont($size: clamp(1em, 2vw, 1.2rem), $weight: 700, $color: #00bc8f);
-    margin: 0;
-  }
-
-  &__text {
-    @include styles.setFont($size: clamp(0.9em, 2vw, 1.1rem), $line-height: 1.6);
-    margin: 0;
-    white-space: pre-line;
-  }
-
-  &__person {
-    @include styles.setFlex($d: column, $ai: flex-start, $gap: 0.1rem);
-    p {
-      margin: 0;
+    @include styles.view-s {
+      align-items: center; 
     }
   }
 
-  &__meta {
-    @include styles.setFont($size: clamp(0.9em, 2vw, 1.1rem), $weight: 600);
-    margin-top: 2rem;
-    opacity: 0.8;
-  }
-
-  &__back-wrap {
+  &__nav-holder {
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    @include styles.view-s {
+      justify-content: center; 
+      margin-bottom: 1rem;       
+    }
   }
 
-  &__back {
+  &__return-link {
     display: block;
-    position: sticky;
-    top: calc(styles.$header-height + 1rem);
-    margin-left: auto;
+    position: fixed;     
+    top: calc(styles.$header-height + 2rem); 
+    right: 2rem;         
     width: 7rem;
     height: 3.2rem;
-    z-index: 2;
-    transition: transform 0.2s ease, filter 0.2s ease;
+    font-size: 1em;
+    transition: width 220ms ease, transform 220ms ease, filter 220ms ease;
+    z-index: 9999;       
 
     img {
       width: 100%;
@@ -84,26 +45,94 @@
 
     &:hover {
       filter: brightness(1.15) drop-shadow(-2px 4px 6px rgba(0, 188, 143, 0.3));
-      // NUTZT JETZT DIE GLOBALE ANIMATION AUS DER STYLES.SCSS
       animation: arrowBounceGlobal 0.8s ease-in-out infinite;
     }
 
     &:active {
       transform: scale(0.95);
     }
+
+    @include styles.view-s {
+      position: static;      
+      margin: 0 auto 1.5rem; 
+    }
   }
 
-  &__title {
+  &__hero-heading {
+    padding: clamp(1rem, 4vmin, 3rem) 0;
+    text-align: left;     
+    letter-spacing: -0.02em;
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: clamp(1.5em, 7vmin, 3.5em),
+      $weight: 800,
+      $line-height: 1.5
+    );
+
+    @include styles.view-s {
+      text-align: center; 
+      width: 100%;
+      padding: 0 0 1rem 0; 
+    }
+  }
+
+  &__caption {
     text-align: left;
     width: 100%;
     margin: -1rem 0 1.5rem 0;
-    @include styles.setFont($size: clamp(4rem, 3vw, 1.8rem), $weight: 600, $color: #00bc8f);
+    @include styles.setFont($size: clamp(1.4rem, 3vw, 2.2rem), $weight: 600, $color: #00bc8f);
 
-    @media (max-width: 500px) {
+    @include styles.view-s {
+      text-align: center;
       font-size: 3rem !important;
     }
-    @media (max-width: 350px) {
+    @include styles.view-xs {
       font-size: 2rem !important;
     }
   }
-} 
+
+  &__block {
+    @include styles.setFlex($d: column, $ai: stretch, $gap: 0.6rem);
+    width: 100%;
+  }
+
+  &__subheading {
+    @include styles.setFont($size: clamp(1em, 2.4vw, 1.6rem), $weight: 700, $color: #00bc8f);
+  }
+
+  &__paragraph {
+    @include styles.setFont($size: clamp(1em, 2vw, 1.2rem), $line-height: 1.5);
+  }
+
+  &__operator-info {
+    @include styles.setFlex($d: column, $ai: flex-start, $gap: 0.1rem);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__accent {
+    color: #00bc8f;
+    font-weight: 600;
+  }
+
+  &__details {
+    @include styles.setFont($size: clamp(1em, 2vw, 1.2rem), $weight: 600);
+  }
+
+  @include styles.view-md {
+    min-height: calc(100dvh - styles.$header-height - 25rem);
+    margin-top: clamp(2rem, 6vmin, 5rem);
+    
+    &__return-link {
+      @include styles.view-s-up { 
+        right: 1rem;       
+        top: calc(styles.$header-height + 1rem);
+      }
+    }
+  }
+}

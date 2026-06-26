@@ -38,7 +38,7 @@
     transition: color 240ms ease;
   }
 
-  &__content {
+  &__inner-box {
     @include styles.setFlex($d: column, $ai: center, $gap: clamp(1.2rem, 3vw, 2rem));
   }
 
@@ -57,7 +57,7 @@
   }
 
   &__field,
-  &__textarea {
+  &__paragrapharea {
     width: 100%;
     min-height: 3.6rem;
     padding: 0.9rem 2.8rem 0.9rem 0.8rem;
@@ -76,17 +76,17 @@
   }
 
   &__field.ng-touched,
-  &__textarea.ng-touched {
+  &__paragrapharea.ng-touched {
     border: 0.2rem solid #ffffff;
   }
 
-  &__textarea {
+  &__paragrapharea {
     min-height: 10.5rem;
     resize: vertical;
   }
 
   &__field::placeholder,
-  &__textarea::placeholder {
+  &__paragrapharea::placeholder {
     color: #ffffff;
   }
 
@@ -131,20 +131,20 @@
   }
 
   &__field.ng-invalid.ng-touched ~ &__status-icon-container,
-  &__textarea.ng-invalid.ng-touched ~ &__status-icon-container {
+  &__paragrapharea.ng-invalid.ng-touched ~ &__status-icon-container {
     opacity: 1;
   }
 
   &__field.ng-valid.ng-touched ~ &__status-icon-container,
-  &__textarea.ng-valid.ng-touched ~ &__status-icon-container {
+  &__paragrapharea.ng-valid.ng-touched ~ &__status-icon-container {
     opacity: 1;
     background-image: url('/assets/img/icons/06-feedback/confirm.svg');
   }
 
   &__field:focus + &__label,
   &__field:not(:placeholder-shown) + &__label,
-  &__textarea:focus + &__label,
-  &__textarea:not(:placeholder-shown) + &__label {
+  &__paragrapharea:focus + &__label,
+  &__paragrapharea:not(:placeholder-shown) + &__label {
     top: 0;
     transform: translateY(-50%);
     font-size: 1em;
@@ -206,7 +206,7 @@
     @include styles.setFont($size: 1em, $weight: 400, $color: inherit, $line-height: 1.5);
   }
 
-  &__link {
+  &____anchor {
     display: inline-block;
     margin: 0 0.3ch;
     color: #00bc8f;
@@ -226,8 +226,8 @@
     transform: scale(1.5);
   }
 
-  &__link:hover,
-  &__link:focus-visible {
+  &____anchor:hover,
+  &____anchor:focus-visible {
     color: #7ff3d4;
     text-decoration-color: currentColor;
     transform: scale(1.04);
@@ -342,7 +342,6 @@
     }
   }
 }
-
 
 @media (max-width: 500px) {
   .feedback {

@@ -7,7 +7,7 @@
   margin: 0 auto;
   @include styles.setFlex($d: column);
 
-  &__section-divider {
+  &__block-divider {
     margin-top: clamp(2rem, 9vw, 5rem);
     right: 5%;
     align-self: flex-end;
@@ -61,7 +61,7 @@
     );
   }
 
-  &__textbox {
+  &__paragraphbox {
     @include styles.setFlex($d: column, $ai: flex-start, $gap: clamp(1.6rem, 2.8vw, 2.6rem));
     width: 100%;
 

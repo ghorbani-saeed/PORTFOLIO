@@ -7,7 +7,7 @@
   <div class="feedback__wrapper">
     <h2 class="feedback__heading" id="contact-title">{{ 'CONTACT.TITLE' | translate }}</h2>
 
-    <div class="feedback__content">
+    <div class="feedback__inner-box">
       <p class="feedback__headline">{{ 'CONTACT.HEADLINE' | translate }}</p>
       <p class="feedback__subheadline">{{ 'CONTACT.SUBHEADLINE' | translate }}</p>
 
@@ -81,7 +81,7 @@
         <div class="feedback__group">
           <div class="feedback__container">
             <textarea
-              class="feedback__textarea"
+              class="feedback__paragrapharea"
               name="message"
               id="contact-message"
               rows=""
@@ -123,7 +123,7 @@
             </div>
             <span class="feedback__checkbox-text">
               {{ 'CONTACT.PRIVACY_TEXT_START' | translate }}
-              <a class="feedback__link" routerLink="/privacy-policy" fragment="policy">{{
+              <a class="feedback____anchor" routerLink="/privacy-policy" fragment="policy">{{
                 'CONTACT.PRIVACY_LINK' | translate
               }}</a>
               {{ 'CONTACT.PRIVACY_TEXT_END' | translate }}

@@ -1,22 +1,27 @@
 <section class="privacy-policy" id="policy" aria-labelledby="privacy-policy-title">
-  <div class="privacy-policy__frame">
-    <div class="privacy-policy__back-wrap">
+  <div class="privacy-policy__container">
+    <div class="privacy-policy__nav-holder">
       <a
-        class="privacy-policy__back"
+        class="privacy-policy__return-link"
         routerLink="/"
         fragment="contact"
         [attr.aria-label]="'POLICY.BACK_ARIA' | translate"
       >
-        <img src="/assets/img/icons/09-arrows/legal-notice-arrow/to-left-arrow.png" [attr.alt]="'POLICY.BACK_ICON_ALT' | translate" />
+        <img
+          src="/assets/img/icons/09-arrows/legal-notice-arrow/to-left-arrow.png"
+          [attr.alt]="'POLICY.BACK_ICON_ALT' | translate"
+        />
       </a>
     </div>
-    <h1 class="privacy-policy__title" id="privacy-policy-title">{{ 'POLICY.TITLE' | translate }}</h1>
+    <h1 class="privacy-policy__caption" id="privacy-policy-title">
+      {{ 'POLICY.TITLE' | translate }}
+    </h1>
 
-    <section class="privacy-policy__section" aria-labelledby="privacy-subtitle-1">
-      <h2 class="privacy-policy__section-title" id="privacy-subtitle-1">
+    <section class="privacy-policy__block" aria-labelledby="privacy-subtitle-1">
+      <h2 class="privacy-policy__block-title" id="privacy-subtitle-1">
         {{ 'POLICY.SECTION_1_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__text">
+      <p class="privacy-policy__paragraph">
         {{
           'POLICY.SECTION_1_TEXT'
             | translate
@@ -24,61 +29,61 @@
                   name: userDBS.profileData.fullName,
                   address: userDBS.profileData.street,
                   city: userDBS.profileData.location,
-                  email: userDBS.profileData.mail
+                  email: userDBS.profileData.mail,
                 }
         }}
       </p>
     </section>
 
-    <section class="privacy-policy__section" aria-labelledby="privacy-subtitle-2">
-      <h2 class="privacy-policy__section-title" id="privacy-subtitle-2">
+    <section class="privacy-policy__block" aria-labelledby="privacy-subtitle-2">
+      <h2 class="privacy-policy__block-title" id="privacy-subtitle-2">
         {{ 'POLICY.SECTION_2_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__text">{{ 'POLICY.SECTION_2_TEXT' | translate }}</p>
+      <p class="privacy-policy__paragraph">{{ 'POLICY.SECTION_2_TEXT' | translate }}</p>
     </section>
 
-    <section class="privacy-policy__section" aria-labelledby="privacy-subtitle-3">
-      <h2 class="privacy-policy__section-title" id="privacy-subtitle-3">
+    <section class="privacy-policy__block" aria-labelledby="privacy-subtitle-3">
+      <h2 class="privacy-policy__block-title" id="privacy-subtitle-3">
         {{ 'POLICY.SECTION_3_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__text">{{ 'POLICY.SECTION_3_TEXT' | translate }}</p>
+      <p class="privacy-policy__paragraph">{{ 'POLICY.SECTION_3_TEXT' | translate }}</p>
     </section>
 
-    <section class="privacy-policy__section" aria-labelledby="privacy-subtitle-4">
-      <h2 class="privacy-policy__section-title" id="privacy-subtitle-4">
+    <section class="privacy-policy__block" aria-labelledby="privacy-subtitle-4">
+      <h2 class="privacy-policy__block-title" id="privacy-subtitle-4">
         {{ 'POLICY.SECTION_4_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__text">{{ 'POLICY.SECTION_4_TEXT' | translate }}</p>
+      <p class="privacy-policy__paragraph">{{ 'POLICY.SECTION_4_TEXT' | translate }}</p>
     </section>
 
-    <section class="privacy-policy__section" aria-labelledby="privacy-subtitle-5">
-      <h2 class="privacy-policy__section-title" id="privacy-subtitle-5">
+    <section class="privacy-policy__block" aria-labelledby="privacy-subtitle-5">
+      <h2 class="privacy-policy__block-title" id="privacy-subtitle-5">
         {{ 'POLICY.SECTION_5_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__text">{{ 'POLICY.SECTION_5_TEXT' | translate }}</p>
+      <p class="privacy-policy__paragraph">{{ 'POLICY.SECTION_5_TEXT' | translate }}</p>
     </section>
 
-    <section class="privacy-policy__section" aria-labelledby="privacy-subtitle-6">
-      <h2 class="privacy-policy__section-title" id="privacy-subtitle-6">
+    <section class="privacy-policy__block" aria-labelledby="privacy-subtitle-6">
+      <h2 class="privacy-policy__block-title" id="privacy-subtitle-6">
         {{ 'POLICY.SECTION_6_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__text">
+      <p class="privacy-policy__paragraph">
         {{ 'POLICY.SECTION_6_TEXT' | translate: { email: userDBS.profileData.mail } }}
       </p>
     </section>
 
-    <section class="privacy-policy__section" aria-labelledby="privacy-subtitle-7">
-      <h2 class="privacy-policy__section-title" id="privacy-subtitle-7">
+    <section class="privacy-policy__block" aria-labelledby="privacy-subtitle-7">
+      <h2 class="privacy-policy__block-title" id="privacy-subtitle-7">
         {{ 'POLICY.SECTION_7_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__text">{{ 'POLICY.SECTION_7_TEXT' | translate }}</p>
+      <p class="privacy-policy__paragraph">{{ 'POLICY.SECTION_7_TEXT' | translate }}</p>
     </section>
 
-    <section class="privacy-policy__section" aria-labelledby="privacy-subtitle-8">
-      <h2 class="privacy-policy__section-title" id="privacy-subtitle-8">
+    <section class="privacy-policy__block" aria-labelledby="privacy-subtitle-8">
+      <h2 class="privacy-policy__block-title" id="privacy-subtitle-8">
         {{ 'POLICY.SECTION_8_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__text">{{ 'POLICY.SECTION_8_TEXT' | translate }}</p>
+      <p class="privacy-policy__paragraph">{{ 'POLICY.SECTION_8_TEXT' | translate }}</p>
     </section>
   </div>
 </section>

@@ -1,27 +1,30 @@
 @use '../../../styles/index' as styles;
 
 .welcome {
-  position: relative; 
+  position: relative;
   height: calc(100vh - styles.$header-height);
   padding: clamp(2rem, 6vmin, 6rem) styles.$g-pad-x;
   width: 100%;
   max-width: styles.$g-max-width;
   margin: 0 auto;
 
-  &__content {
+  &__inner-box {
     display: flex;
     flex-direction: column;
     padding: clamp(2rem, 6vw, 6rem);
   }
 
-  &__title-group {
+  &__caption-group {
     @include styles.setFlex($d: column, $gap: clamp(1rem, 2vw, 2rem));
   }
 
-  &__title {
+  &__caption {
     @include styles.setFlex($d: column, $ai: flex-start, $gap: clamp(0.5rem, 2vw, 1.2rem));
     @include styles.setFont(
-      $family: ('Syne', sans-serif),
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
       $size: clamp(2rem, 8vw, 12.5rem),
       $weight: 800,
       $line-height: 0.9,
@@ -44,7 +47,15 @@
 
   &__name {
     white-space: nowrap;
-    @include styles.setFont($family: ('Syne', sans-serif), $weight: 700, $color: #00bc8f, $letter-spacing: -0.05em);
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $weight: 700,
+      $color: #00bc8f,
+      $letter-spacing: -0.05em
+    );
   }
 
   &__email {
@@ -59,7 +70,7 @@
   &__scroll {
     position: absolute;
     right: styles.$g-pad-x;
-    bottom: 20rem; 
+    bottom: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,7 +82,7 @@
   &__arrow-wrapper {
     display: flex;
     justify-content: center;
-    width: 65px; 
+    width: 65px;
   }
 
   &__arrow-icon {

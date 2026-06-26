@@ -5,15 +5,15 @@
   padding: clamp(1.5rem, 7vw, 3rem) styles.$g-pad-x clamp(6rem, 10vw, 9rem);
   width: 100%;
   margin: 0 auto;
-  
-  &__frame {
+
+  &__container {
     margin: 0 auto;
     max-width: styles.$g-max-width;
     padding: 0 clamp(0rem, 4vmin, 13rem);
     @include styles.setFlex($d: column, $ai: flex-start, $gap: clamp(2rem, 4vw, 3rem));
   }
 
-  &__title {
+  &__caption {
     padding: clamp(2rem, 4vmin, 5rem) 0;
     text-align: left;
     letter-spacing: -0.02em;
@@ -30,24 +30,24 @@
     overflow-wrap: break-word;
   }
 
-  &__section {
+  &__block {
     @include styles.setFlex($d: column, $ai: stretch, $gap: 0.8rem);
   }
 
-  &__section-title {
+  &__block-title {
     @include styles.setFont($size: clamp(1.4rem, 2.6vw, 1.8rem), $weight: 700, $color: #00bc8f);
   }
 
-  &__text {
+  &__paragraph {
     width: 100%;
     @include styles.setFont($size: clamp(1em, 2vw, 1.2rem), $line-height: 1.5);
   }
 
-  &__back-wrap {
+  &__nav-holder {
     width: 100%;
   }
 
-  &__back {
+  &__return-link {
     display: block;
     position: sticky;
     top: calc(styles.$header-height + 1rem);
@@ -55,7 +55,10 @@
     width: 7rem;
     height: 3.2rem;
     font-size: 1em;
-    transition: width 220ms ease, transform 220ms ease, filter 220ms ease;
+    transition:
+      width 220ms ease,
+      transform 220ms ease,
+      filter 220ms ease;
     z-index: 2;
 
     img {
@@ -73,7 +76,7 @@
   @media (max-width: 768px) {
     min-height: calc(100dvh - styles.$header-height - 25rem);
     margin-top: clamp(2rem, 6vmin, 5rem);
-    &__title {
+    &__caption {
       padding: clamp(5rem, 4vmin, 6rem) 0;
     }
   }

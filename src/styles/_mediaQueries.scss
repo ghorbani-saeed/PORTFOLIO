@@ -1,62 +1,12 @@
-// @mixin view-xs {
-//   @media (max-width: 560px) {
-//     @content;
-//   }
-// }
-
-// @mixin view-s {
-//   @media (max-width: 640px) {
-//     @content;
-//   }
-// }
-
-// @mixin view-md {
-//   @media (max-width: 768px) {
-//     @content;
-//   }
-// }
-
-// @mixin view-sm {
-//   @media (max-width: 700px) {
-//     @content;
-//   }
-// }
-
-// @mixin view-lg {
-//   @media (max-width: 900px) {
-//     @content;
-//   }
-// }
-
-// @mixin view-xl {
-//   @media (max-width: 1024px) {
-//     @content;
-//   }
-// }
-
-// @mixin view-xxl {
-//   @media (min-width: 1025px) {
-//     @content;
-//   }
-// }
-
-// @mixin view-4xl {
-//   @media (min-width: 1920px) {
-//     @content;
-//   }
-// }
-
-// @mixin view-3xl {
-//   @media (min-width: 1440px) {
-//     @content;
-//   }
-// }
-
-
-
 
 @mixin view-xs {
   @media (max-width: 480px) { // Geändert von 560px (Standard für kleinere Phones)
+    @content;
+  }
+}
+
+@mixin view-s-up {
+  @media (min-width: 501px) {
     @content;
   }
 }
@@ -109,3 +59,9 @@
     @content;
   }
 }
+
+
+
+
+
+

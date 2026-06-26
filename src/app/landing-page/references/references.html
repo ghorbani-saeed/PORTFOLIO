@@ -1,23 +1,30 @@
 <section class="references" aria-labelledby="references-title">
-  <div class="references__frame">
-    <h2 class="references__title" id="references-title">{{ 'REFERENCES.TITLE' | translate }}</h2>
+  <div class="references__container">
+    <h2 class="references__caption" id="references-title">{{ 'REFERENCES.TITLE' | translate }}</h2>
     <p class="references__intro">
       {{ 'REFERENCES.INTRO' | translate }}
     </p>
 
-    <div class="references__list">
-      @for(item of userDBS.userReviews; track item.authorName; let idx=$index){
-      <article class="references__card">
-        <img class="references__quote" src="/assets/img/icons/10-references/quote.svg"
-          [attr.alt]="'REFERENCES.QUOTE_ALT' | translate" />
-        <h3 class="references__name">{{ item.authorName }}</h3>
-        <p class="references__role">{{ item.translationRoleKey | translate }}</p>
-        <p class="references__text">{{ item.translationTextKey | translate }}</p>
-      </article>
+    <div class="references__group-list">
+      @for (item of userDBS.userReviews; track item.authorName; let idx = $index) {
+        <article class="references__card">
+          <img
+            class="references__quote"
+            src="/assets/img/icons/10-references/quote.svg"
+            [attr.alt]="'REFERENCES.QUOTE_ALT' | translate"
+          />
+          <h3 class="references__name">{{ item.authorName }}</h3>
+          <p class="references__role">{{ item.translationRoleKey | translate }}</p>
+          <p class="references__paragraph">{{ item.translationTextKey | translate }}</p>
+        </article>
       }
     </div>
   </div>
-  <a class="references__separator-link" href="#contact" [attr.aria-label]="'REFERENCES.SEPARATOR_ARIA' | translate">
-    <app-divider-to-left/>
+  <a
+    class="references__separator-link"
+    href="#contact"
+    [attr.aria-label]="'REFERENCES.SEPARATOR_ARIA' | translate"
+  >
+    <app-divider-to-left />
   </a>
 </section>

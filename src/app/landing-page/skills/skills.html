@@ -1,12 +1,12 @@
 <section class="skills" id="skills" aria-labelledby="skills-title">
-  <div class="skills__frame">
+  <div class="skills__container">
     <div class="skills__headline">
-      <h2 class="skills__title" id="skills-title">{{ 'SKILLS.TITLE' | translate }}</h2>
+      <h2 class="skills__caption" id="skills-title">{{ 'SKILLS.TITLE' | translate }}</h2>
     </div>
 
-    <ul class="skills__list">
+    <ul class="skills__group-list">
       @for (item of userDBS.techStack; track item.title; let idx = $index) {
-        <li class="skills__item">
+        <li class="skills__group-item">
           <img class="skills__icon" [src]="item.icon" [alt]="item.title + ' icon'" />
           <span class="skills__label">{{ item.title }}</span>
         </li>
