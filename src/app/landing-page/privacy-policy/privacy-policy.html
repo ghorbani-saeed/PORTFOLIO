@@ -26,10 +26,10 @@
           'POLICY.SECTION_1_TEXT'
             | translate
               : {
-                  name: userDBS.profileData.fullName,
-                  address: userDBS.profileData.street,
-                  city: userDBS.profileData.location,
-                  email: userDBS.profileData.mail,
+                  name: userDBS.ownerProfile.fullName,
+                  address: userDBS.ownerProfile.street,
+                  city: userDBS.ownerProfile.location,
+                  email: userDBS.ownerProfile.mail,
                 }
         }}
       </p>
@@ -68,7 +68,7 @@
         {{ 'POLICY.SECTION_6_TITLE' | translate }}
       </h2>
       <p class="privacy-policy__paragraph">
-        {{ 'POLICY.SECTION_6_TEXT' | translate: { email: userDBS.profileData.mail } }}
+        {{ 'POLICY.SECTION_6_TEXT' | translate: { email: userDBS.ownerProfile.mail } }}
       </p>
     </section>
 

@@ -1,7 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { UserDatabankService } from '../userDatabankService/user-databank-service';
+import { PortfolioDataService } from '../../services/userDatabankService/portfolio-data.service';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 type Lang = 'en' | 'de';
@@ -12,7 +12,7 @@ type Lang = 'en' | 'de';
   styleUrl: './header.scss',
 })
 export class Header {
-  userDBS = inject(UserDatabankService);
+  userDBS = inject(PortfolioDataService);
   translate = inject(TranslateService);
   private readonly document: Document = inject(DOCUMENT);
   private readonly supportedLangs: Lang[] = ['en', 'de'];

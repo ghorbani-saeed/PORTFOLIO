@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { UserDatabankService } from '../../shared/components/userDatabankService/user-databank-service';
+import { PortfolioDataService } from '../../shared/services/userDatabankService/portfolio-data.service';
 import { DividerRightLeftComponent } from '../../shared/components/divider-to-left/divider-to-left';
 @Component({
   selector: 'app-references',
@@ -12,5 +12,5 @@ import { DividerRightLeftComponent } from '../../shared/components/divider-to-le
  * Represents the References class.
  */
 export class ReferencesComponent {
-  userDBS = inject(UserDatabankService);
+  userDBS = inject(PortfolioDataService);
 }

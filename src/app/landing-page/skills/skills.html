@@ -5,7 +5,7 @@
     </div>
 
     <ul class="skills__group-list">
-      @for (item of userDBS.techStack; track item.title; let idx = $index) {
+      @for (item of userDBS.expertise; track item.title; let idx = $index) {
         <li class="skills__group-item">
           <img class="skills__tech-icon" [src]="item.icon" [alt]="item.title + ' icon'" />
           <span class="skills__tech-name">{{ item.title }}</span>

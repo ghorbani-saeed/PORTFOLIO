@@ -24,9 +24,9 @@
       </h3>
       <p class="legal-notice__paragraph">{{ 'LEGAL.IMPRINT_TEXT' | translate }}</p>
       <div class="legal-notice__operator-info">
-        <p class="legal-notice__paragraph">{{ userDBS.profileData.fullName }}</p>
-        <p class="legal-notice__paragraph">{{ userDBS.profileData.street }}</p>
-        <p class="legal-notice__paragraph">{{ userDBS.profileData.location }}</p>
+        <p class="legal-notice__paragraph">{{ userDBS.ownerProfile.fullName }}</p>
+        <p class="legal-notice__paragraph">{{ userDBS.ownerProfile.street }}</p>
+        <p class="legal-notice__paragraph">{{ userDBS.ownerProfile.location }}</p>
       </div>
     </section>
 
@@ -35,7 +35,7 @@
         {{ 'LEGAL.CONTACT_TITLE' | translate }}
       </h3>
       <p class="legal-notice__paragraph">
-        {{ 'LEGAL.CONTACT_TEXT' | translate: { email: userDBS.profileData.mail } }}
+        {{ 'LEGAL.CONTACT_TEXT' | translate: { email: userDBS.ownerProfile.mail } }}
       </p>
     </section>
 
@@ -44,9 +44,9 @@
         {{ 'LEGAL.RESPONSIBLE_TITLE' | translate }}
       </h3>
       <div class="legal-notice__operator-info">
-        <p class="legal-notice__paragraph">{{ userDBS.profileData.fullName }}</p>
-        <p class="legal-notice__paragraph">{{ userDBS.profileData.street }}</p>
-        <p class="legal-notice__paragraph">{{ userDBS.profileData.location }}</p>
+        <p class="legal-notice__paragraph">{{ userDBS.ownerProfile.fullName }}</p>
+        <p class="legal-notice__paragraph">{{ userDBS.ownerProfile.street }}</p>
+        <p class="legal-notice__paragraph">{{ userDBS.ownerProfile.location }}</p>
       </div>
     </section>
 

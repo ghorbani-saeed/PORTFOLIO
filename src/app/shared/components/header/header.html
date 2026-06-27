@@ -7,7 +7,10 @@
       (click)="closeMenu()"
       [attr.aria-label]="'HEADER.LOGO_ARIA' | translate"
     >
-      <img src="/assets/img/icons/00-logo/brand-identity-logos/personal-brand-header-footer.svg" [attr.alt]="'HEADER.LOGO_ALT' | translate" />
+      <img
+        src="/assets/img/icons/00-logo/brand-identity-logos/personal-brand-header-footer.svg"
+        [attr.alt]="'HEADER.LOGO_ALT' | translate"
+      />
     </a>
     <div class="header__lang-and-menu" [attr.aria-label]="'HEADER.CONTROLS_ARIA' | translate">
       <div
@@ -47,9 +50,21 @@
         "
       >
         <span class="header__burger-frames" aria-hidden="true">
-          <img class="frame f1" src="/assets/img/icons/01-navbar/interactive-icons/hamburger-to-x-1.svg" alt="" />
-          <img class="frame f2" src="/assets/img/icons/01-navbar/interactive-icons/hamburger-to-x-2.svg" alt="" />
-          <img class="frame f3" src="/assets/img/icons/01-navbar/interactive-icons/hamburger-to-x-3.svg" alt="" />
+          <img
+            class="frame f1"
+            src="/assets/img/icons/01-navbar/interactive-icons/hamburger-to-x-1.svg"
+            alt=""
+          />
+          <img
+            class="frame f2"
+            src="/assets/img/icons/01-navbar/interactive-icons/hamburger-to-x-2.svg"
+            alt=""
+          />
+          <img
+            class="frame f3"
+            src="/assets/img/icons/01-navbar/interactive-icons/hamburger-to-x-3.svg"
+            alt=""
+          />
         </span>
       </button>
     </div>
@@ -65,19 +80,32 @@
     >
       <div class="menu-overlay__panel">
         <nav class="menu-overlay__nav" [attr.aria-label]="'HEADER.NAV_ARIA' | translate">
+          <a
+            class="menu-overlay__nav-link"
+            [routerLink]="['/']"
+            fragment="about"
+            (click)="closeMenu()"
+          >
+            <span>{{ 'HEADER.NAV_ABOUT' | translate }}</span>
+          </a>
 
-         <a class="menu-overlay__nav-link" [routerLink]="['/']" fragment="about" (click)="closeMenu()">
-           <span>{{ 'HEADER.NAV_ABOUT' | translate }}</span>
-         </a>
+          <a
+            class="menu-overlay__nav-link"
+            [routerLink]="['/']"
+            fragment="skills"
+            (click)="closeMenu()"
+          >
+            <span>{{ 'HEADER.NAV_SKILLS' | translate }}</span>
+          </a>
 
-         <a class="menu-overlay__nav-link" [routerLink]="['/']" fragment="skills" (click)="closeMenu()">
-           <span>{{ 'HEADER.NAV_SKILLS' | translate }}</span>
-         </a>
-
-         <a class="menu-overlay__nav-link" [routerLink]="['/']" fragment="portfolio" (click)="closeMenu()">
-           <span>{{ 'HEADER.NAV_PORTFOLIO' | translate }}</span>
-         </a>
-
+          <a
+            class="menu-overlay__nav-link"
+            [routerLink]="['/']"
+            fragment="portfolio"
+            (click)="closeMenu()"
+          >
+            <span>{{ 'HEADER.NAV_PORTFOLIO' | translate }}</span>
+          </a>
         </nav>
 
         <section class="menu-overlay__footer" [attr.aria-label]="'HEADER.FOOTER_ARIA' | translate">
@@ -92,14 +120,14 @@
             >
               <h2>{{ 'HEADER.CONTACT_TITLE' | translate }}</h2>
               <span class="menu-overlay__mail">
-                {{ userDBS.profileData.mail}}
+                {{ userDBS.ownerProfile.mail }}
               </span>
             </div>
 
             <div class="menu-overlay__social-links">
               <a
                 class="menu-overlay__social-link"
-                [href]="userDBS.profileData.githubUrl"
+                [href]="userDBS.ownerProfile.githubUrl"
                 target="_blank"
                 rel="noreferrer"
                 [attr.aria-label]="'HEADER.SOCIAL_GITHUB_ARIA' | translate"

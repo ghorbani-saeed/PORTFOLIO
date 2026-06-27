@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root',
 })
-export class UserDatabankService {
+export class PortfolioDataService {
   personalInfo = {
     name: 'Saeed Ghorbani',
     address: 'Gerd-Jansen-Platz 5',

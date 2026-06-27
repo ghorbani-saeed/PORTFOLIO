@@ -12,19 +12,16 @@
           [attr.alt]="'FOOTER.LOGO_ALT' | translate"
         />
       </a>
-      <span class="footer__note"> © {{ userDBS.profileData.fullName }} 2026 </span>
+      <span class="footer__note"> © {{ userDBS.ownerProfile.fullName }} 2026 </span>
       <a class="footer__email" routerLink="/" fragment="contact">
-        {{ userDBS.profileData.mail }}
+        {{ userDBS.ownerProfile.mail }}
       </a>
     </div>
 
     <div class="footer__right">
-      <div
-        class="footer__social-channels"
-        [attr.aria-label]="'FOOTER.SOCIAL_ARIA' | translate"
-      >
+      <div class="footer__social-channels" [attr.aria-label]="'FOOTER.SOCIAL_ARIA' | translate">
         <a
-          [href]="userDBS.profileData.githubUrl"
+          [href]="userDBS.ownerProfile.githubUrl"
           target="_blank"
           rel="noreferrer"
           [attr.aria-label]="'FOOTER.SOCIAL_GITHUB_ARIA' | translate"

@@ -3,8 +3,7 @@ import { Component, OnDestroy, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
-import { UserDatabankService } from '../../shared/components/userDatabankService/user-databank-service';
-
+import { PortfolioDataService } from '../../shared/services/userDatabankService/portfolio-data.service';
 @Component({
   selector: 'app-feedback',
   imports: [FormsModule, RouterLink, TranslatePipe],
@@ -22,10 +21,10 @@ export class FeedbackComponent implements OnDestroy {
   http = inject(HttpClient);
 
   /** Injecting the central data service for accessing localized or global portfolio data */
-  userDBS = inject(UserDatabankService);
+  userDBS = inject(PortfolioDataService);
 
   /** Two-way or component-bound reference to the contact form fields */
-  formData = this.userDBS.messageModel;
+  formData = this.userDBS.contactFormState;
 
   /** Automatically determines if the app runs locally to toggle test mode for emails */
   mailTest = this.isLocalEnvironment(window.location.hostname);

@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { UserDatabankService } from '../userDatabankService/user-databank-service';
+import { PortfolioDataService } from '../../services/userDatabankService/portfolio-data.service';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -13,5 +13,5 @@ import { TranslatePipe } from '@ngx-translate/core';
  * Represents the Footer class.
  */
 export class Footer {
-  userDBS = inject(UserDatabankService);
+  userDBS = inject(PortfolioDataService);
 }

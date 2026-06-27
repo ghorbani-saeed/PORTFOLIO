@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
-import { UserDatabankService } from '../../shared/components/userDatabankService/user-databank-service';
-
+import { PortfolioDataService } from '../../shared/services/userDatabankService/portfolio-data.service';
 @Component({
   selector: 'app-welcome',
   imports: [TranslatePipe],
@@ -12,10 +11,10 @@ import { UserDatabankService } from '../../shared/components/userDatabankService
  * Represents the Hero class.
  */
 export class WelcomeComponent {
-  userDBS = inject(UserDatabankService);
+  userDBS = inject(PortfolioDataService);
 
   get displayName(): string {
-    const fullName = this.userDBS.profileData.fullName?.trim() ?? '';
+    const fullName = this.userDBS.ownerProfile.fullName?.trim() ?? '';
     const [firstName = '', lastName = ''] = fullName.split(/\s+/);
     return [firstName, lastName].filter(Boolean).join(' ');
   }

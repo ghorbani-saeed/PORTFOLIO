@@ -10,7 +10,7 @@
     </header>
 
     <div class="portfolio__group-list">
-      @for (project of userDBS.showcaseProjects; track project.title; let idx = $index) {
+      @for (project of userDBS.featuredWork; track project.title; let idx = $index) {
         <article class="portfolio__card" [class.portfolio__card--reverse]="idx % 2 === 1">
           <a
             class="portfolio__preview-link"
