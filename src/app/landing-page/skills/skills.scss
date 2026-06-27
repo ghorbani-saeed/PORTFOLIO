@@ -7,7 +7,7 @@
   margin: 0 auto;
   @include styles.setFlex($d: column);
 
-  &__separator-link {
+  &__divider-link {
     margin-top: clamp(2rem, 9vw, 5rem);
     left: 5%;
     align-self: flex-start;
@@ -34,7 +34,7 @@
     padding: clamp(4.5rem, 9vw, 6rem) clamp(2rem, 6vw, 5rem) clamp(3rem, 6vw, 5rem);
   }
 
-  &__headline {
+  &__header {
     position: absolute;
     top: 0;
     left: 0;
@@ -78,7 +78,7 @@
     // Das rotierende "spin-horizontal" beim Hovern über die Skills wurde hier gelöscht!
   }
 
-  &__icon {
+  &__tech-icon {
     display: block;
     transform-style: preserve-3d;
     width: auto;
@@ -87,27 +87,27 @@
     transition: filter 220ms ease;
   }
 
-  &__label {
+  &__tech-name {
     text-align: center;
     @include styles.setFont($weight: 700);
   }
 
-  &__cta {
+  &__box {
     margin-top: clamp(3rem, 6vw, 4.5rem);
     @include styles.setFlex($gap: clamp(1rem, 3vw, 2rem));
     text-align: center;
   }
 
-  &__cta-icon {
+  &__box-icon {
     width: auto;
     height: clamp(6rem, 7vw, 7.5rem);
   }
 
-  &__cta-text {
+  &__box-text {
     @include styles.setFont($size: clamp(1em, 2vw, 1.4em), $weight: 400);
   }
 
-  &__cta-link {
+  &__box-link {
     text-decoration: none;
     @include styles.setFont($weight: 400, $color: #00bc8f);
   }

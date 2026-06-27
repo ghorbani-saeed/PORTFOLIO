@@ -1,7 +1,9 @@
 <section class="portfolio" id="portfolio" [attr.aria-label]="'PORTFOLIO.ARIA_LABEL' | translate">
   <div class="portfolio__container">
     <header class="portfolio__top-bar">
-      <h2 class="portfolio__caption" id="portfolio-title">{{ 'PORTFOLIO.TITLE' | translate }}</h2>
+      <h2 class="portfolio__caption" id="portfolio__caption">
+        {{ 'PORTFOLIO.TITLE' | translate }}
+      </h2>
       <p class="portfolio__subheading">
         {{ 'PORTFOLIO.SUBTITLE' | translate }}
       </p>
@@ -9,24 +11,24 @@
 
     <div class="portfolio__group-list">
       @for (project of userDBS.showcaseProjects; track project.title; let idx = $index) {
-        <article class="portfolio__project" [class.portfolio__project--reverse]="idx % 2 === 1">
+        <article class="portfolio__card" [class.portfolio__card--reverse]="idx % 2 === 1">
           <a
-            class="portfolio__media-link"
+            class="portfolio__preview-link"
             [href]="project.liveUrl"
             target="_blank"
             rel="noreferrer"
           >
-            <figure class="portfolio__media">
+            <figure class="portfolio__figure">
               <img
-                class="portfolio__image"
+                class="portfolio__img"
                 [src]="project.previewImg"
                 [alt]="project.title + ' project preview'"
               />
             </figure>
           </a>
 
-          <div class="portfolio__details">
-            <h3 class="portfolio__name">{{ project.title }}</h3>
+          <div class="portfolio__info">
+            <h3 class="portfolio__title">{{ project.title }}</h3>
             <p class="portfolio__description">{{ project.langKey | translate }}</p>
             <a
               class="portfolio____anchor"
@@ -38,8 +40,8 @@
             </a>
           </div>
 
-          <div class="portfolio__counter">
-            <span class="portfolio__counter-value">{{ getCounterLabel(idx) }}</span>
+          <div class="portfolio__number-box">
+            <span class="portfolio__number-box-value">{{ getCounterLabel(idx) }}</span>
           </div>
         </article>
       }

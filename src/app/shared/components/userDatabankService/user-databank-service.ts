@@ -69,10 +69,9 @@ private initTechStack(): void {
     { title: 'HTML', icon: '/assets/img/icons/04-skills/html.svg' },
     { title: 'CSS', icon: '/assets/img/icons/04-skills/css.svg' },
     { title: 'REST-API', icon: '/assets/img/icons/04-skills/api.svg' },
+    { title: 'Supabase', icon: '/assets/img/icons/04-skills/supabase.svg' },
     { title: 'Firebase', icon: '/assets/img/icons/04-skills/firebase.svg' },
     { title: 'Git', icon: '/assets/img/icons/04-skills/git.svg' },
-    { title: 'Git', icon: '/assets/img/icons/04-skills/continued-learning.svg' },
-
   ];
 }
 

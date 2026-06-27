@@ -12,7 +12,7 @@
     @include styles.setFlex($d: column, $ai: flex-start, $gap: clamp(1.4rem, 3vw, 2.4rem));
 
     @include styles.view-s {
-      align-items: center; 
+      align-items: center;
     }
   }
 
@@ -22,21 +22,24 @@
     justify-content: flex-end;
 
     @include styles.view-s {
-      justify-content: center; 
-      margin-bottom: 1rem;       
+      justify-content: center;
+      margin-bottom: 1rem;
     }
   }
 
   &__return-link {
     display: block;
-    position: fixed;     
-    top: calc(styles.$header-height + 2rem); 
-    right: 2rem;         
+    position: fixed;
+    top: calc(styles.$header-height + 2rem);
+    right: 2rem;
     width: 7rem;
     height: 3.2rem;
     font-size: 1em;
-    transition: width 220ms ease, transform 220ms ease, filter 220ms ease;
-    z-index: 9999;       
+    transition:
+      width 220ms ease,
+      transform 220ms ease,
+      filter 220ms ease;
+    z-index: 9999;
 
     img {
       width: 100%;
@@ -53,14 +56,14 @@
     }
 
     @include styles.view-s {
-      position: static;      
-      margin: 0 auto 1.5rem; 
+      position: static;
+      margin: 0 auto 1.5rem;
     }
   }
 
   &__hero-heading {
     padding: clamp(1rem, 4vmin, 3rem) 0;
-    text-align: left;     
+    text-align: left;
     letter-spacing: -0.02em;
     @include styles.setFont(
       $family: (
@@ -73,9 +76,9 @@
     );
 
     @include styles.view-s {
-      text-align: center; 
+      text-align: center;
       width: 100%;
-      padding: 0 0 1rem 0; 
+      padding: 0 0 1rem 0;
     }
   }
 
@@ -94,7 +97,7 @@
     }
   }
 
-  &__block {
+  &__section {
     @include styles.setFlex($d: column, $ai: stretch, $gap: 0.6rem);
     width: 100%;
   }
@@ -127,10 +130,10 @@
   @include styles.view-md {
     min-height: calc(100dvh - styles.$header-height - 25rem);
     margin-top: clamp(2rem, 6vmin, 5rem);
-    
+
     &__return-link {
-      @include styles.view-s-up { 
-        right: 1rem;       
+      @include styles.view-s-up {
+        right: 1rem;
         top: calc(styles.$header-height + 1rem);
       }
     }

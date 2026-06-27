@@ -1,38 +1,66 @@
 <footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__brand">
-      <a class="footer__logo" routerLink="/" fragment="hero" [attr.aria-label]="'FOOTER.LOGO_ARIA' | translate">
-        <img src="/assets/img/icons/00-logo/brand-identity-logos/personal-brand-header-footer.svg" [attr.alt]="'FOOTER.LOGO_ALT' | translate" />
+  <div class="footer__container">
+    <div class="footer__left">
+      <a
+        class="footer__logo-link"
+        routerLink="/"
+        fragment="hero"
+        [attr.aria-label]="'FOOTER.LOGO_ARIA' | translate"
+      >
+        <img
+          src="/assets/img/icons/00-logo/brand-identity-logos/personal-brand-header-footer.svg"
+          [attr.alt]="'FOOTER.LOGO_ALT' | translate"
+        />
       </a>
-      <span class="footer__copyright">
-        © {{ userDBS.profileData.fullName }} 2026
-      </span>
-      <a class="footer__mail" routerLink="/" fragment="contact">
+      <span class="footer__note"> © {{ userDBS.profileData.fullName }} 2026 </span>
+      <a class="footer__email" routerLink="/" fragment="contact">
         {{ userDBS.profileData.mail }}
       </a>
     </div>
 
     <div class="footer__right">
-      <div class="footer__social-links" [attr.aria-label]="'FOOTER.SOCIAL_ARIA' | translate">
-        <a [href]="userDBS.profileData.githubUrl" target="_blank" rel="noreferrer"
-          [attr.aria-label]="'FOOTER.SOCIAL_GITHUB_ARIA' | translate">
-          <img class="footer__icon" src="/assets/img/icons/07-footer/github.svg"
-            [attr.alt]="'FOOTER.SOCIAL_GITHUB_ALT' | translate" />
+      <div
+        class="footer__social-channels"
+        [attr.aria-label]="'FOOTER.SOCIAL_ARIA' | translate"
+      >
+        <a
+          [href]="userDBS.profileData.githubUrl"
+          target="_blank"
+          rel="noreferrer"
+          [attr.aria-label]="'FOOTER.SOCIAL_GITHUB_ARIA' | translate"
+        >
+          <img
+            class="footer__social-icon"
+            src="/assets/img/icons/07-footer/github.svg"
+            [attr.alt]="'FOOTER.SOCIAL_GITHUB_ALT' | translate"
+          />
         </a>
-        <a [routerLink]="['/']" fragment="contact" [attr.aria-label]="'FOOTER.SOCIAL_MAIL_ARIA' | translate">
-          <img class="footer__icon" src="/assets/img/icons/07-footer/mail.svg"
-            [attr.alt]="'FOOTER.SOCIAL_MAIL_ALT' | translate" />
+        <a
+          [routerLink]="['/']"
+          fragment="contact"
+          [attr.aria-label]="'FOOTER.SOCIAL_MAIL_ARIA' | translate"
+        >
+          <img
+            class="footer__social-icon"
+            src="/assets/img/icons/07-footer/mail.svg"
+            [attr.alt]="'FOOTER.SOCIAL_MAIL_ALT' | translate"
+          />
         </a>
         <a
           href="#"
           (click)="$event.preventDefault()"
           [attr.aria-label]="'FOOTER.SOCIAL_LINKEDIN_ARIA' | translate"
         >
-          <img class="footer__icon" src="/assets/img/icons/07-footer/linkedIn.svg"
-            [attr.alt]="'FOOTER.SOCIAL_LINKEDIN_ALT' | translate" />
+          <img
+            class="footer__social-icon"
+            src="/assets/img/icons/07-footer/linkedIn.svg"
+            [attr.alt]="'FOOTER.SOCIAL_LINKEDIN_ALT' | translate"
+          />
         </a>
       </div>
-      <a class="footer__legal" routerLink="/legal-notice" fragment="legal">{{ 'FOOTER.LEGAL_NOTICE' | translate }}</a>
+      <a class="footer__legal-link" routerLink="/legal-notice" fragment="legal">{{
+        'FOOTER.LEGAL_NOTICE' | translate
+      }}</a>
     </div>
   </div>
 </footer>

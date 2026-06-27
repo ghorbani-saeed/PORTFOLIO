@@ -30,11 +30,11 @@
     overflow-wrap: break-word;
   }
 
-  &__block {
+  &__section {
     @include styles.setFlex($d: column, $ai: stretch, $gap: 0.8rem);
   }
 
-  &__block-title {
+  &__section-title {
     @include styles.setFont($size: clamp(1.4rem, 2.6vw, 1.8rem), $weight: 700, $color: #00bc8f);
   }
 

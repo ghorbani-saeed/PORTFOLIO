@@ -39,23 +39,23 @@
     width: 100%;
   }
 
-  &__project {
+  &__card {
     @include styles.setFlex($jc: space-between, $gap: clamp(2.5rem, 8vw, 9rem));
     width: 100%;
   }
 
-  &__project--reverse {
+  &__card--reverse {
     flex-direction: row-reverse;
   }
 
-  &__media-link {
+  &__preview-link {
     width: 50%;
     display: block;
     color: inherit;
     text-decoration: none;
   }
 
-  &__media {
+  &__figure {
     position: relative;
     width: 100%;
     z-index: 1;
@@ -63,7 +63,7 @@
     border-radius: 2.5%;
   }
 
-  &__image {
+  &__img {
     position: relative;
     width: 100%;
     height: auto;
@@ -80,7 +80,7 @@
     display: none !important;
   }
 
-  &__details {
+  &__info {
     width: 50%;
     opacity: 1;
     transform: none;
@@ -89,7 +89,7 @@
     overflow: hidden;
   }
 
-  &__name {
+  &__title {
     margin: 0 0 1rem;
     @include styles.setFont(
       $family: (
@@ -134,18 +134,18 @@
     }
   }
 
-  &__counter {
+  &__number-box {
     position: absolute;
     top: -10%;
     right: 0%;
   }
 
-  &__project--reverse &__counter {
+  &__card--reverse &__number-box {
     text-align: left;
     left: 0%;
   }
 
-  &__counter-value {
+  &__number-box-value {
     @include styles.setFont(
       $family: (
         'Syne',
@@ -157,7 +157,7 @@
   }
 
   // NUR EIN SCHLICHTER, MODERNER ZOOM OHNE JEGLICHE FARBVERÄNDERUNG ODER RÄNDER
-  &__project:hover &__image {
+  &__card:hover &__img {
     transform: scale(1.03);
     filter: grayscale(0) !important; // Erzwingt, dass die echten Farben stabil bleiben
   }
@@ -173,24 +173,24 @@
       gap: clamp(3rem, 13vw, 9rem);
     }
 
-    &__project,
-    &__project--reverse {
+    &__card,
+    &__card--reverse {
       flex-direction: column;
       width: 100%;
     }
 
-    &__project {
+    &__card {
       align-items: flex-start;
     }
 
-    &__project--reverse {
+    &__card--reverse {
       align-items: flex-end;
 
-      .portfolio__details {
+      .portfolio__info {
         transform: none;
       }
 
-      .portfolio__details {
+      .portfolio__info {
         align-items: flex-end;
       }
 
@@ -199,15 +199,15 @@
       }
     }
 
-    &__media {
+    &__figure {
       width: 100%;
     }
 
-    &__media-link {
+    &__preview-link {
       width: 91%;
     }
 
-    &__details {
+    &__info {
       width: 95%;
       transform: none;
     }
@@ -225,23 +225,23 @@
 // Speziell für kleine Bildschirme ab 370px abwärts
 @media (max-width: 370px) {
   .portfolio {
-    &__project {
+    &__card {
       // Erhöht den globalen Abstand zwischen den Projekten, falls sie untereinander stehen
       gap: 5rem !important;
     }
 
-    &__details {
+    &__info {
       // Gibt den Details-Boxen nach unten hin extra Luft,
       // damit der Counter des nächsten Projekts nicht in den Button knallt
       padding-bottom: 3.5rem !important;
     }
 
-    &__counter {
+    &__number-box {
       // Schiebt den Counter etwas weiter nach oben aus der Gefahrenzone
       top: -18% !important;
     }
 
-    &__project--reverse &__counter {
+    &__card--reverse &__number-box {
       // Falls der Counter links sitzt, passen wir ihn hier ebenfalls an
       top: -18% !important;
     }

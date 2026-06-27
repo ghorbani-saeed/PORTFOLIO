@@ -7,7 +7,7 @@
   margin: 0 auto;
   @include styles.setFlex($d: column);
 
-  &__block-divider {
+  &__section-divider {
     margin-top: clamp(2rem, 9vw, 5rem);
     right: 5%;
     align-self: flex-end;
