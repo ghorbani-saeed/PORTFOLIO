@@ -76,9 +76,9 @@
 
     &:hover {
       .skills__tech-icon {
-        // Normaler Jojo-Effekt für die normalen Listen-Icons oben
         transform: translateY(-12px) scale(1.15) rotateX(10deg);
-        filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%) contrast(115%);
+        filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%)
+          contrast(115%);
       }
 
       .skills__tech-name {
@@ -94,7 +94,9 @@
     width: auto;
     height: auto;
     max-width: 60%;
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.42, 1.35), filter 0.3s ease-in-out;
+    transition:
+      transform 0.5s cubic-bezier(0.175, 0.885, 0.42, 1.35),
+      filter 0.3s ease-in-out;
   }
 
   &__tech-name {
@@ -103,40 +105,39 @@
     transition: all 0.3s ease-in-out;
   }
 
+  @keyframes spin-wheel {
+    from {
+      transform: scale(1.15) rotate(0deg);
+    }
+    to {
+      transform: scale(1.15) rotate(360deg);
+    }
+  }
+
   &__box {
     margin-top: clamp(3rem, 6vw, 4.5rem);
     @include styles.setFlex($gap: clamp(1rem, 3vw, 2rem));
     text-align: center;
     cursor: pointer;
 
-    // Wenn man über die Box hovert, fängt das "Continued Learning"-Rad an sich zu drehen!
+    // Wenn man die gesamte BOX berührt:
     &:hover {
       .skills__box-icon {
-        transform: scale(1.15) rotate(360deg);
+        animation: spin-wheel 1.2s linear infinite;
+        filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%)
+          contrast(115%);
       }
     }
   }
 
-  @keyframes spin-wheel {
-  from {
-    transform: scale(1.15) rotate(0deg);
+  &__box-icon {
+    width: auto;
+    height: clamp(6rem, 7vw, 7.5rem);
+    transform-origin: center center;
+    transition:
+      transform 0.4s cubic-bezier(0.175, 0.885, 0.42, 1.35),
+      filter 0.3s ease-in-out;
   }
-  to {
-    transform: scale(1.15) rotate(360deg);
-  }
-}
-
-&__box-icon {
-  width: auto;
-  height: clamp(6rem, 7vw, 7.5rem);
-  transform-origin: center center;
-  transition: transform 0.4s ease-out, filter 0.3s ease-in-out;
-
-  &:hover {
-    animation: spin-wheel 1.2s linear infinite;
-    filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%) contrast(115%);
-  }
-}
 
   &__box-text {
     @include styles.setFont($size: clamp(1em, 2vw, 1.4em), $weight: 400);
