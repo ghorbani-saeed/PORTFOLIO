@@ -1,5 +1,7 @@
 @use '../../../../styles/index' as styles;
 @use '../../../../styles/headline-text' as headline-text;
+@use '../../../../styles/logos-animations' as logos-animations;
+
 
 :host {
   display: block;
@@ -22,6 +24,7 @@
   }
 
   &__logo {
+    @include styles.logo-hover-effect;
     @include styles.setFlex();
 
     img {
@@ -79,15 +82,11 @@
     align-items: center;
     justify-content: center;
 
-    // --- GLOBALE ERZWUNGENE SICHTBARKEIT ---
-
-    // Wenn NICHT offen -> f1 (Hamburger) MUSS sichtbar sein
     &:not(.is-open) .f1 {
       opacity: 1 !important;
       visibility: visible !important;
     }
 
-    // Wenn OFFEN -> f3 (Kreuz) MUSS sichtbar sein
     &.is-open .f3 {
       opacity: 1 !important;
       visibility: visible !important;
@@ -100,7 +99,6 @@
     height: 100%;
     display: block;
 
-    // Standard-Zustand für alle Frames: unsichtbar im Hintergrund bereitstehen
     .frame {
       position: absolute;
       top: 0;
@@ -265,6 +263,7 @@
 
     .menu-overlay__icon {
       width: 2.5rem;
+      @include logos-animations.logo-hover-effect;
       transition: transform 360ms ease;
 
       &:hover {

@@ -70,14 +70,46 @@
       <h2 class="privacy-policy__number-title" id="privacy-subtitle-7">
         {{ 'POLICY.SECTION_7_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__paragraph">{{ 'POLICY.SECTION_7_TEXT' | translate }}</p>
+      <p class="privacy-policy__paragraph">
+        {{ 'POLICY.SECTION_7_TEXT' | translate: { email: userDBS.ownerProfile.mail } }}
+      </p>
     </section>
 
     <section class="privacy-policy__number" aria-labelledby="privacy-subtitle-8">
       <h2 class="privacy-policy__number-title" id="privacy-subtitle-8">
         {{ 'POLICY.SECTION_8_TITLE' | translate }}
       </h2>
-      <p class="privacy-policy__paragraph">{{ 'POLICY.SECTION_8_TEXT' | translate }}</p>
+      <p class="privacy-policy__paragraph">
+        {{ 'POLICY.SECTION_8_TEXT' | translate: { email: userDBS.ownerProfile.mail } }}
+      </p>
     </section>
-  </div>
-</section>
+
+    <section class="privacy-policy__number" aria-labelledby="privacy-subtitle-9">
+      <h2 class="privacy-policy__number-title" id="privacy-subtitle-9">
+        {{ 'POLICY.SECTION_9_TITLE' | translate }}
+      </h2>
+      <p class="privacy-policy__paragraph">
+        {{ 'POLICY.SECTION_9_TEXT' | translate: { email: userDBS.ownerProfile.mail } }}
+      </p>
+    </section>
+
+      <section class="privacy-policy__number" aria-labelledby="privacy-subtitle-10">
+      <h2 class="privacy-policy__number-title" id="privacy-subtitle-10">
+        {{ 'POLICY.SECTION_10_TITLE' | translate }}
+      </h2>
+      <p class="privacy-policy__paragraph">
+        {{ 'POLICY.SECTION_10_TEXT' | translate: { email: userDBS.ownerProfile.mail } }}
+      </p>
+    </section>
+
+      <section class="privacy-policy__number" aria-labelledby="privacy-subtitle-11">
+      <h2 class="privacy-policy__number-title" id="privacy-subtitle-11">
+        {{ 'POLICY.SECTION_11_TITLE' | translate }}
+      </h2>
+      <p class="privacy-policy__paragraph">
+        {{ 'POLICY.SECTION_11_TEXT' | translate: { email: userDBS.ownerProfile.mail } }}
+      </p>
+    </section>
+
+     </div>
+   </section>

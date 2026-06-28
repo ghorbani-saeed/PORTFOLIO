@@ -1,0 +1,17 @@
+@mixin logo-hover-effect {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05) rotate(2deg);
+    opacity: 0.85;
+  }
+}
+
+@mixin social-icon-hover {
+  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  &:hover {
+    transform: translateY(-0.5rem) scale(1.1);
+  }
+}

@@ -1,0 +1,22 @@
+@mixin image-zoom-effect {
+  overflow: hidden;
+  
+  img {
+    transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1), filter 0.4s ease;
+    transform: scale(1);
+    filter: grayscale(0%);
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+    filter: grayscale(20%); 
+  }
+}
+
+@mixin profile-picture-tilt {
+  transition: transform 0.5s ease;
+  
+  &:hover {
+    transform: perspective(1000px) rotateY(10deg);
+  }
+}

@@ -2,6 +2,8 @@
 @use '../../../styles/arrows' as arrows;
 @use '../../../styles/btn-animations' as btn_animations;
 @use '../../../styles/headline-text' as headline-text;
+@use '../../../styles/photos-animations' as photos-animations;
+
 
 
 .introduction {
@@ -163,6 +165,7 @@
     border-radius: 1.5rem;
     overflow: hidden;
     width: 100%;
+    @include photos-animations.profile-picture-tilt;
 
     &:hover .about-me__portrait {
       transform: scale(1.04);
@@ -188,7 +191,6 @@
     display: block;
     border: none;
     outline: none;
-    transition: transform 0.3s ease;
 
     @include styles.view-lg {
       width: 100% !important;

@@ -1,24 +1,30 @@
 {
-  "POLICY": {
+"POLICY": {
     "TITLE": "Datenschutzerklärung",
     "BACK_ARIA": "Zur Hauptseite",
     "BACK_ICON_ALT": "Pfeil nach links",
-    "SECTION_1_TITLE": "1. Verantwortliche Stelle",
-    "SECTION_1_TEXT": "Verantwortlich für die Datenverarbeitung auf dieser Website ist {{name}}, {{address}}, {{city}}. Kontakt: {{email}}.",
-    "SECTION_2_TITLE": "2. Hosting und Server-Logfiles",
-    "SECTION_2_TEXT": "Beim Besuch dieser Website werden technisch erforderliche Daten automatisch erfasst (z. B. IP-Adresse, Datum/Uhrzeit, angefragte Seite, Referrer, Browser und Betriebssystem). Die Verarbeitung erfolgt zur Gewährleistung von Sicherheit und Stabilität des Webangebots auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.",
-    "SECTION_3_TITLE": "3. Kontaktformular",
-    "SECTION_3_TEXT": "Wenn Sie das Kontaktformular nutzen, verarbeite ich die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Nachricht), um Ihre Anfrage zu bearbeiten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Kommunikation) und, soweit einschlägig, Art. 6 Abs. 1 lit. f DSGVO.",
-    "SECTION_4_TITLE": "4. Speicherdauer",
-    "SECTION_4_TEXT": "Personenbezogene Daten werden nur so lange gespeichert, wie es für die genannten Zwecke erforderlich ist. Danach werden die Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.",
-    "SECTION_5_TITLE": "5. Weitergabe von Daten",
-    "SECTION_5_TEXT": "Eine Weitergabe an Dritte erfolgt nur, wenn dies gesetzlich erlaubt oder erforderlich ist. Soweit externe Dienstleister für den technischen Betrieb eingesetzt werden, erfolgt dies im Rahmen der datenschutzrechtlichen Vorgaben.",
-    "SECTION_6_TITLE": "6. Ihre Rechte",
-    "SECTION_6_TEXT": "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die Verarbeitung Ihrer Daten. Sie haben außerdem das Recht, sich bei einer Datenschutzaufsichtsbehörde zu beschweren. Für Datenschutzanfragen kontaktieren Sie bitte {{email}}.",
-    "SECTION_7_TITLE": "7. Datensicherheit",
-    "SECTION_7_TEXT": "Diese Website nutzt angemessene technische und organisatorische Maßnahmen, um Ihre Daten vor Verlust, Missbrauch oder unberechtigtem Zugriff zu schützen. Die Übertragung erfolgt verschlüsselt über HTTPS.",
-    "SECTION_8_TITLE": "8. Stand und Änderungen dieser Datenschutzerklärung",
-    "SECTION_8_TEXT": "Stand: 18. Februar 2026. Ich behalte mir vor, diese Datenschutzerklärung bei rechtlichen, technischen oder inhaltlichen Änderungen zu aktualisieren."
+    "SECTION_1_TITLE": "1. Einleitung",
+    "SECTION_1_TEXT": "Der Schutz Ihrer persönlichen Daten ist mir ein wichtiges Anliegen. Nachfolgend informiere ich Sie darüber, welche Daten bei Ihrem Besuch meiner Website erhoben werden.",
+    "SECTION_2_TITLE": "2. Verantwortlicher",
+    "SECTION_2_TEXT": "Verantwortlich für die Datenverarbeitung ist: {{name}}, {{address}}, {{city}}. E-Mail: {{email}}",
+    "SECTION_3_TITLE": "3. Hosting und Server-Logfiles",
+    "SECTION_3_TEXT": "Beim Besuch dieser Website werden technisch erforderliche Daten (IP-Adresse, Datum/Uhrzeit) erfasst. HINWEIS: Hier AVV des Hosting-Anbieters (z.B. Strato/IONOS) prüfen.",
+    "SECTION_4_TITLE": "4. Eingebundene Tools & Dienste",
+    "SECTION_4_TEXT": "Diese Website nutzt ggf. externe Dienste (wie Google Fonts/Maps). HINWEIS: Prüfe, ob diese lokal eingebunden sind oder ob hier eine explizite Auflistung erforderlich ist.",
+    "SECTION_5_TITLE": "5. Kontaktaufnahme",
+    "SECTION_5_TEXT": "Wenn Sie mir per E-Mail schreiben, verarbeite ich Ihre Daten, um Ihr Anliegen zu bearbeiten (Art. 6 Abs. 1 lit. b/f DSGVO).",
+    "SECTION_6_TITLE": "6. Datensicherheit",
+    "SECTION_6_TEXT": "Ich verwende SSL-Verschlüsselung, um Ihre Daten bei der Übertragung zu schützen.",
+    "SECTION_7_TITLE": "7. Betroffenenrechte",
+    "SECTION_7_TEXT": "Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch.",
+    "SECTION_8_TITLE": "8. Beschwerderecht",
+    "SECTION_8_TEXT": "Zudem können Sie Beschwerde bei einer Aufsichtsbehörde einreichen.",
+    "SECTION_9_TITLE": "9. Erreichbarkeit",
+    "SECTION_9_TEXT": "Diese Erklärung ist über den Footer von jeder Unterseite Ihrer Website aus mit maximal zwei Klicks erreichbar.",
+    "SECTION_10_TITLE": "10. Änderungen dieser Erklärung",
+    "SECTION_10_TEXT": "Ich behalte mir vor, diese Datenschutzerklärung bei rechtlichen Änderungen anzupassen.",
+    "SECTION_11_TITLE": "11. Stand",
+    "SECTION_11_TEXT": "Stand: xx 2026"
   },
   "LEGAL": {
     "TITLE": "Impressum",
@@ -100,7 +106,6 @@
       "EL_POLLO_LOCO": {
         "DESCRIPTION": "🎮 Ein unterhaltsames 2D-Action-Spiel, bei dem der Spieler als Huhn durch verschiedene Levels läuft, Hindernisse überwindet, Münzen sammelt und gegen Gegner kämpft. Das Spiel enthält Animationen, Soundeffekte, Hintergrundmusik und einfache Levelmechaniken – entwickelt mit HTML, CSS und JavaScript."
       }
-      
     }
   },
   "REFERENCES": {
