@@ -1,4 +1,6 @@
 @use '../../../styles/index' as styles;
+@use '../../../styles/btn-animations' as btn-animations;
+@use '../../../styles/headline-text' as headline-text;
 
 .feedback {
   background: #000000;
@@ -36,6 +38,7 @@
       $color: inherit
     );
     transition: color 240ms ease;
+  @include headline-text.playful-headline-hover;
   }
 
   &__inner-box {
@@ -268,6 +271,7 @@
       transform: translateY(-0.12rem);
       box-shadow: 0 0.6rem 1.5rem #00000066;
     }
+    @include btn-animations.button-hover;
   }
 
   &__toast {

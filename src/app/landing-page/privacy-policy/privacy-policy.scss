@@ -1,4 +1,7 @@
 @use '../../../styles/index' as styles;
+@use '../../../styles/arrows' as arrows;
+@use '../../../styles/headline-text' as headline-text;
+
 
 .privacy-policy {
   min-height: calc(100dvh - styles.$header-height - styles.$footer-height);
@@ -28,6 +31,7 @@
     );
     hyphens: auto;
     overflow-wrap: break-word;
+   @include headline-text.playful-headline-hover;
   }
 
   &__section {
@@ -45,6 +49,7 @@
 
   &__nav-holder {
     width: 100%;
+    @include arrows.arrow-bounce;
   }
 
   &__return-link {

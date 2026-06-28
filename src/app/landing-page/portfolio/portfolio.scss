@@ -1,4 +1,6 @@
 @use '../../../styles/index' as styles;
+@use '../../../styles/btn-animations' as btn-animations;
+@use '../../../styles/headline-text' as headline-text;
 
 .portfolio {
   &__container {
@@ -26,6 +28,7 @@
       $letter-spacing: -0.01em
     );
     transition: color 240ms ease;
+    @include headline-text.playful-headline-hover;
   }
 
   &__subheading {
@@ -42,55 +45,44 @@
   &__card {
     @include styles.setFlex($jc: space-between, $gap: clamp(2.5rem, 8vw, 9rem));
     width: 100%;
-  }
+    position: relative;
 
-  &__card--reverse {
-    flex-direction: row-reverse;
+    &--reverse {
+      flex-direction: row-reverse;
+      .portfolio__number-box {
+        text-align: left;
+        left: 0%;
+      }
+    }
   }
 
   &__preview-link {
     width: 50%;
     display: block;
-    color: inherit;
-    text-decoration: none;
-  }
-
-  &__figure {
-    position: relative;
-    width: 100%;
-    z-index: 1;
     overflow: hidden;
     border-radius: 2.5%;
   }
 
   &__img {
-    position: relative;
     width: 100%;
     height: auto;
     display: block;
-    border: 0.3rem solid transparent;
-    border-radius: 2.5%;
-
-    filter: grayscale(0) !important;
-
-    transition: transform 0.3s ease;
+    transition:
+      transform 0.4s cubic-bezier(0.2, 0, 0, 1),
+      filter 0.3s ease;
   }
-
-  &__hover-arrow-icon {
-    display: none !important;
+  &__card:hover &__img {
+    transform: scale(1.03);
+    filter: brightness(0.95);
   }
 
   &__info {
     width: 50%;
-    opacity: 1;
-    transform: none;
-    @include styles.setFlex($d: column, $ai: flex-start);
-    padding-top: 5%;
-    overflow: hidden;
+    @include styles.setFlex($d: column, $ai: flex-start, $gap: 1rem);
   }
 
   &__title {
-    margin: 0 0 1rem;
+    margin: 0;
     @include styles.setFont(
       $family: (
         'Syne',
@@ -100,155 +92,54 @@
       $weight: 800,
       $line-height: 0.8
     );
-    letter-spacing: -0.01em;
+    @include headline-text.playful-headline-hover;
   }
 
   &__stack {
-    margin: 0 0 1.4rem;
     @include styles.setFont($size: clamp(1em, 2vmin, 1.3em), $weight: 400, $color: #00bc8f);
-    letter-spacing: 0.02em;
   }
 
   &__description {
-    margin: 0 0 1rem;
     width: 80%;
     @include styles.setFont($size: clamp(1em, 2vmin, 1.3em), $line-height: 1.35);
   }
 
-  &____anchor {
-    padding: 0.1rem 3rem;
+  &__anchor {
+    margin-top: 1rem;
+    padding: 0.8rem 2.5rem;
     border: 0.35rem solid #000000;
-    border-radius: 7%;
-
+    border-radius: 0.5rem;
+    text-decoration: none;
     @include styles.setFont($size: 1em, $weight: 500);
-    transition:
-      transform 220ms ease,
-      box-shadow 220ms ease,
-      background-color 220ms ease,
-      border-color 220ms ease,
-      color 220ms ease;
-
-    &:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.18);
-    }
+    @include btn-animations.button-hover;
   }
 
   &__number-box {
     position: absolute;
-    top: -10%;
+    top: -5%;
     right: 0%;
-  }
-
-  &__card--reverse &__number-box {
-    text-align: left;
-    left: 0%;
-  }
-
-  &__number-box-value {
-    @include styles.setFont(
-      $family: (
-        'Syne',
-        sans-serif,
-      ),
-      $size: clamp(2rem, 4.5vw, 4.8rem),
-      $weight: 700
-    );
-  }
-
-  // NUR EIN SCHLICHTER, MODERNER ZOOM OHNE JEGLICHE FARBVERÄNDERUNG ODER RÄNDER
-  &__card:hover &__img {
-    transform: scale(1.03);
-    filter: grayscale(0) !important; // Erzwingt, dass die echten Farben stabil bleiben
+    &-value {
+      @include styles.setFont(
+        $family: (
+          'Syne',
+          sans-serif,
+        ),
+        $size: clamp(2rem, 4.5vw, 4.8rem),
+        $weight: 700
+      );
+    }
   }
 }
 
 @include styles.view-lg {
-  .portfolio {
-    &__subheading {
-      text-align: left;
-    }
-
-    &__group-list {
-      gap: clamp(3rem, 13vw, 9rem);
-    }
-
-    &__card,
-    &__card--reverse {
-      flex-direction: column;
-      width: 100%;
-    }
-
-    &__card {
+  .portfolio__card {
+    flex-direction: column !important;
+    &--reverse {
       align-items: flex-start;
     }
-
-    &__card--reverse {
-      align-items: flex-end;
-
-      .portfolio__info {
-        transform: none;
-      }
-
-      .portfolio__info {
-        align-items: flex-end;
-      }
-
-      .portfolio__description {
-        text-align: right;
-      }
-    }
-
-    &__figure {
-      width: 100%;
-    }
-
+    &__info,
     &__preview-link {
-      width: 91%;
-    }
-
-    &__info {
-      width: 95%;
-      transform: none;
-    }
-  }
-}
-
-@include styles.view-xs {
-  .portfolio {
-    &__container {
-      padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
-    }
-  }
-}
-
-// Speziell für kleine Bildschirme ab 370px abwärts
-@media (max-width: 370px) {
-  .portfolio {
-    &__card {
-      // Erhöht den globalen Abstand zwischen den Projekten, falls sie untereinander stehen
-      gap: 5rem !important;
-    }
-
-    &__info {
-      // Gibt den Details-Boxen nach unten hin extra Luft,
-      // damit der Counter des nächsten Projekts nicht in den Button knallt
-      padding-bottom: 3.5rem !important;
-    }
-
-    &__number-box {
-      // Schiebt den Counter etwas weiter nach oben aus der Gefahrenzone
-      top: -18% !important;
-    }
-
-    &__card--reverse &__number-box {
-      // Falls der Counter links sitzt, passen wir ihn hier ebenfalls an
-      top: -18% !important;
-    }
-
-    &____anchor {
-      // Verhindert, dass der Button zu nah am unteren Rand klebt
-      margin-bottom: 1.5rem;
+      width: 100% !important;
     }
   }
 }

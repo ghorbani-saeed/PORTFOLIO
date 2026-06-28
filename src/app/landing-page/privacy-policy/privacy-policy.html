@@ -1,17 +1,11 @@
 <section class="privacy-policy" id="policy" aria-labelledby="privacy-policy-title">
   <div class="privacy-policy__container">
     <div class="privacy-policy__nav-holder">
-      <a
-        class="privacy-policy__return-link"
-        routerLink="/"
-        fragment="contact"
-        [attr.aria-label]="'POLICY.BACK_ARIA' | translate"
-      >
-        <img
-          src="/assets/img/icons/09-arrows/legal-notice-arrow/to-left-arrow.png"
-          [attr.alt]="'POLICY.BACK_ICON_ALT' | translate"
-        />
+
+      <a class="privacy-policy__return-link" routerLink="/" fragment="contact" [attr.aria-label]="'POLICY.BACK_ARIA' | translate">
+        <img class="arrow-icon" src="/assets/img/icons/09-arrows/legal-notice-arrow/to-left-arrow.png" [attr.alt]="'POLICY.BACK_ICON_ALT' | translate"/>
       </a>
+      
     </div>
     <h1 class="privacy-policy__caption" id="privacy-policy-title">
       {{ 'POLICY.TITLE' | translate }}

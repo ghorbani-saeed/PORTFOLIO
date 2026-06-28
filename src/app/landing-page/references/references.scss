@@ -1,5 +1,7 @@
 @use '../../../styles/index' as styles;
 @use '../../../styles/arrows' as arrows;
+@use '../../../styles/headline-text' as headline-text;
+
 
 
 .references {
@@ -42,6 +44,7 @@
       $letter-spacing: -0.03em
     );
     transition: color 220ms ease;
+    @include headline-text.playful-headline-hover;
   }
 
   &__subtitle {

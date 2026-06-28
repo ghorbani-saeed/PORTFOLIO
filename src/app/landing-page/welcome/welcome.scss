@@ -1,5 +1,6 @@
 @use '../../../styles/index' as styles;
 @use '../../../styles/arrows' as arrows;
+@use '../../../styles/headline-text' as headline-text;
 
 .welcome {
   position: relative;
@@ -17,6 +18,11 @@
 
   &__caption-group {
     @include styles.setFlex($d: column, $gap: clamp(1rem, 2vw, 2rem));
+  }
+
+  &__caption-line {
+    @include headline-text.playful-headline-hover;
+    display: inline-block; // Nötig für die Animation
   }
 
   &__caption {

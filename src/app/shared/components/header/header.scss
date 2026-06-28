@@ -1,4 +1,5 @@
 @use '../../../../styles/index' as styles;
+@use '../../../../styles/headline-text' as headline-text;
 
 :host {
   display: block;
@@ -145,9 +146,12 @@
     @include styles.setFlex($d: column, $gap: clamp(3rem, 5vw, 4rem));
     text-align: center;
     padding: clamp(2rem, 10vw, 5rem) styles.$g-pad-x 0;
+
   }
 
   &__nav-link {
+            @include headline-text.playful-headline-hover;
+
     position: relative;
     display: block;
     width: clamp(21rem, 40vmin, 64rem);
@@ -163,7 +167,6 @@
     );
     transition: color 220ms ease;
 
-    // Der Wurm-Container (die Linie)
     .nav-worm {
       position: absolute;
       top: 50%;
@@ -171,12 +174,10 @@
       width: 4rem;
       height: 4rem;
       fill: none;
-      stroke: #109a7a; // Deine Wunschfarbe
+      stroke: #109a7a; 
       stroke-width: 4;
       stroke-linecap: round;
       stroke-linejoin: round;
-
-      // Die Linie wird in Stücke zerteilt und versteckt
       stroke-dasharray: 200;
       stroke-dashoffset: 200;
       transition: stroke-dashoffset 0.8s ease-in-out;
@@ -213,7 +214,7 @@
   &__contact {
     margin: 20rem 0 5rem;
     align-self: flex-start;
-
+    @include headline-text.playful-headline-hover;
     @include styles.setFlex($d: column, $jc: flex-start, $ai: flex-start);
 
     h2 {

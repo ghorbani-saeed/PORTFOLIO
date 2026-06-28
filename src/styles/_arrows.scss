@@ -10,6 +10,7 @@
 
   &:hover .arrow-icon {
     animation: arrowBounceGlobal 0.8s ease-in-out infinite;
+    filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%) contrast(115%);
   }
 }
 

@@ -1,0 +1,17 @@
+@mixin button-hover {
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), 
+              border-color 0.3s ease, 
+              color 0.3s ease, 
+              box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-0.4rem); 
+    border-color: #00bc8f;         
+    color: #00bc8f;                  
+    box-shadow: 0 0.8rem 1.5rem rgba(0, 188, 143, 0.2); 
+  }
+
+  &:active {
+    transform: translateY(-0.1rem); 
+  }
+}

@@ -1,0 +1,9 @@
+@mixin playful-headline-hover {
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-0.5rem) rotate(-2deg);
+  }
+}

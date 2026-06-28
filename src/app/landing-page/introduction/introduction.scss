@@ -1,6 +1,7 @@
 @use '../../../styles/index' as styles;
 @use '../../../styles/arrows' as arrows;
-
+@use '../../../styles/btn-animations' as btn_animations;
+@use '../../../styles/headline-text' as headline-text;
 
 
 .introduction {
@@ -52,6 +53,7 @@
   &__heading {
     margin: 0 0 2.5rem 0;
     white-space: nowrap;
+    @include headline-text.playful-headline-hover;
 
     @include styles.setFont(
       $family: (
@@ -134,6 +136,7 @@
       margin-top: 2rem;
       margin-bottom: 2rem;
     }
+    @include btn_animations.button-hover;
   }
 
   &__media-aside {
