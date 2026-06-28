@@ -70,6 +70,7 @@
     height: auto;
     display: block;
     @include photos-animations.image-zoom-effect;
+    filter: grayscale(100%) brightness(0.6) sepia(100%) hue-rotate(60deg) saturate(500%);
     transition:
       transform 0.4s cubic-bezier(0.2, 0, 0, 1),
       filter 0.3s ease;
