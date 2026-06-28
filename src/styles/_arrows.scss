@@ -1,0 +1,19 @@
+@mixin arrow-bounce {
+  cursor: pointer;
+  display: inline-block;
+
+  .skills-arrow__icon { // Hier den Namen deines Icons anpassen
+    transition: transform 0.3s ease;
+    display: block;
+    transform-origin: center;
+  }
+
+  &:hover .arrow-icon {
+    animation: arrowBounceGlobal 0.8s ease-in-out infinite;
+  }
+}
+
+@keyframes arrowBounceGlobal {
+  0%, 100% { transform: translateX(0) rotate(0deg) scale(1); }
+  50% { transform: translateX(-0.8rem) rotate(-8deg) scale(1.1); }
+}

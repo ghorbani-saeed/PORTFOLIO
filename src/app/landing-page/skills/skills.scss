@@ -1,4 +1,5 @@
 @use '../../../styles/index' as styles;
+@use '../../../styles/arrows' as arrows;
 
 .skills {
   padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
@@ -6,25 +7,6 @@
   width: 100%;
   margin: 0 auto;
   @include styles.setFlex($d: column);
-
-  &__divider-link {
-    margin-top: clamp(2rem, 9vw, 5rem);
-    left: 5%;
-    align-self: flex-start;
-
-    @include styles.view-lg {
-      left: 20%;
-    }
-
-    app-divider-to-right,
-    svg,
-    img,
-    div {
-      animation: none !important;
-      transform: none !important;
-      transition: none !important;
-    }
-  }
 
   &__container {
     position: relative;
@@ -48,10 +30,7 @@
     padding: 0 clamp(0.5rem, 2vw, 2rem);
     background: styles.$bg-color;
     @include styles.setFont(
-      $family: (
-        'Syne',
-        sans-serif,
-      ),
+      $family: ('Syne', sans-serif),
       $size: clamp(1.6em, 5vw, 5rem),
       $weight: 800,
       $line-height: 0.8,
@@ -77,10 +56,8 @@
     &:hover {
       .skills__tech-icon {
         transform: translateY(-12px) scale(1.15) rotateX(10deg);
-        filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%)
-          contrast(115%);
+        filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%) contrast(115%);
       }
-
       .skills__tech-name {
         color: #ff0000;
         transform: translateY(-2px);
@@ -91,12 +68,8 @@
   &__tech-icon {
     display: block;
     transform-style: preserve-3d;
-    width: auto;
-    height: auto;
     max-width: 60%;
-    transition:
-      transform 0.5s cubic-bezier(0.175, 0.885, 0.42, 1.35),
-      filter 0.3s ease-in-out;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.42, 1.35), filter 0.3s ease-in-out;
   }
 
   &__tech-name {
@@ -105,54 +78,47 @@
     transition: all 0.3s ease-in-out;
   }
 
-  @keyframes spin-wheel {
-    from {
-      transform: scale(1.15) rotate(0deg);
-    }
-    to {
-      transform: scale(1.15) rotate(360deg);
-    }
-  }
-
   &__box {
     margin-top: clamp(3rem, 6vw, 4.5rem);
     @include styles.setFlex($gap: clamp(1rem, 3vw, 2rem));
     text-align: center;
     cursor: pointer;
-
-    // Wenn man die gesamte BOX berührt:
-    &:hover {
-      .skills__box-icon {
-        animation: spin-wheel 1.2s linear infinite;
-        filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%)
-          contrast(115%);
-      }
+    &:hover .skills__box-icon {
+      animation: spin-wheel 1.2s linear infinite;
+      filter: invert(53%) sepia(87%) saturate(601%) hue-rotate(92deg) brightness(101%) contrast(115%);
     }
   }
 
   &__box-icon {
-    width: auto;
     height: clamp(6rem, 7vw, 7.5rem);
-    transform-origin: center center;
-    transition:
-      transform 0.4s cubic-bezier(0.175, 0.885, 0.42, 1.35),
-      filter 0.3s ease-in-out;
-  }
-
-  &__box-text {
-    @include styles.setFont($size: clamp(1em, 2vw, 1.4em), $weight: 400);
-  }
-
-  &__box-link {
-    text-decoration: none;
-    @include styles.setFont($weight: 400, $color: #00bc8f);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.42, 1.35), filter 0.3s ease-in-out;
   }
 }
 
+// Pfeil-Sektion
+.skills-arrow-wrapper {
+  @include arrows.arrow-bounce;
+  margin-top: clamp(2rem, 9vw, 5rem);
+  left: 5%;
+  align-self: flex-start;
+  display: block;
+  text-decoration: none;
+
+  @include styles.view-lg { left: 20%; }
+}
+
+.skills-arrow {
+  width: clamp(12rem, 15vw, 18rem);
+  height: clamp(12rem, 15vw, 18rem);
+  &__icon { display: block; width: 100%; }
+}
+
+@keyframes spin-wheel {
+  from { transform: scale(1.15) rotate(0deg); }
+  to { transform: scale(1.15) rotate(360deg); }
+}
+
 @include styles.view-lg {
-  .skills {
-    &__headline {
-      padding: 0 clamp(1rem, 2vw, 2rem);
-    }
-  }
+  .skills__headline { padding: 0 clamp(1rem, 2vw, 2rem); }
 }

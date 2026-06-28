@@ -1,4 +1,6 @@
 @use '../../../styles/index' as styles;
+@use '../../../styles/arrows' as arrows;
+
 
 .references {
   padding: calc(1 * styles.$header-height) styles.$g-pad-x calc(0.1 * styles.$header-height);
@@ -8,6 +10,7 @@
   @include styles.setFlex($d: column);
 
   &__divider-link {
+    @include arrows.arrow-bounce;
     margin-top: clamp(2rem, 9vw, 5rem);
     right: 5%;
     align-self: flex-end;

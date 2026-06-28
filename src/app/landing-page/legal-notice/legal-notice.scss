@@ -1,4 +1,5 @@
 @use '../../../styles/index' as styles;
+@use '../../../styles/arrows' as arrows;
 
 .legal-notice {
   min-height: calc(100dvh - styles.$header-height - styles.$footer-height);
@@ -40,6 +41,7 @@
       transform 220ms ease,
       filter 220ms ease;
     z-index: 9999;
+    @include arrows.arrow-bounce;
 
     img {
       width: 100%;
