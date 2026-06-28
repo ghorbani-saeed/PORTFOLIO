@@ -1,5 +1,6 @@
 @use '../../../styles/index' as styles;
 @use '../../../styles/arrows' as arrows;
+@use '../../../styles/headline-text' as headline-text;
 
 .legal-notice {
   min-height: calc(100dvh - styles.$header-height - styles.$footer-height);
@@ -67,6 +68,11 @@
     padding: clamp(1rem, 4vmin, 3rem) 0;
     text-align: left;
     letter-spacing: -0.02em;
+    @include headline-text.playful-headline-hover;
+    &:hover {
+      color: #00bc8f;
+    }
+
     @include styles.setFont(
       $family: (
         'Syne',
