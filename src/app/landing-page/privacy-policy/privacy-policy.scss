@@ -2,7 +2,6 @@
 @use '../../../styles/arrows' as arrows;
 @use '../../../styles/headline-text' as headline-text;
 
-
 .privacy-policy {
   min-height: calc(100dvh - styles.$header-height - styles.$footer-height);
   padding: clamp(1.5rem, 7vw, 3rem) styles.$g-pad-x clamp(6rem, 10vw, 9rem);
@@ -31,7 +30,10 @@
     );
     hyphens: auto;
     overflow-wrap: break-word;
-   @include headline-text.playful-headline-hover;
+    @include headline-text.playful-headline-hover;
+    &:hover {
+      color: #00bc8f;
+    }
   }
 
   &__section {
