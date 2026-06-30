@@ -13,7 +13,7 @@
     margin: auto;
     @include styles.setFlex($d: column, $ai: flex-start, $gap: clamp(1.4rem, 3vw, 2.4rem));
 
-    @include styles.view-s {
+    @include styles.view-st {
       align-items: center;
     }
   }
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: flex-end;
 
-    @include styles.view-s {
+    @include styles.view-st {
       justify-content: center;
       margin-bottom: 1rem;
     }
@@ -58,7 +58,7 @@
       transform: scale(0.95);
     }
 
-    @include styles.view-s {
+    @include styles.view-st {
       position: static;
       margin: 0 auto 1.5rem;
     }
@@ -83,7 +83,7 @@
       $line-height: 1.5
     );
 
-    @include styles.view-s {
+    @include styles.view-st {
       text-align: center;
       width: 100%;
       padding: 0 0 1rem 0;
@@ -96,7 +96,7 @@
     margin: -1rem 0 1.5rem 0;
     @include styles.setFont($size: clamp(1.4rem, 3vw, 2.2rem), $weight: 600, $color: #00bc8f);
 
-    @include styles.view-s {
+    @include styles.view-st {
       text-align: center;
       font-size: 3rem !important;
     }
@@ -140,7 +140,7 @@
     margin-top: clamp(2rem, 6vmin, 5rem);
 
     &__return-link {
-      @include styles.view-s-up {
+      @include styles.view-st-up {
         right: 1rem;
         top: calc(styles.$header-height + 1rem);
       }
