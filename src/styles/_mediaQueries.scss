@@ -1,67 +1,65 @@
-
 @mixin view-xs {
-  @media (max-width: 480px) { // Geändert von 560px (Standard für kleinere Phones)
+  @media (max-width: 480px) {
     @content;
   }
 }
 
-@mixin view-s-up {
+@mixin view-st-up {
   @media (min-width: 501px) {
     @content;
   }
 }
 
-@mixin view-s {
-  @media (max-width: 600px) { // Geändert von 640px 
+@mixin view-sm {
+  @media (max-width: 560px) {
     @content;
   }
 }
 
-@mixin view-sm {
-  @media (max-width: 720px) { // Geändert von 700px (Dein neuer Foto-Umschaltpunkt!)
+@mixin view-m {
+  @media (max-width: 640px) {
+    @content;
+  }
+}
+
+@mixin view-st  {
+  @media (max-width: 768px) {
     @content;
   }
 }
 
 @mixin view-md {
-  @media (max-width: 790px) { // Geändert von 768px
+  @media (max-width: 700px) {
     @content;
   }
 }
 
 @mixin view-lg {
-  @media (max-width: 920px) { // Geändert von 900px (Dein neuer Layout-Umbruch!)
+  @media (max-width: 900px) {
     @content;
   }
 }
 
 @mixin view-xl {
-  @media (max-width: 1050px) { // Geändert von 1024px
+  @media (max-width: 1024px) {
     @content;
   }
 }
 
-// ACHTUNG: Der Startwert für xxl muss genau 1 Pixel höher sein als das Ende von xl!
 @mixin view-xxl {
-  @media (min-width: 1051px) { // Angepasst an den neuen xl-Wert
+  @media (min-width: 1025px) {
     @content;
   }
 }
 
 @mixin view-3xl {
-  @media (min-width: 1400px) { // Geändert von 1440px (Typischer Bootstrap-Wert)
+  @media (min-width: 1440px) {
     @content;
   }
 }
 
 @mixin view-4xl {
-  @media (min-width: 1850px) { // Geändert von 1920px
+  @media (min-width: 1920px) {
     @content;
   }
 }
-
-
-
-
-
-
