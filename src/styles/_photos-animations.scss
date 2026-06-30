@@ -1,5 +1,8 @@
 @mixin image-zoom-effect {
   overflow: hidden;
+   filter: grayscale(60%);
+    mix-blend-mode: multiply;
+    background-color: #03775c;
   
   img {
     transition: transform 0.6s cubic-bezier(0.2, 0, 0, 1), filter 0.4s ease;
