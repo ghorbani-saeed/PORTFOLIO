@@ -185,9 +185,7 @@
       color: #109a7a;
 
       .nav-worm {
-        // Beim Hovern läuft die Linie durch den Pfad
         stroke-dashoffset: 0;
-        // Optionale Animation für das "Wandern" der Linie:
         animation: worm-move 2s linear infinite;
       }
     }
