@@ -3,7 +3,6 @@
 @use '../../../styles/headline-text' as headline-text;
 @use '../../../styles/photos-animations' as photos-animations;
 
-
 .portfolio {
   &__container {
     max-width: styles.$g-max-width;
@@ -47,46 +46,53 @@
   &__card {
     @include styles.setFlex($jc: space-between, $gap: clamp(2.5rem, 8vw, 9rem));
     width: 100%;
-    position: relative;
+  }
 
-    &--reverse {
-      flex-direction: row-reverse;
-      .portfolio__number-box {
-        text-align: left;
-        left: 0%;
-      }
-    }
+  &__card--reverse {
+    flex-direction: row-reverse;
   }
 
   &__preview-link {
     width: 50%;
     display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__media {
+    position: relative;
+    width: 100%;
+    z-index: 1;
     overflow: hidden;
     border-radius: 2.5%;
   }
 
   &__img {
+    position: relative;
     width: 100%;
     height: auto;
     display: block;
+    border: 0.3rem solid transparent;
+    border-radius: 2.5%;
+    transition: transform 0.3s ease;
     @include photos-animations.image-zoom-effect;
-    filter: grayscale(100%) brightness(0.6) sepia(100%) hue-rotate(60deg) saturate(500%);
-    transition:
-      transform 0.4s cubic-bezier(0.2, 0, 0, 1),
-      filter 0.3s ease;
   }
-  &__card:hover &__img {
-    transform: scale(1.03);
-    filter: brightness(0.95);
+
+  &__hover-arrow-icon {
+    display: none !important;
   }
 
   &__info {
     width: 50%;
-    @include styles.setFlex($d: column, $ai: flex-start, $gap: 1rem);
+    opacity: 1;
+    transform: none;
+    @include styles.setFlex($d: column, $ai: flex-start);
+    padding-top: 5%;
+    overflow: hidden;
   }
 
   &__title {
-    margin: 0;
+    margin: 0 0 1rem;
     @include styles.setFont(
       $family: (
         'Syne',
@@ -96,54 +102,113 @@
       $weight: 800,
       $line-height: 0.8
     );
+    letter-spacing: -0.01em;
     @include headline-text.playful-headline-hover;
   }
 
   &__stack {
+    margin: 0 0 1.4rem;
     @include styles.setFont($size: clamp(1em, 2vmin, 1.3em), $weight: 400, $color: #00bc8f);
+    letter-spacing: 0.02em;
   }
 
   &__description {
+    margin: 0 0 1rem;
     width: 80%;
     @include styles.setFont($size: clamp(1em, 2vmin, 1.3em), $line-height: 1.35);
   }
 
   &__anchor {
-    margin-top: 1rem;
-    padding: 0.8rem 2.5rem;
+    padding: 0.1rem 3rem;
     border: 0.35rem solid #000000;
-    border-radius: 0.5rem;
-    text-decoration: none;
-    @include styles.setFont($size: 1em, $weight: 500);
+    border-radius: 7%;
     @include btn-animations.button-hover;
+    @include styles.setFont($size: 1em, $weight: 500);
+    transition:
+      transform 220ms ease,
+      box-shadow 220ms ease,
+      background-color 220ms ease,
+      border-color 220ms ease,
+      color 220ms ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.18);
+    }
   }
 
   &__number-box {
     position: absolute;
-    top: -5%;
+    top: -10%;
     right: 0%;
-    &-value {
-      @include styles.setFont(
-        $family: (
-          'Syne',
-          sans-serif,
-        ),
-        $size: clamp(2rem, 4.5vw, 4.8rem),
-        $weight: 700
-      );
+  }
+
+  &__card--reverse &__number-box {
+    text-align: left;
+    left: 0%;
+  }
+
+  &__number-box-value {
+    @include styles.setFont(
+      $family: (
+        'Syne',
+        sans-serif,
+      ),
+      $size: clamp(2rem, 4.5vw, 4.8rem),
+      $weight: 700
+    );
+  }
+
+  &__card:hover &__img {
+    transform: scale(1.03);
+    filter: grayscale(0) !important;
+  }
+}
+
+// Hier die angepasst Mixin-Nutzung (entsprechend Nummer 1)
+@include styles.view-lg {
+  .portfolio {
+    &__subheading {
+      text-align: left;
+    }
+    &__group-list {
+      gap: clamp(3rem, 13vw, 9rem);
+    }
+    &__card,
+    &__card--reverse {
+      flex-direction: column;
+      width: 100%;
+    }
+    &__card {
+      align-items: flex-start;
+    }
+    &__card--reverse {
+      align-items: flex-end;
+      .portfolio__info {
+        transform: none;
+        align-items: flex-end;
+      }
+      .portfolio__description {
+        text-align: right;
+      }
+    }
+    &__media {
+      width: 100%;
+    }
+    &__preview-link {
+      width: 91%;
+    }
+    &__info {
+      width: 95%;
+      transform: none;
     }
   }
 }
 
-@include styles.view-lg {
-  .portfolio__card {
-    flex-direction: column !important;
-    &--reverse {
-      align-items: flex-start;
-    }
-    &__info,
-    &__preview-link {
-      width: 100% !important;
+@include styles.view-sm {
+  .portfolio {
+    &__container {
+      padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
     }
   }
 }
