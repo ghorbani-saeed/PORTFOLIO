@@ -13,7 +13,7 @@ import { PortfolioDataService } from '../../shared/services/userDatabankService/
 
 /**
  * Component managing the contact form section.
- * Handles user inputs, detects the environment, manages state for toast notifications,
+ * Handles user inputs, detects the environment, manages state for overlay notifications,
  * and ensures proper cleanup of asynchronous timers and DOM styles when the component is destroyed.
  */
 export class FeedbackComponent implements OnDestroy {
@@ -35,17 +35,17 @@ export class FeedbackComponent implements OnDestroy {
     body: (payload: { name: string; email: string; msg: string }) => payload,
   };
 
-  /** Controls whether the toast notification modal is visible in the DOM */
-  toastVisible = false;
+  /** Controls whether the overlay notification modal is visible in the DOM */
+  overlayVisible = false;
 
-  /** Stores the current success or error text to be displayed inside the toast */
-  toastMessage = '';
+  /** Stores the current success or error text to be displayed inside the overlay */
+  overlayMessage = '';
 
-  /** Defines the current visual theme/type of the active toast */
-  toastType: 'success' | 'error' = 'success';
+  /** Defines the current visual theme/type of the active overlay */
+  overlayType: 'success' | 'error' = 'success';
 
   /** Reference ID for the running setTimeout timer, used to clear it on early exit or destruction */
-  private toastTimerId: ReturnType<typeof setTimeout> | null = null;
+  private overlayTimerId: ReturnType<typeof setTimeout> | null = null;
 
   /** Backup reference for the original <body> CSS overflow value to restore scrolling behavior */
   private previousBodyOverflow: string | null = null;
@@ -59,7 +59,7 @@ export class FeedbackComponent implements OnDestroy {
    * running in the background and guarantees that page scrolling is restored.
    */
   ngOnDestroy(): void {
-    this.clearToastTimer();
+    this.clearoverlayTimer();
     this.unlockPageScroll();
   }
 
@@ -101,7 +101,7 @@ export class FeedbackComponent implements OnDestroy {
       if (this.mailTest === true) {
         setTimeout(() => {
           ngForm.resetForm();
-          this.showToast('success');
+          this.showoverlay('success');
         }, 600);
       } else {
         const payload = {
@@ -120,15 +120,15 @@ export class FeedbackComponent implements OnDestroy {
             next: (response: any) => {
               if (response && response.ok === true) {
                 ngForm.resetForm();
-                this.showToast('success');
+                this.showoverlay('success');
               } else {
                 console.error('Mail send failed');
-                this.showToast('error');
+                this.showoverlay('error');
               }
             },
             error: (error) => {
               console.error('Mail send failed', error);
-              this.showToast('error');
+              this.showoverlay('error');
             },
           });
       }
@@ -136,31 +136,31 @@ export class FeedbackComponent implements OnDestroy {
   }
 
   /**
-   * Displays a temporary toast notification (success or error) to the user.
+   * Displays a temporary overlay notification (success or error) to the user.
    * Automatically clears any active timers, sets the message, locks page scrolling,
-   * and hides the toast after a 3.2-second delay.
-   * * @param type The type of toast to display ('success' | 'error')
+   * and hides the overlay after a 3.2-second delay.
+   * * @param type The type of overlay to display ('success' | 'error')
    */
-  private showToast(type: 'success' | 'error'): void {
-    this.clearToastTimer();
-    this.toastType = type;
-    this.toastMessage = type === 'success' ? 'Email sent!' : 'Email-sending failed!';
-    this.toastVisible = true;
+  private showoverlay(type: 'success' | 'error'): void {
+    this.clearoverlayTimer();
+    this.overlayType = type;
+    this.overlayMessage = type === 'success' ? "Thanks for reaching out!" : "Oops! Something went wrong. Please give it another try in a moment.";
+    this.overlayVisible = true;
     this.lockPageScroll();
-    this.toastTimerId = setTimeout(() => {
-      this.toastVisible = false;
+    this.overlayTimerId = setTimeout(() => {
+      this.overlayVisible = false;
       this.unlockPageScroll();
     }, 3200);
   }
 
   /**
-   * Clears the active toast timeout timer if it exists to prevent memory leaks
+   * Clears the active overlay timeout timer if it exists to prevent memory leaks
    * or overlapping animation issues.
    */
-  private clearToastTimer(): void {
-    if (this.toastTimerId !== null) {
-      clearTimeout(this.toastTimerId);
-      this.toastTimerId = null;
+  private clearoverlayTimer(): void {
+    if (this.overlayTimerId !== null) {
+      clearTimeout(this.overlayTimerId);
+      this.overlayTimerId = null;
     }
   }
 
