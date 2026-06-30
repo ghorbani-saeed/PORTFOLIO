@@ -2,7 +2,7 @@
   class="feedback"
   id="contact"
   [attr.aria-label]="'CONTACT.ARIA_LABEL' | translate"
-  [class.contact-me--pop-up]="toastVisible"
+  [class.feedback--pop-up]="overlayVisible"
 >
   <div class="feedback__wrapper">
     <h2 class="feedback__heading" id="contact-title">{{ 'CONTACT.TITLE' | translate }}</h2>
@@ -160,10 +160,10 @@
           {{ 'CONTACT.SUBMIT' | translate }}
         </button>
 
-        @if (toastVisible) {
-          <div class="feedback__overlay" aria-hidden="true"></div>
-          <p class="feedback__alert-box" role="status" aria-live="polite">
-            {{ toastMessage }}
+        @if (overlayVisible) {
+          <div class="feedback__message-box-backdrop" aria-hidden="true"></div>
+          <p class="feedback__message-box" role="status" aria-live="polite">
+            {{ overlayMessage }}
           </p>
         }
       </form>
