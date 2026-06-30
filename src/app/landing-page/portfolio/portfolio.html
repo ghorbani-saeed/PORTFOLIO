@@ -40,7 +40,11 @@
             </a>
           </div>
 
-          <div class="portfolio__number-box">
+          <div 
+            class="portfolio__number-box" 
+            [class.portfolio__number-box--right]="idx % 2 === 0" 
+            [class.portfolio__number-box--left]="idx % 2 === 1"
+           >          
             <span class="portfolio__number-box-value">{{ getCounterLabel(idx) }}</span>
           </div>
         </article>
