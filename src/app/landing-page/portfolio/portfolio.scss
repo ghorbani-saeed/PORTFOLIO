@@ -70,6 +70,8 @@
   &__img {
     position: relative;
     width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
     height: auto;
     display: block;
     border: 0.3rem solid transparent;
