@@ -12,10 +12,10 @@ import { PortfolioDataService } from '../../shared/services/userDatabankService/
 })
 
 /**
- * Component managing the contact form section.
- * Handles user inputs, detects the environment, manages state for overlay notifications,
- * and ensures proper cleanup of asynchronous timers and DOM styles when the component is destroyed.
- */
+ * Manages the contact form interaction.
+ * Handles form validation, local/production environment switching,
+ * and the display logic for status overlay notifications.
+*/
 export class FeedbackComponent implements OnDestroy {
   /** Injecting the HttpClient for making backend API requests */
   http = inject(HttpClient);
@@ -57,7 +57,7 @@ export class FeedbackComponent implements OnDestroy {
    * Angular Lifecycle Hook.
    * Runs automatically when the component is unloaded. Prevents active timers from
    * running in the background and guarantees that page scrolling is restored.
-   */
+  */
   ngOnDestroy(): void {
     this.clearoverlayTimer();
     this.unlockPageScroll();
@@ -68,7 +68,7 @@ export class FeedbackComponent implements OnDestroy {
    * This is used to differentiate between local testing and the live production server.
    * * @param hostname The current window location hostname (e.g., 'localhost' or an IP address)
    * @returns {boolean} True if the environment is local, false if it is live
-   */
+  */
   private isLocalEnvironment(hostname: string): boolean {
     if (
       hostname === 'localhost' ||
@@ -91,11 +91,10 @@ export class FeedbackComponent implements OnDestroy {
   }
 
   /**
-   * Handles the contact form submission.
-   * Validates the form, simulates a success response if mailTest is enabled,
-   * or sends the actual form data payload to the backend server.
-   * * @param ngForm The Angular template-driven form instance
-   */
+   * Submits the form data. 
+   * Uses a local mock-response if in development mode, 
+   * or performs an HTTP POST request to the backend for live production.
+  */
   onSubmit(ngForm: NgForm) {
     if (ngForm.submitted && ngForm.form.valid) {
       if (this.mailTest === true) {
@@ -135,12 +134,10 @@ export class FeedbackComponent implements OnDestroy {
     }
   }
 
-  /**
-   * Displays a temporary overlay notification (success or error) to the user.
-   * Automatically clears any active timers, sets the message, locks page scrolling,
-   * and hides the overlay after a 3.2-second delay.
-   * * @param type The type of overlay to display ('success' | 'error')
-   */
+/**
+   * Triggers the UI overlay to show success or error states.
+   * Manages DOM scroll-locking to prevent background movement while modal is active.
+*/
   private showoverlay(type: 'success' | 'error'): void {
     this.clearoverlayTimer();
     this.overlayType = type;
@@ -153,10 +150,7 @@ export class FeedbackComponent implements OnDestroy {
     }, 3200);
   }
 
-  /**
-   * Clears the active overlay timeout timer if it exists to prevent memory leaks
-   * or overlapping animation issues.
-   */
+  /** Prevents memory leaks by clearing the overlay auto-dismiss timer. */
   private clearoverlayTimer(): void {
     if (this.overlayTimerId !== null) {
       clearTimeout(this.overlayTimerId);
@@ -167,7 +161,7 @@ export class FeedbackComponent implements OnDestroy {
   /**
    * Locks the window/page scrolling by setting the CSS overflow property to 'hidden'.
    * Stores the original overflow styles to safely restore them later.
-   */
+  */
   private lockPageScroll(): void {
     const html = document.documentElement;
     const body = document.body;
@@ -183,10 +177,9 @@ export class FeedbackComponent implements OnDestroy {
     }
   }
 
-  /**
-   * Restores the original page scrolling behavior by reapplying the previously
-   * saved CSS overflow values.
-   */
+ /**
+   * Restores body/html scroll functionality after overlay is dismissed.
+ */
   private unlockPageScroll(): void {
     const html = document.documentElement;
     const body = document.body;

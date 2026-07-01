@@ -27,6 +27,10 @@ export interface Recommendation {
   translationTextKey: string;
 }
 
+/**
+ * Central service to manage and provide static portfolio data 
+ * such as project showcases, skill sets, and user profile details.
+*/
 @Injectable({
   providedIn: 'root',
 })
@@ -44,6 +48,7 @@ export class PortfolioDataService {
   public expertise: SkillDefinition[] = [];
 
   constructor() {
+    // Initialize all data sets on service startup
     this.buildShowcase();
     this.setupIdentity();
     this.prepareTestimonials();
@@ -61,7 +66,7 @@ export class PortfolioDataService {
       },
       {
         title: 'Pokedex',
-        previewImg: '/assets/img/projects-photos/pokedex.jpg',
+        previewImg: '/assets/img/projects-photos/pokedex.jpeg',
         langKey: 'PORTFOLIO.PROJECTS.Pokedex.DESCRIPTION',
         repoUrl: 'https://github.com/ghorbani-saeed/Fotogram',
         liveUrl: 'https://ghorbani-saeed.github.io/Pokedex/',
@@ -74,7 +79,7 @@ export class PortfolioDataService {
       fullName: 'Saeed Ghorbani',
       street: 'Gerd-Jansen-Platz 5',
       location: '47546 Kalkar, Germany',
-      mail: 'saeed.ghorbani@web.de',
+      mail: 'ghorbani.saeed@web.de',
       githubUrl: 'https://github.com/ghorbani-saeed',
     };
   }

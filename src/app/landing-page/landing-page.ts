@@ -6,6 +6,10 @@ import { Portfolio } from './portfolio/portfolio';
 import { ReferencesComponent } from './references/references';
 import { FeedbackComponent } from './feedback/feedback';
 
+/**
+ * LandingPage component acting as the main entry point for the application.
+ * Assembles all primary sections into a unified portfolio view.
+*/
 @Component({
   selector: 'app-landing-page',
   imports: [
@@ -19,7 +23,6 @@ import { FeedbackComponent } from './feedback/feedback';
   templateUrl: './landing-page.html',
   styleUrl: './landing-page.scss',
 })
-/**
- * Represents the MainPage class.
- */
-export class LandingPageComponent {}
+
+export class LandingPageComponent {
+}

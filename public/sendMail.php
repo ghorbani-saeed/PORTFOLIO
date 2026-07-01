@@ -1,75 +1,77 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type');
+// CORS headers
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
+header("Content-Type: application/json; charset=utf-8");
 
-function respond(int $statusCode, array $payload): void
-{
-    http_response_code($statusCode);
-    echo json_encode($payload);
-    exit;
+$siteEmail = "ghorbani.saeed@web.de";
+
+switch ($_SERVER['REQUEST_METHOD']) {
+    case 'OPTIONS':
+        http_response_code(200);
+        exit;
+
+    case 'POST':
+        $json = file_get_contents('php://input');
+        $params = json_decode($json);
+
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            http_response_code(400);
+            echo json_encode(['ok' => false, 'message' => 'Invalid JSON']);
+            exit;
+        }
+
+        $email = $params->email ?? '';
+        $name = $params->name ?? '';
+        // Akzeptiert 'message' oder 'msg' aus dem Frontend
+        $userMessage = $params->message ?? ($params->msg ?? '');
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL) || empty($name) || empty($userMessage)) {
+            http_response_code(400);
+            echo json_encode(['ok' => false, 'message' => 'Invalid input data']);
+            exit;
+        }
+
+        $safeName = htmlspecialchars($name, ENT_QUOTES, 'UTF-8');
+        $safeEmail = htmlspecialchars($email, ENT_QUOTES, 'UTF-8');
+        $safeMessage = nl2br(htmlspecialchars($userMessage, ENT_QUOTES, 'UTF-8'));
+
+        $recipient = $siteEmail; 
+        $subject = 'Portfolio Kontaktformular';
+
+        $mailBody = "
+            <strong>Name:</strong> {$safeName}<br>
+            <strong>Email:</strong> {$safeEmail}<br><br>
+            <strong>Nachricht:</strong><br>
+            {$safeMessage}
+        ";
+
+        $headers = [];
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=utf-8';
+        $headers[] = 'From: Portfolio <' . $siteEmail . '>'; 
+        $headers[] = 'Reply-To: ' . $safeEmail;
+        $headers[] = 'Return-Path: ' . $siteEmail; 
+
+        $success = mail(
+            $recipient,
+            $subject,
+            $mailBody,
+            implode("\r\n", $headers),
+            '-f ' . $siteEmail 
+        );
+
+        if ($success) {
+            echo json_encode(['ok' => true]);
+        } else {
+            http_response_code(500);
+            echo json_encode(['ok' => false, 'message' => 'Mail delivery failed']);
+        }
+        break;
+
+    default:
+        http_response_code(405);
+        echo json_encode(['ok' => false, 'message' => 'Method not allowed']);
+        exit;
 }
-
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(204);
-    exit;
-}
-
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    respond(405, ['ok' => false, 'message' => 'Method not allowed']);
-}
-
-$rawInput = file_get_contents('php://input');
-$data = json_decode($rawInput ?: '', true);
-
-if (!is_array($data)) {
-    respond(400, ['ok' => false, 'message' => 'Invalid request body']);
-}
-
-$name = trim((string)($data['name'] ?? ''));
-$email = trim((string)($data['email'] ?? ''));
-$message = trim((string)($data['msg'] ?? ($data['message'] ?? '')));
-
-if ($name === '' || $message === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    respond(400, ['ok' => false, 'message' => 'Invalid input']);
-}
-
-if (strlen($name) > 120 || strlen($email) > 200 || strlen($message) > 6000) {
-    respond(400, ['ok' => false, 'message' => 'Input too long']);
-}
-
-$safeName = str_replace(["\r", "\n"], '', $name);
-$safeEmail = str_replace(["\r", "\n"], '', $email);
-
-// Deine angepassten Daten - kein fremder Name mehr vorhanden!
-// $recipient = 'saeed-ghorban@web.de';
-// $sender = 'saeed-ghorban@web.de';
-
-$recipient = 'saeed.ghorbani@web.de'; 
-
-// HIER muss eine System-E-Mail deines Hosters hin (z.B. von deinem Server)
-// Wenn du gar nichts weißt, lass hier übergangsweise ein Minimum stehen, 
-// aber frage bei deinem Hoster (z.B. Strato, Ionos) nach der "Standard-System-E-Mail".
-$sender = 'noreply@' . $_SERVER['HTTP_HOST']; 
-
-$subject = 'Portfolio Kontaktformular';
-$subject = 'Message';
-$mailBody = "Name: {$safeName}\n";
-$mailBody .= "E-Mail: {$safeEmail}\n\n";
-$mailBody .= "Nachricht:\n{$message}\n";
-
-$headers = [];
-$headers[] = 'MIME-Version: 1.0';
-$headers[] = 'Content-Type: text/plain; charset=UTF-8';
-$headers[] = "From: {$sender}";
-$headers[] = "Reply-To: {$safeEmail}";
-
-$sent = mail($recipient, $subject, $mailBody, implode("\r\n", $headers));
-
-if (!$sent) {
-    error_log('sendMail.php: mail() returned false');
-    respond(500, ['ok' => false, 'message' => 'Mail not sent']);
-}
-
-respond(200, ['ok' => true]);

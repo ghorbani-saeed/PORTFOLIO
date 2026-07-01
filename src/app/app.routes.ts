@@ -4,7 +4,7 @@ import { LegalNotice } from './landing-page/legal-notice/legal-notice';
 import { PrivacyPolicy } from './landing-page/privacy-policy/privacy-policy';
 /**
  * Application route definitions.
- */
+*/
 export const routes: Routes = [
   { path: '', component: LandingPageComponent  },
   { path: 'legal-notice', component: LegalNotice },
