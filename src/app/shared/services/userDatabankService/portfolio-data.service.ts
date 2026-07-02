@@ -67,9 +67,16 @@ export class PortfolioDataService {
       {
         title: 'Pokedex',
         previewImg: '/assets/img/projects-photos/pokedex.jpeg',
-        langKey: 'PORTFOLIO.PROJECTS.Pokedex.DESCRIPTION',
+        langKey: 'PORTFOLIO.PROJECTS.POKEDEX.DESCRIPTION',
         repoUrl: 'https://github.com/ghorbani-saeed/Fotogram',
         liveUrl: 'https://ghorbani-saeed.github.io/Pokedex/',
+      },
+            {
+        title: 'Bestell App',
+        previewImg: '/assets/img/projects-photos/bestellApp.jpeg',
+        langKey: 'PORTFOLIO.PROJECTS.BESTELL_APP.DESCRIPTION',
+        repoUrl: 'https://github.com/ghorbani-saeed/Bestell-App',
+        liveUrl: 'https://ghorbani-saeed.github.io/Bestell-App/',
       },
     ];
   }
