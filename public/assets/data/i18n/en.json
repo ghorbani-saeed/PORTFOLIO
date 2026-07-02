@@ -100,14 +100,14 @@
     "ARROW_ALT": "Arrow icon",
     "GITHUB_LINK": "GitHub",
     "PROJECTS": {
-      "Pokedex": {
-        "DESCRIPTION": "Developed with HTML, CSS, and JavaScript, this project displays a list of Pokémon with search functionality, type-based color coding, overlays for detailed stats, and a responsive design."
-      },
       "EL_POLLO_LOCO": {
         "DESCRIPTION": "🎮 A fun 2D action game developed with HTML, CSS, and JavaScript, where the player controls a chicken running through various levels, overcoming obstacles, collecting coins, and fighting enemies. The game features animations, sound effects, background music, and simple level mechanics."
       },
-      "DA_BUBBLE": {
-        "DESCRIPTION": "Slack-style team messenger with channels, threads, and emoji reactions for seamless collaboration."
+      "POKEDEX": {
+        "DESCRIPTION": "Developed with HTML, CSS, and JavaScript, this project displays a list of Pokémon with search functionality, type-based color coding, overlays for detailed stats, and a responsive design."
+      },
+      "BESTELL_APP": {
+        "DESCRIPTION": "🍕 An interactive pizza and pasta ordering web app. The project features a dynamic menu, a fully functional shopping cart with real-time price calculation, and a fully responsive design for seamless ordering on all devices."
       }
     }
   },
