@@ -100,12 +100,16 @@
     "ARROW_ALT": "Pfeil-Icon",
     "GITHUB_LINK": "GitHub",
     "PROJECTS": {
-      "JOIN": {
-        "DESCRIPTION": "Dieses mit HTML, CSS und JavaScript entwickelte Projekt zeigt eine Liste von Pokémon mit einer Suchfunktion, farblicher Kennzeichnung basierend auf dem Pokémon-Typ, Overlays für detaillierte Statistiken und einem responsiven Design"
-      },
       "EL_POLLO_LOCO": {
         "DESCRIPTION": "🎮 Ein unterhaltsames 2D-Action-Spiel, bei dem der Spieler als Huhn durch verschiedene Levels läuft, Hindernisse überwindet, Münzen sammelt und gegen Gegner kämpft. Das Spiel enthält Animationen, Soundeffekte, Hintergrundmusik und einfache Levelmechaniken – entwickelt mit HTML, CSS und JavaScript."
+      },
+      "POKEDEX": {
+        "DESCRIPTION": "Dieses mit HTML, CSS und JavaScript entwickelte Projekt zeigt eine Liste von Pokémon mit Suchfunktion, typbasierter Farbkodierung, Overlays für detaillierte Statistiken und einem responsiven Design."
+      },
+      "BESTELL_APP": {
+        "DESCRIPTION": "🍕 Eine interaktive Web-App zur Bestellung von Pizza und Pasta. Das Projekt bietet ein dynamisches Menü, einen voll funktionsfähigen Warenkorb mit Echtzeit-Preisberechnung sowie ein vollständig responsives Design für eine nahtlose Bestellung auf allen Geräten."
       }
+
     }
   },
   "REFERENCES": {
