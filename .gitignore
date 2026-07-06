@@ -1,52 +1,17 @@
-# Custom project configuration for version control
+Thumbs.db
+*.log
 
-# --- IDE, Editor & System specific ---
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
 !.vscode/launch.json
 !.vscode/tasks.json
-.idea/
-*.iml
-.history/
-Thumbs.db
 
-# --- Build artifacts & Compiled files ---
+node_modules/
+
 dist/
-out-tsc/
 tmp/
 coverage/
-bazel-out/
 .angular/
 .angular/cache/
 *.tsbuildinfo
-
-# --- Project dependencies ---
-node_modules/
-
-# --- Log & Diagnostic files ---
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-testem.log
-libpeerconnection.log
-.sass-cache/
-connect.lock
-typings/
-__screenshots__/
-
-# --- Cloud & Deployment service integration ---
-.scully/
-.vercel/
-.netlify/
-.firebase/
-public/
-
-# --- Sensitive project configuration ---
-.env
-.env.*
-!.env.example
-!.env.template
