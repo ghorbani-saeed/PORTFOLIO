@@ -5,7 +5,7 @@ header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json; charset=utf-8");
 
-$siteEmail = "saeed.ghorbani@saeed-ghorbani.de";
+$siteEmail = "info@saeed-ghorbani.de";
 
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'OPTIONS':
