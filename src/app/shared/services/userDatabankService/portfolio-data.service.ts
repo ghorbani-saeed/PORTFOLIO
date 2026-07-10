@@ -99,7 +99,7 @@ export class PortfolioDataService {
         translationTextKey: 'REFERENCES.LIST.USER_1.TEXT',
       },
       {
-        authorName: 'Farbod Saraf (: Product Lead bei Miro ',
+        authorName: 'Prof. R.bashiri Materials Data Scientist ',
         translationRoleKey: 'REFERENCES.LIST.USER_2.ROLE',
         translationTextKey: 'REFERENCES.LIST.USER_2.TEXT',
       },

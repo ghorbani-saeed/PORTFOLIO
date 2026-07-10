@@ -119,11 +119,11 @@
     "LIST": {
       "USER_1": {
         "ROLE": "Team Partner",
-        "TEXT": "aeed has a real knack for cleanly transforming complex design concepts into responsive, high-performance Angular components. Communication was completely seamless, and he always proactively suggested clever solutions whenever project challenges arose. A fantastic team player!"
+        "TEXT": "Saeed has a real knack for cleanly transforming complex design concepts into responsive, high-performance Angular components. Communication was completely seamless, and he always proactively suggested clever solutions whenever project challenges arose. A fantastic team player!"
       },
       "USER_2": {
-        "ROLE": "Team Partner",
-        "TEXT": "Working with Saeed was an absolute pleasure. He brings remarkable structure to his work and delivered our frontend project not only on time, but also with outstanding code quality. You can completely rely on his word and his technical expertise at all times."
+        "ROLE": "Client",
+        "TEXT": "Saeed did an excellent job designing my portfolio. He was highly motivated, met every deadline, and was incredibly patient with my requested changes. His creativity, attention to detail, and collaborative attitude made the process seamless. I highly recommend him as a reliable and talented professional."
       },
       "USER_3": {
         "ROLE": "Frontend Engineer",
