@@ -24,7 +24,6 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         $email = $params->email ?? '';
         $name = $params->name ?? '';
-        // Akzeptiert 'message' oder 'msg' aus dem Frontend
         $userMessage = $params->message ?? ($params->msg ?? '');
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL) || empty($name) || empty($userMessage)) {
