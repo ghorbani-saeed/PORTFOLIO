@@ -21,8 +21,7 @@
   }
 
   &__caption-line {
-    @include headline-text.playful-headline-hover;
-    display: inline-block; // Nötig für die Animation
+    display: inline-block; 
   }
 
   &__caption {
