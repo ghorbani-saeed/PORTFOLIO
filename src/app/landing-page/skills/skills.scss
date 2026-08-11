@@ -42,7 +42,6 @@
     );
     text-align: center;
     transition: color 240ms ease;
-    @include headline-text.playful-headline-hover;
   }
 
   &__group-list {

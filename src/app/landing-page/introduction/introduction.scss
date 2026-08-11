@@ -53,7 +53,7 @@
   &__heading {
     margin: 0 0 2.5rem 0;
     white-space: nowrap;
-    @include headline-text.playful-headline-hover;
+   
 
     @include styles.setFont(
       $family: (

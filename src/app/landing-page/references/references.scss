@@ -44,7 +44,6 @@
       $letter-spacing: -0.03em
     );
     transition: color 220ms ease;
-    @include headline-text.playful-headline-hover;
   }
 
   &__subtitle {
