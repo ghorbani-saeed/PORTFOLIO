@@ -106,25 +106,58 @@
   }
 }
 
-// Pfeil-Sektion
+// Pfeil-Sektion & Hover-Animation (angepasst wie in Introduction)
 .skills-arrow-wrapper {
-  @include arrows.arrow-bounce;
   margin-top: clamp(2rem, 9vw, 5rem);
   left: 5%;
   align-self: flex-start;
-  display: block;
   text-decoration: none;
+  display: inline-block;
 
   @include styles.view-lg {
     left: 20%;
   }
 }
 
-.skills-arrow {
-  width: clamp(12rem, 15vw, 18rem);
-  height: clamp(12rem, 15vw, 18rem);
+.section-seperator {
+  width: clamp(10rem, 12vw, 14rem);
+  height: clamp(10rem, 12vw, 14rem);
+  position: relative;
+
   &__icon {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  #icon1 {
     display: block;
+    width: 100%;
+    top: -15%;
+    left: -15%;
+  }
+  #icon2 {
+    display: block;
+    width: 100%;
+    top: -15%;
+    left: -15%;
+    opacity: 0;
+  }
+  #icon3 {
+    display: block;
+    width: 100%;
+    top: 17%;
+    left: 17%;
+    opacity: 0;
+  }
+
+  &:hover #icon1 {
+    animation: frame1 360ms ease-in-out forwards;
+  }
+  &:hover #icon2 {
+    animation: frame2 360ms ease-in-out forwards;
+  }
+  &:hover #icon3 {
+    animation: frame3 360ms ease-in-out forwards;
   }
 }
 
@@ -139,6 +172,6 @@
 
 @include styles.view-lg {
   .skills__headline {
-    padding: 0 clamp(1rem, 2vw, 2rem);
+    padding: 0 clamp(1.0rem, 2vw, 2rem);
   }
 }

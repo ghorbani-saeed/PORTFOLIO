@@ -7,7 +7,7 @@ import { TranslatePipe } from '@ngx-translate/core';
  */
 @Component({
   selector: 'app-interoduction',
-  imports: [ TranslatePipe],
+  imports: [TranslatePipe],
   templateUrl: './introduction.html',
   styleUrl: './introduction.scss',
 })

@@ -1,40 +1,3 @@
-<!-- <section class="skills" id="skills" aria-labelledby="skills-title">
-  <div class="skills__container">
-    <div class="skills__header">
-      <h2 class="skills__caption" id="skills-title">{{ 'SKILLS.TITLE' | translate }}</h2>
-    </div>
-
-    <ul class="skills__group-list">
-      @for (item of userDBS.expertise; track item.title; let idx = $index) {
-        <li class="skills__group-item">
-          <img class="skills__tech-icon" [src]="item.icon" [alt]="item.title + ' icon'" />
-          <span class="skills__tech-name">{{ item.title }}</span>
-        </li>
-      }
-    </ul>
-
-    <div class="skills__box">
-      <img
-        class="skills__box-icon"
-        src="/assets/img/icons/04-skills/continued-learning.svg"
-        [attr.alt]="'SKILLS.CTA_ICON_ALT' | translate"
-      />
-      <p class="skills__box-text">
-        {{ 'SKILLS.CTA_TEXT_START' | translate }}
-        <a class="skills__box-link" href="#contact">{{ 'SKILLS.CTA_LINK' | translate }}</a>
-        {{ 'SKILLS.CTA_TEXT_END' | translate }}
-      </p>
-    </div>
-  </div>
-  <a
-    class="skills__divider-link"
-    href="#portfolio"
-    [attr.aria-label]="'SKILLS.SEPARATOR_ARIA' | translate"
-  >
-  </a>
-</section> -->
-
-
 <section class="skills" id="skills" aria-labelledby="skills-title">
   <div class="skills__container">
     <div class="skills__header">
@@ -64,9 +27,27 @@
     </div>
   </div>
 
+  <!-- Neuer Animations-Pfeil-Container -->
   <a class="skills-arrow-wrapper" href="#portfolio" [attr.aria-label]="'SKILLS.SEPARATOR_ARIA' | translate">
-    <div class="skills-arrow">
-      <img class="skills-arrow__icon arrow-icon" src="/assets/img/icons/09-arrows/arrow-diagonal/arrow-south-east.svg" alt="Pfeil" />
+    <div class="section-seperator" aria-hidden="true">
+      <img
+        id="icon1"
+        class="section-seperator__icon"
+        src="/assets/img/animation/arrows/leftToRight/arrow1.svg"
+        alt="Arrow-seperator1 icon"
+      />
+      <img
+        id="icon2"
+        class="section-seperator__icon"
+        src="/assets/img/animation/arrows/leftToRight/arrow2.svg"
+        alt="Arrow-seperator2 icon"
+      />
+      <img
+        id="icon3"
+        class="section-seperator__icon"
+        src="/assets/img/animation/arrows/leftToRight/arrow3.svg"
+        alt="Arrow-seperator3 icon"
+      />
     </div>
   </a>
 </section>

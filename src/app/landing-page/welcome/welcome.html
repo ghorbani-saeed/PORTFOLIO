@@ -11,14 +11,18 @@
     </div>
   </div>
 
-  <a class="welcome__scroll-btn" href="#about" style="text-decoration: none; color: inherit">
-    <div class="welcome__arrow-box">
+  <a class="welcome__email" [href]="'mailto:' + userDBS.ownerProfile.mail">
+    {{ userDBS.ownerProfile.mail }}
+  </a>
+
+  <div class="welcome__scroll" aria-hidden="true">
+    <div class="welcome__arrow-wrapper">
       <img
-        class="welcome__arrow arrow-icon"
+        class="welcome__arrow-icon"
         src="assets/img/icons/02-welcome/arrow-to-down.svg"
         [attr.alt]="'HERO.ARROW_ALT' | translate"
       />
     </div>
-    <span class="welcome__scroll-btn-hint">{{ 'HERO.SCROLL_TEXT' | translate }}</span>
-  </a>
+    <span class="welcome__scroll-text">{{ 'HERO.SCROLL_TEXT' | translate }}</span>
+  </div>
 </section>

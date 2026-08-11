@@ -12,13 +12,60 @@
   @include styles.setFlex($d: column);
 
   &__section-divider {
-    @include arrows.arrow-bounce;
     margin-top: clamp(2rem, 9vw, 5rem);
-    right: 5%;
+    right: 10%; // <--- Platziert den Pfeil auf der rechten Seite
     align-self: flex-end;
+    text-decoration: none;
+    display: inline-block;
+
+    // Spiegelt den Pfeil, damit er von rechts nach links zeigt & animiert
+    transform: scaleX(-1);
 
     @include styles.view-lg {
-      right: 20%;
+      right: 20%; // <--- Für große Bildschirme auf der rechten Seite
+    }
+  }
+
+  // Die Animations-Logik deines Freundes integriert
+  .section-seperator {
+    width: clamp(10rem, 12vw, 14rem);
+    height: clamp(10rem, 12vw, 14rem);
+    position: relative;
+
+    &__icon {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    #icon1 {
+      display: block;
+      width: 100%;
+      top: -15%;
+      left: -15%;
+    }
+    #icon2 {
+      display: block;
+      width: 100%;
+      top: -15%;
+      left: -15%;
+      opacity: 0;
+    }
+    #icon3 {
+      display: block;
+      width: 100%;
+      top: 17%;
+      left: 17%;
+      opacity: 0;
+    }
+
+    &:hover #icon1 {
+      animation: frame1 360ms ease-in-out forwards;
+    }
+    &:hover #icon2 {
+      animation: frame2 360ms ease-in-out forwards;
+    }
+    &:hover #icon3 {
+      animation: frame3 360ms ease-in-out forwards;
     }
   }
 
@@ -53,7 +100,6 @@
   &__heading {
     margin: 0 0 2.5rem 0;
     white-space: nowrap;
-   
 
     @include styles.setFont(
       $family: (
@@ -152,7 +198,7 @@
       justify-content: center;
     }
 
-    @include styles.view-st  {
+    @include styles.view-st {
       width: 220px !important;
       min-width: 220px !important;
     }

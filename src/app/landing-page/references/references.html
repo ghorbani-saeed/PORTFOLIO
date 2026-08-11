@@ -1,4 +1,4 @@
-<section class="references" aria-labelledby="references-title">
+<!-- <section class="references" aria-labelledby="references-title">
   <div class="references__container">
     <h2 class="references__caption" id="references-title">{{ 'REFERENCES.TITLE' | translate }}</h2>
     <p class="references__subtitle">
@@ -22,5 +22,54 @@
   </div>
   <a class="references__divider-link" href="#contact" [attr.aria-label]="'REFERENCES.SEPARATOR_ARIA' | translate">
     <img class="arrow-icon" src="/assets/img/icons/09-arrows/arrow-diagonal/arrow-south-west.svg" alt="">
+  </a>
+</section> -->
+
+
+<section class="references" aria-labelledby="references-title">
+  <div class="references__container">
+    <h2 class="references__caption" id="references-title">{{ 'REFERENCES.TITLE' | translate }}</h2>
+    <p class="references__subtitle">
+      {{ 'REFERENCES.INTRO' | translate }}
+    </p>
+
+    <div class="references__group-list">
+      @for (item of userDBS.clientQuotes; track item.authorName; let idx = $index) {
+        <article class="references__testimonial">
+          <img
+            class="references__quote-icon"
+            src="/assets/img/icons/10-references/quote.svg"
+            [attr.alt]="'REFERENCES.QUOTE_ALT' | translate"
+          />
+          <h3 class="references__author">{{ item.authorName }}</h3>
+          <p class="references__position">{{ item.translationRoleKey | translate }}</p>
+          <p class="references__paragraph">{{ item.translationTextKey | translate }}</p>
+        </article>
+      }
+    </div>
+  </div>
+
+  <!-- Animations-Pfeil-Container (horizontal gespiegelt für Rechts-nach-Links-Verhalten) -->
+  <a class="references__divider-link" href="#contact" [attr.aria-label]="'REFERENCES.SEPARATOR_ARIA' | translate">
+    <div class="section-seperator" aria-hidden="true">
+      <img
+        id="icon1"
+        class="section-seperator__icon"
+        src="/assets/img/animation/arrows/leftToRight/arrow1.svg"
+        alt="Arrow-seperator1 icon"
+      />
+      <img
+        id="icon2"
+        class="section-seperator__icon"
+        src="/assets/img/animation/arrows/leftToRight/arrow2.svg"
+        alt="Arrow-seperator2 icon"
+      />
+      <img
+        id="icon3"
+        class="section-seperator__icon"
+        src="/assets/img/animation/arrows/leftToRight/arrow3.svg"
+        alt="Arrow-seperator3 icon"
+      />
+    </div>
   </a>
 </section>
