@@ -71,13 +71,6 @@ export class PortfolioDataService {
         repoUrl: 'https://github.com/ghorbani-saeed/Fotogram',
         liveUrl: 'https://ghorbani-saeed.github.io/Pokedex/',
       },
-            {
-        title: 'Bestell App',
-        previewImg: '/assets/img/projects-photos/bestellApp.jpeg',
-        langKey: 'PORTFOLIO.PROJECTS.BESTELL_APP.DESCRIPTION',
-        repoUrl: 'https://github.com/ghorbani-saeed/Bestell-App',
-        liveUrl: 'https://ghorbani-saeed.github.io/Bestell-App/',
-      },
     ];
   }
 
