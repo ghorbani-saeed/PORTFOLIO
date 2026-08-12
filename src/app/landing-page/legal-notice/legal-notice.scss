@@ -68,7 +68,6 @@
     padding: clamp(1rem, 4vmin, 3rem) 0;
     text-align: left;
     letter-spacing: -0.02em;
-    @include headline-text.playful-headline-hover;
     &:hover {
       color: #00bc8f;
     }

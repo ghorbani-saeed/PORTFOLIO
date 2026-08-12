@@ -1,10 +1,9 @@
 @use '../../../styles/index' as styles;
 @use '../../../styles/btn-animations' as btn-animations;
-@use '../../../styles/headline-text' as headline-text;
 @use '../../../styles/photos-animations' as photos-animations;
 
 .portfolio {
-  &__container {
+  &__frame {
     max-width: styles.$g-max-width;
     padding: calc(1.5 * styles.$header-height) styles.$g-pad-x calc(1 * styles.$header-height);
     width: 100%;
@@ -12,12 +11,12 @@
     @include styles.setFlex($d: column, $gap: clamp(3rem, 5vw, 7rem));
   }
 
-  &__top-bar {
+  &__header {
     @include styles.setFlex($d: column, $gap: clamp(1.2rem, 3vw, 2rem));
     text-align: center;
   }
 
-  &__caption {
+  &__title {
     @include styles.setFont(
       $family: (
         'Syne',
@@ -29,29 +28,54 @@
       $letter-spacing: -0.01em
     );
     transition: color 240ms ease;
+
+    &:hover {
+      color: #00bc8f;
+      cursor: pointer;
+    }
   }
 
-  &__subheading {
+  &__subtitle {
     margin-bottom: 2rem;
     max-width: 47rem;
     @include styles.setFont($size: clamp(1em, 2vw, 1.4em), $weight: 400, $line-height: 1.2);
+    pointer-events: none;
   }
 
-  &__group-list {
+  &__list {
     @include styles.setFlex($d: column, $gap: clamp(3rem, 9vw, 11rem));
     width: 100%;
   }
 
-  &__card {
-    @include styles.setFlex($jc: space-between, $gap: clamp(2.5rem, 8vw, 9rem));
+  &__project {
+    position: relative;
+    @include styles.setFlex($jc: space-between, $ai: center, $gap: clamp(2.5rem, 8vw, 9rem));
     width: 100%;
+    transition: transform 360ms ease;
+    cursor: pointer;
   }
 
-  &__card--reverse {
+  &__project--reverse {
     flex-direction: row-reverse;
+
+    .portfolio__media {
+      &::after {
+        transform: translate(calc(-1 * #{styles.$g-frame-gap}), #{styles.$g-frame-gap});
+      }
+    }
+
+    .portfolio__hover-arrow-box {
+      top: 50%;
+      left: 0%;
+      transform: translate(-80%, -90%) scale(0.5);
+    }
+
+    .portfolio__details {
+      transform: translateX(100%);
+    }
   }
 
-  &__preview-link {
+  &__media-link {
     width: 50%;
     display: block;
     color: inherit;
@@ -62,37 +86,74 @@
     position: relative;
     width: 100%;
     z-index: 1;
-    overflow: hidden;
     border-radius: 2.5%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transform: translate(#{styles.$g-frame-gap}, #{styles.$g-frame-gap});
+      border: 0.3rem solid #000000;
+      border-radius: 2.5%;
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+    }
   }
 
-  &__img {
+  &__image {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
     height: auto;
     display: block;
-    border: 0.3rem solid transparent;
     border-radius: 2.5%;
-    transition: transform 0.3s ease;
+    filter: grayscale(1);
+    transition: filter 0.3s ease;
     @include photos-animations.image-zoom-effect;
   }
 
-  &__hover-arrow-icon {
-    display: none !important;
+  &__hover-arrow-box {
+    @include styles.setFlex();
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    width: clamp(3.6rem, 6vw, 4.6rem);
+    height: clamp(3.6rem, 6vw, 4.6rem);
+    border-radius: 50%;
+    background: #000000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(80%, -90%) scale(0.5);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    z-index: 2;
   }
 
-  &__info {
+  &__hover-arrow-icon {
+    width: 60%;
+    height: auto;
+    padding: 0.2rem;
+    filter: invert(1);
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+  }
+
+  &__details {
     width: 50%;
-    opacity: 1;
-    transform: none;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
     @include styles.setFlex($d: column, $ai: flex-start);
-    padding-top: 5%;
+    padding-top: 2%;
     overflow: hidden;
   }
 
-  &__title {
+  &__name {
     margin: 0 0 1rem;
     @include styles.setFont(
       $family: (
@@ -113,15 +174,17 @@
   }
 
   &__description {
-    margin: 0 0 1rem;
-    width: 80%;
+    margin: 0 0 1.5rem;
+    width: 90%;
     @include styles.setFont($size: clamp(1em, 2vmin, 1.3em), $line-height: 1.35);
   }
 
-  &__anchor {
+  &__link {
     padding: 0.1rem 3rem;
     border: 0.35rem solid #000000;
     border-radius: 7%;
+    text-decoration: none;
+    color: inherit;
     @include btn-animations.button-hover;
     @include styles.setFont($size: 1em, $weight: 500);
     transition:
@@ -137,18 +200,18 @@
     }
   }
 
-  &__number-box {
+  &__counter {
     position: absolute;
     top: -10%;
     right: 0%;
   }
 
-  &__card--reverse &__number-box {
-    text-align: left;
+  &__project--reverse &__counter {
+    right: auto;
     left: 0%;
   }
 
-  &__number-box-value {
+  &__counter-value {
     @include styles.setFont(
       $family: (
         'Syne',
@@ -157,58 +220,67 @@
       $size: clamp(2rem, 4.5vw, 4.8rem),
       $weight: 700
     );
+    cursor: pointer;;
+
   }
 
-  &__card:hover &__img {
+  // Hover-Effekte (Bild wird farbig, Rahmen schiebt sich raus, Pfeil erscheint und Text fährt ein)
+  &__project:hover &__image {
+    filter: grayscale(0);
     transform: scale(1.03);
-    filter: grayscale(0) !important;
+  }
+
+  &__project:hover &__media::after {
+    opacity: 1;
+  }
+
+  &__project:hover &__hover-arrow-box {
+    opacity: 1;
+    transform: translate(80%, -90%) scale(1);
+  }
+
+  &__project--reverse:hover &__hover-arrow-box {
+    opacity: 1;
+    transform: translate(-80%, -90%) scale(1);
+  }
+
+  &__project:hover &__hover-arrow-icon {
+    transform: rotate(-45deg);
+  }
+
+  &__project:hover &__details {
+    opacity: 1;
+    transform: translateX(0%);
   }
 }
 
-// Hier die angepasst Mixin-Nutzung (entsprechend Nummer 1)
+// Media Query für große Bildschirme/Tablets
 @include styles.view-lg {
   .portfolio {
     &__subheading {
       text-align: left;
     }
-    &__group-list {
+
+    &__list {
       gap: clamp(3rem, 13vw, 9rem);
     }
-    &__card,
-    &__card--reverse {
-      flex-direction: column;
-      width: 100%;
-    }
-    &__card {
-      align-items: flex-start;
-    }
-    &__card--reverse {
-      align-items: flex-end;
-      .portfolio__info {
-        transform: none;
-        align-items: flex-end;
-      }
-      .portfolio__description {
-        text-align: right;
-      }
-    }
-    &__media {
-      width: 100%;
-    }
-    &__preview-link {
-      width: 91%;
-    }
-    &__info {
-      width: 95%;
-      transform: none;
-    }
-  }
-}
 
-@include styles.view-sm {
-  .portfolio {
-    &__container {
-      padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
+    &__project,
+    &__project--reverse {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    &__media-link {
+      width: 100%;
+    }
+
+    &__details {
+      width: 100%;
+      padding-top: 1.5rem;
+      transform: none; // Auf kleineren Screens direkt anzeigen
+      opacity: 1;
     }
   }
 }

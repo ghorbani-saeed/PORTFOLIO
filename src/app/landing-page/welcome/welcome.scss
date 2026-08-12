@@ -21,7 +21,7 @@
   }
 
   &__caption-line {
-    display: inline-block; 
+    display: inline-block;
   }
 
   &__caption {
@@ -36,6 +36,7 @@
       $line-height: 0.9,
       $letter-spacing: -0.01em
     );
+    pointer-events: none;
   }
 
   &__down {
@@ -62,6 +63,7 @@
       $color: #00bc8f,
       $letter-spacing: -0.05em
     );
+    pointer-events: none;
   }
 
   &__email {
@@ -71,9 +73,11 @@
     text-decoration: none;
     writing-mode: vertical-lr;
     transform: rotate(180deg);
+    font-size: 24px;
+    color: #000000;
+    pointer-events: none;
   }
 
-  // Scroll-Container (Größe hier anpassen, um den Pfeil größer/kleiner zu machen)
   &__scroll {
     position: absolute;
     right: styles.$g-pad-x;

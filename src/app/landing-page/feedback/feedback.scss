@@ -24,7 +24,12 @@
     margin: clamp(2rem, 9vmin, 7rem) auto 0;
     @include styles.setFlex($d: column, $jc: space-around, $gap: clamp(2rem, 6vw, 7rem));
   }
+&__subheadline , &__headline {
+ 
+    pointer-events: none;
 
+
+ }
   &__heading {
     align-self: flex-start;
     @include styles.setFont(
@@ -38,6 +43,10 @@
       $color: inherit
     );
     transition: color 240ms ease;
+    cursor: pointer;
+    &:hover{
+      color: #00bc8f;
+    }
   }
 
   &__inner-box {

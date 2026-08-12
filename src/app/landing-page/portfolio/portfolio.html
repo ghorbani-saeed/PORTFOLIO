@@ -1,53 +1,37 @@
 <section class="portfolio" id="portfolio" [attr.aria-label]="'PORTFOLIO.ARIA_LABEL' | translate">
-  <div class="portfolio__container">
-    <header class="portfolio__top-bar">
-      <h2 class="portfolio__caption" id="portfolio__caption">
-        {{ 'PORTFOLIO.TITLE' | translate }}
-      </h2>
-      <p class="portfolio__subheading">
+  <div class="portfolio__frame">
+    <header class="portfolio__header">
+      <h2 class="portfolio__title" id="portfolio-title">{{ 'PORTFOLIO.TITLE' | translate }}</h2>
+      <p class="portfolio__subtitle">
         {{ 'PORTFOLIO.SUBTITLE' | translate }}
       </p>
     </header>
 
-    <div class="portfolio__group-list">
+    <div class="portfolio__list">
       @for (project of userDBS.featuredWork; track project.title; let idx = $index) {
-        <article class="portfolio__card" [class.portfolio__card--reverse]="idx % 2 === 1">
-          <a
-            class="portfolio__preview-link"
-            [href]="project.liveUrl"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <figure class="portfolio__figure">
-              <img
-                class="portfolio__img"
-                [src]="project.previewImg"
-                [alt]="project.title + ' project preview'"
-              />
-            </figure>
+      <article class="portfolio__project" [class.portfolio__project--reverse]="idx % 2 === 1">
+        <a class="portfolio__media-link" [href]="project.liveUrl" target="_blank" rel="noreferrer">
+          <figure class="portfolio__media">
+            <img class="portfolio__image" [src]="project.previewImg" [alt]="project.title + ' project preview'" />
+            <span class="portfolio__hover-arrow-box" aria-hidden="true">
+              <img class="portfolio__hover-arrow-icon" src="/assets/img/icons/arrow.svg"
+                [attr.alt]="'PORTFOLIO.ARROW_ALT' | translate" />
+            </span>
+          </figure>
+        </a>
+
+        <div class="portfolio__details">
+          <h3 class="portfolio__name">{{ project.title }}</h3>
+          <p class="portfolio__description">{{ project.langKey | translate }}</p>
+          <a class="portfolio__link" [href]="project.repoUrl" target="_blank" rel="noreferrer">
+            {{ 'PORTFOLIO.GITHUB_LINK' | translate }}
           </a>
+        </div>
 
-          <div class="portfolio__info">
-            <h3 class="portfolio__title">{{ project.title }}</h3>
-            <p class="portfolio__description">{{ project.langKey | translate }}</p>
-            <a
-              class="portfolio__anchor"
-              [href]="project.repoUrl"
-              target="_blank"
-              rel="noreferrer"
-            >
-              {{ 'PORTFOLIO.GITHUB_LINK' | translate }}
-            </a>
-          </div>
-
-          <div 
-            class="portfolio__number-box" 
-            [class.portfolio__number-box--right]="idx % 2 === 0" 
-            [class.portfolio__number-box--left]="idx % 2 === 1"
-           >          
-            <span class="portfolio__number-box-value">{{ getCounterLabel(idx) }}</span>
-          </div>
-        </article>
+        <div class="portfolio__counter">
+          <span class="portfolio__counter-value">{{ getCounterLabel(idx) }}</span>
+        </div>
+      </article>
       }
     </div>
   </div>

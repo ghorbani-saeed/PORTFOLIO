@@ -2,7 +2,6 @@
 @use '../../../styles/arrows' as arrows;
 @use '../../../styles/btn-animations' as btn_animations;
 @use '../../../styles/headline-text' as headline-text;
-@use '../../../styles/photos-animations' as photos-animations;
 
 .introduction {
   padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
@@ -13,23 +12,20 @@
 
   &__section-divider {
     margin-top: clamp(2rem, 9vw, 5rem);
-    right: 10%; // <--- Platziert den Pfeil auf der rechten Seite
+    right: 10%;
     align-self: flex-end;
     text-decoration: none;
     display: inline-block;
-
-    // Spiegelt den Pfeil, damit er von rechts nach links zeigt & animiert
     transform: scaleX(-1);
 
     @include styles.view-lg {
-      right: 20%; // <--- Für große Bildschirme auf der rechten Seite
+      right: 20%;
     }
   }
 
-  // Die Animations-Logik deines Freundes integriert
   .section-seperator {
-    width: clamp(10rem, 12vw, 14rem);
-    height: clamp(10rem, 12vw, 14rem);
+    width: clamp(20rem, 25vw, 30rem);
+    height: clamp(20rem, 25vw, 30rem);
     position: relative;
 
     &__icon {
@@ -111,6 +107,11 @@
       $line-height: 0.8,
       $letter-spacing: -0.02em
     );
+    &:hover{
+      cursor: pointer;
+      color: #00bc8f;
+
+    }
   }
 
   &__paragraphbox {
@@ -122,6 +123,7 @@
       align-items: center;
       text-align: center;
     }
+    pointer-events: none;
   }
 
   &__summary {
@@ -207,21 +209,32 @@
   &__avatar-holder {
     position: relative;
     border-radius: 1.5rem;
-    overflow: hidden;
     width: 100%;
-    @include photos-animations.profile-picture-tilt;
 
-    &:hover .about-me__portrait {
-      transform: scale(1.04);
+    // Der herausrutschende schwarze Rahmen beim Hover
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      transform: translate(0, 0);
+      border: 0.3rem solid #000000;
+      border-radius: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        transform 220ms ease,
+        opacity 220ms ease;
+    }
+
+    &:hover::after {
+      transform: translate(calc(-1 * #{styles.$g-frame-gap}), calc(1 * #{styles.$g-frame-gap}));
+      opacity: 1;
     }
 
     @include styles.view-lg {
       width: 100% !important;
       aspect-ratio: 3 / 4;
       border-radius: 1.5rem;
-      &:hover .introduction__portrait {
-        transform: none;
-      }
     }
   }
 
@@ -235,13 +248,45 @@
     display: block;
     border: none;
     outline: none;
+    cursor: pointer;
 
     @include styles.view-lg {
       width: 100% !important;
       height: 100% !important;
       object-fit: cover;
       border-radius: 1.5rem;
-      transition: none;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .introduction {
+    &__inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: clamp(2rem, 6vw, 3rem);
+    }
+
+    &__main-content {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__media-aside {
+      margin: auto;
+      width: 90%;
+    }
+
+    &__paragraphbox {
+      max-width: 100%;
+    }
+
+    &__summary {
+      max-width: 100%;
+    }
+
+    &__action-link {
+      align-self: center;
     }
   }
 }

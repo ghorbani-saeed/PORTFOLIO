@@ -24,6 +24,7 @@
     transform: translateY(-50%);
     @include styles.setFlex($gap: clamp(1rem, 3vw, 2rem));
     padding: 0 clamp(1.6rem, 4vw, 3.5rem);
+   
   }
 
   &__caption {
@@ -42,6 +43,11 @@
     );
     text-align: center;
     transition: color 240ms ease;
+     &:hover{
+      color: #00bc8f;
+      cursor: pointer;
+    }
+
   }
 
   &__group-list {
@@ -50,6 +56,7 @@
     @include styles.setFlex($wrap: wrap);
     row-gap: clamp(1.5rem, 5vw, 7rem);
     column-gap: clamp(1.5rem, 6vw, 8rem);
+    cursor: pointer;
   }
 
   &__group-item {
@@ -120,8 +127,8 @@
 }
 
 .section-seperator {
-  width: clamp(10rem, 12vw, 14rem);
-  height: clamp(10rem, 12vw, 14rem);
+  width: clamp(20rem, 25vw, 30rem);
+  height: clamp(20rem, 25vw, 30rem);
   position: relative;
 
   &__icon {
