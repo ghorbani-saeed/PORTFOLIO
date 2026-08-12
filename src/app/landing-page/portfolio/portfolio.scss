@@ -43,12 +43,13 @@
   }
 
   &__list {
-    @include styles.setFlex($d: column, $gap: clamp(3rem, 9vw, 11rem));
+    @include styles.setFlex($d: column, $gap: clamp(4rem, 10vw, 12rem));
     width: 100%;
   }
 
   &__project {
     position: relative;
+    margin-top: 3rem; // Schafft oben Platz für den Zähler
     @include styles.setFlex($jc: space-between, $ai: center, $gap: clamp(2.5rem, 8vw, 9rem));
     width: 100%;
     transition: transform 360ms ease;
@@ -200,9 +201,10 @@
     }
   }
 
+  /* Zähler sauber platziert, damit er nie abgeschnitten wird */
   &__counter {
     position: absolute;
-    top: -10%;
+    top: -4.5rem;
     right: 0%;
   }
 
@@ -220,11 +222,10 @@
       $size: clamp(2rem, 4.5vw, 4.8rem),
       $weight: 700
     );
-    cursor: pointer;;
-
+    cursor: pointer;
   }
 
-  // Hover-Effekte (Bild wird farbig, Rahmen schiebt sich raus, Pfeil erscheint und Text fährt ein)
+  // Hover-Effekte
   &__project:hover &__image {
     filter: grayscale(0);
     transform: scale(1.03);
@@ -252,9 +253,14 @@
     opacity: 1;
     transform: translateX(0%);
   }
+
+  &__project--reverse:hover &__details {
+    opacity: 1;
+    transform: translateX(0%);
+  }
 }
 
-// Media Query für große Bildschirme/Tablets
+// Media Query für große Bildschirme/Tablets (ab ca. 900px)
 @include styles.view-lg {
   .portfolio {
     &__subheading {
@@ -270,6 +276,16 @@
       flex-direction: column;
       align-items: flex-start;
       width: 100%;
+      margin-top: 2rem;
+    }
+
+    &__counter {
+      position: static;
+      margin-bottom: 0.8rem;
+    }
+
+    &__project--reverse &__counter {
+      position: static;
     }
 
     &__media-link {
@@ -279,8 +295,22 @@
     &__details {
       width: 100%;
       padding-top: 1.5rem;
-      transform: none; // Auf kleineren Screens direkt anzeigen
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    &__project--reverse &__details {
+      transform: translateX(-100%);
+    }
+
+    &__project:hover &__details {
       opacity: 1;
+      transform: translateX(0%);
+    }
+
+    &__project--reverse:hover &__details {
+      opacity: 1;
+      transform: translateX(0%);
     }
   }
 }

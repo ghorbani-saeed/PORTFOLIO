@@ -8,6 +8,7 @@
   margin: 0;
   padding: calc(1.5 * styles.$header-height) styles.$g-pad-x 0;
   z-index: 1;
+  position: relative;
   @include styles.setFont($color: #ffffff);
   top: calc(styles.$footer-height / 3.8);
   clip-path: polygon(0 0, 100% clamp(10%, 20vw, 15%), 100% 100%, 0 100%);
@@ -24,19 +25,16 @@
     margin: clamp(2rem, 9vmin, 7rem) auto 0;
     @include styles.setFlex($d: column, $jc: space-around, $gap: clamp(2rem, 6vw, 7rem));
   }
-&__subheadline , &__headline {
- 
+
+  &__subheadline, 
+  &__headline {
     pointer-events: none;
+  }
 
-
- }
   &__heading {
     align-self: flex-start;
     @include styles.setFont(
-      $family: (
-        'Syne',
-        sans-serif,
-      ),
+      $family: ('Syne', sans-serif),
       $size: clamp(3em, 9vw, 5.5em),
       $weight: 800,
       $line-height: 1,
@@ -44,7 +42,7 @@
     );
     transition: color 240ms ease;
     cursor: pointer;
-    &:hover{
+    &:hover {
       color: #00bc8f;
     }
   }
@@ -76,9 +74,7 @@
     border: 0.2rem solid transparent;
     border-bottom: 0.2rem solid #ffffffcd;
     @include styles.setFont($size: 1em, $weight: 400, $color: inherit);
-    transition:
-      border-color 220ms ease,
-      box-shadow 220ms ease;
+    transition: border-color 220ms ease, box-shadow 220ms ease;
 
     &:hover {
       border-color: #ffffff;
@@ -120,10 +116,7 @@
     transform: translateY(-50%);
     background: #000000;
     @include styles.setFont($size: 1em, $weight: 100, $color: #ffffff);
-    transition:
-      top 0.2s ease,
-      transform 360ms ease,
-      font-size 0.2s ease;
+    transition: top 0.2s ease, transform 360ms ease, font-size 0.2s ease;
   }
 
   &__status-icon-container {
@@ -184,10 +177,7 @@
     width: 2.4rem;
     height: 2.4rem;
     @include styles.setFlex();
-    transition:
-      background-color 220ms ease,
-      border-radius 220ms ease,
-      transform 220ms ease;
+    transition: background-color 220ms ease, border-radius 220ms ease, transform 220ms ease;
   }
 
   &__checkbox-input {
@@ -225,13 +215,9 @@
     text-decoration-color: transparent;
     text-underline-offset: 0.14em;
     transform-origin: center;
-    transition:
-      color 220ms ease,
-      text-decoration-color 220ms ease,
-      transform 220ms ease;
+    transition: color 220ms ease, text-decoration-color 220ms ease, transform 220ms ease;
   }
 
-  // HIER KORRIGIERT: contact-me zu feedback geändert
   &__checkbox:hover .feedback__checkbox-input-container {
     border-radius: 50%;
     transform: scale(1.5);
@@ -252,21 +238,12 @@
     border: 0.2rem solid #4d4d4d;
     background: transparent;
     @include styles.setFont(
-      $family: (
-        'Syne',
-        sans-serif,
-      ),
+      $family: ('Syne', sans-serif),
       $size: clamp(1em, 9vw, 1.1em),
       $weight: 500,
       $color: #7a7a7a
     );
-
-    transition:
-      width 240ms ease,
-      transform 240ms ease,
-      box-shadow 240ms ease,
-      border-color 240ms ease,
-      color 240ms ease;
+    transition: width 240ms ease, transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease, color 240ms ease;
   }
 
   &__action-btn--enabled {
@@ -305,30 +282,37 @@
     z-index: 1500;
   }
 
+  /* Stoßdämpfer-Effekt: Federt beim Hovern nach unten und schnellt beim Weggehen nach oben zurück */
   &__jump-top {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 10rem;
-    height: 10rem;
-    z-index: 1;
+    right: 2rem;
+    bottom: 2rem;
+    width: 6rem;
+    height: 6rem;
+    z-index: 10;
     @include styles.setFlex();
-    object-fit: fill;
-    background-image: url('/assets/img/icons/09-arrows/feedback-arrows/arrow-to-up-white.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    transition:
-      transform 0.2s ease,
-      filter 0.2s ease;
+    text-decoration: none;
+    transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: #ffffff;
+      transition: fill 280ms ease, filter 280ms ease;
+      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+    }
 
     &:hover {
-      filter: brightness(1.2) drop-shadow(0px 0px 8px rgba(0, 188, 143, 0.4));
-      animation: arrowBounceGlobal 0.8s ease-in-out infinite;
+      transform: translateY(0.6rem);
+
+      svg {
+        fill: #00bc8f;
+        filter: drop-shadow(0 0 6px rgba(0, 188, 143, 0.5));
+      }
     }
 
     &:active {
-      transform: scale(0.9);
+      transform: translateY(0.6rem) scale(0.9);
     }
   }
 }
@@ -349,8 +333,8 @@
       display: flex;
       width: 6rem;
       height: 6rem;
-      bottom: 1rem;
-      right: 1rem;
+      bottom: 2rem;
+      right: 2rem;
     }
   }
 }
@@ -358,25 +342,20 @@
 @media (max-width: 500px) {
   .feedback {
     &__wrapper {
-      // Wir geben dem Frame unten extra Platz (Padding), damit der Pfeil Platz hat
       padding-bottom: 8rem;
     }
 
     &__jump-top {
-      right: auto; // Setzt den alten Rechts-Abstand zurück
-      bottom: 1rem; // Abstand ganz unten vom Frame
-      left: 50%; // Setzt den Startpunkt genau in die Mitte (50%)
-      transform: translateX(
-        -50%
-      ); // Verschiebt den Pfeil um die eigene Hälfte zurück -> exakt zentriert!
+      right: auto;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
 
       &:hover {
-        filter: none; // Entfernt das Leuchten (oder lass es drin, wenn du magst)
-        animation: none !important; // DEAKTIVIERT DIE ANIMATION (Pfeil steht absolut still!)
+        transform: translateX(-50%) translateY(0.6rem);
       }
 
       &:active {
-        // Da wir oben transform nutzen, müssen wir das scale() für den Klick hier kombinieren
         transform: translateX(-50%) scale(0.9);
       }
     }
