@@ -70,6 +70,7 @@
     letter-spacing: -0.02em;
     &:hover {
       color: #00bc8f;
+      cursor: pointer;
     }
 
     @include styles.setFont(
