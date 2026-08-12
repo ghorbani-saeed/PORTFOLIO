@@ -37,21 +37,20 @@
     width: 7rem;
     height: 3.2rem;
     font-size: 1em;
-    transition:
-      width 220ms ease,
-      transform 220ms ease,
-      filter 220ms ease;
     z-index: 9999;
-    @include arrows.arrow-bounce;
+    transition: transform 250ms ease, filter 250ms ease;
 
     img {
       width: 100%;
       height: 100%;
+      transition: transform 250ms ease, filter 250ms ease;
     }
 
     &:hover {
-      filter: brightness(1.15) drop-shadow(-2px 4px 6px rgba(0, 188, 143, 0.3));
-      animation: arrowBounceGlobal 0.8s ease-in-out infinite;
+      img {
+        transform: translateX(-4rem); 
+        filter: invert(48%) sepia(79%) saturate(2476%) hue-rotate(130deg) brightness(95%) contrast(101%); 
+      }
     }
 
     &:active {
