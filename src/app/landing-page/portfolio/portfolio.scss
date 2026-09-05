@@ -295,22 +295,14 @@
     &__details {
       width: 100%;
       padding-top: 1.5rem;
-      opacity: 0;
-      transform: translateX(-100%);
+      opacity: 1;
+      transform: none;
     }
 
     &__project--reverse &__details {
-      transform: translateX(-100%);
+      transform: none;
     }
 
-    &__project:hover &__details {
-      opacity: 1;
-      transform: translateX(0%);
-    }
-
-    &__project--reverse:hover &__details {
-      opacity: 1;
-      transform: translateX(0%);
-    }
+   
   }
 }
