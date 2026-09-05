@@ -26,6 +26,7 @@ img{
 html {
   @include styles.setFont($size: 10px);
   scroll-padding-top: styles.$header-height;
+  scroll-padding-top: calc(styles.$header-height + 2rem);
   // overflow-y: scroll;
   // scrollbar-gutter: stable;
   // overflow-x: hidden;

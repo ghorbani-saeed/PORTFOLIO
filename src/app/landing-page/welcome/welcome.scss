@@ -4,11 +4,15 @@
 
 .welcome {
   position: relative;
-  height: calc(100vh - styles.$header-height);
-  padding: clamp(2rem, 6vmin, 6rem) styles.$g-pad-x;
+  min-height: 100dvh;
+  padding: calc(styles.$header-height + 2rem) styles.$g-pad-x 4rem;
+  justify-content: center;
+  // min-height: calc(100dvh - styles.$header-height);
+  // padding: clamp(2rem, 6vmin, 6rem) styles.$g-pad-x;
   width: 100%;
   max-width: styles.$g-max-width;
   margin: 0 auto;
+  scroll-margin-top: calc(styles.$header-height + 3rem);
 
   &__inner-box {
     display: flex;
@@ -106,4 +110,5 @@
     @include styles.setFont($weight: 300);
     text-align: center;
   }
+
 }
