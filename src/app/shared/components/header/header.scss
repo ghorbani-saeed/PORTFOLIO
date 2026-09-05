@@ -2,30 +2,32 @@
 @use '../../../../styles/headline-text' as headline-text;
 @use '../../../../styles/logos-animations' as logos-animations;
 
-
 :host {
   display: block;
   width: 100%;
 }
 
 .header {
-  position: sticky;
   top: 0;
+  position: sticky;
+  position: fixed;
   z-index: 10;
   width: 100%;
-  max-width: styles.$g-max-width;
   margin: 0 auto;
   background-color: styles.$bg-color;
 
   &__inner {
     height: styles.$header-height;
-    padding: 0 clamp(0rem, 4vmin, 13rem);
+    max-width: styles.$g-max-width;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vmin, 13rem);
     @include styles.setFlex($jc: space-between);
   }
 
   &__logo {
     @include styles.logo-hover-effect;
     @include styles.setFlex();
+    flex-shrink: 0;
 
     img {
       width: 6.6rem;
@@ -118,17 +120,16 @@
 
 .menu-overlay {
   position: fixed;
-  inset: 0;
-  height: calc(100dvh - styles.$header-height);
+  left: 0;
   width: 100%;
+  // inset: 0;
+  height: calc(100dvh - styles.$header-height);
   margin: 0 auto;
-
-  z-index: 1;
-  top: styles.$header-height;
-  overflow-y: auto;
-  overflow-x: hidden;
   overscroll-behavior: contain;
 
+  z-index: 100;
+  top: styles.$header-height;
+  overflow-y: auto;
   background-color: styles.$bg-color;
 
   &__panel {
@@ -144,11 +145,10 @@
     @include styles.setFlex($d: column, $gap: clamp(3rem, 5vw, 4rem));
     text-align: center;
     padding: clamp(2rem, 10vw, 5rem) styles.$g-pad-x 0;
-
   }
 
   &__nav-link {
-            @include headline-text.playful-headline-hover;
+    @include headline-text.playful-headline-hover;
 
     position: relative;
     display: block;
@@ -172,7 +172,7 @@
       width: 4rem;
       height: 4rem;
       fill: none;
-      stroke: #109a7a; 
+      stroke: #109a7a;
       stroke-width: 4;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -208,7 +208,7 @@
   }
 
   &__contact {
-    margin: 20rem 0 5rem;
+    margin: 3rem 0 2rem;
     align-self: flex-start;
     @include headline-text.playful-headline-hover;
     @include styles.setFlex($d: column, $jc: flex-start, $ai: flex-start);

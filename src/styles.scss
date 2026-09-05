@@ -26,21 +26,18 @@ img{
 html {
   @include styles.setFont($size: 10px);
   scroll-padding-top: styles.$header-height;
-  overflow-y: scroll;
-  scrollbar-gutter: stable;
-  overflow-x: hidden;
+  // overflow-y: scroll;
+  // scrollbar-gutter: stable;
+  // overflow-x: hidden;
 
   > body {
     @include styles.setFont($size: 16px, $weight: 400);
-
     min-height: 100dvh;
-    overflow-x: hidden;
-
     background-color: styles.$bg-color;
     background-image: radial-gradient(#eadbc9 1px, transparent 1px);
     background-size: 36px 36px;
-
     width: 100%;
+    padding-top: styles.$header-height;
   }
 }
 
