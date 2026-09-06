@@ -44,8 +44,10 @@
           />
         </a>
         <a
-          href="#"
-          (click)="$event.preventDefault()"
+          [href]="userDBS.ownerProfile.linkedinUrl"
+          target="_blank"
+          rel="noreferrer"
+         
           [attr.aria-label]="'FOOTER.SOCIAL_LINKEDIN_ARIA' | translate"
         >
           <img

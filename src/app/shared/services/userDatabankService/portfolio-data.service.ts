@@ -19,6 +19,7 @@ export interface IdentityDetails {
   location: string;
   street: string;
   githubUrl: string;
+  linkedinUrl: string;
 }
 
 export interface Recommendation {
@@ -81,6 +82,7 @@ export class PortfolioDataService {
       location: '47546 Kalkar, Germany',
       mail: 'ghorbani.saeed@web.de',
       githubUrl: 'https://github.com/ghorbani-saeed',
+      linkedinUrl: 'https://www.linkedin.com/in/saeed-ghorbani-016501374/',
     };
   }
 
