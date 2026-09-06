@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser'; 
 
 export interface SkillDefinition {
   title: string;
@@ -48,7 +49,12 @@ export class PortfolioDataService {
   public clientQuotes: Recommendation[] = [];
   public expertise: SkillDefinition[] = [];
 
-  constructor() {
+  get mailtoUrl(): SafeUrl {
+    const url = `mailto:${this.ownerProfile?.mail}`;
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
+
+  constructor(private sanitizer: DomSanitizer) {
     // Initialize all data sets on service startup
     this.buildShowcase();
     this.setupIdentity();
