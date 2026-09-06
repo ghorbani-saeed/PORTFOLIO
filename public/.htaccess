@@ -1,0 +1,22 @@
+# Apache Rewrite-Regeln für Angular SPA-Routing (verhindert 404-Fehler bei Unterseiten und direktem Refresh)
+<IfModule mod_rewrite.c>
+
+  # Turn on the URL rewrite engine
+  RewriteEngine On
+
+  # Set the base path for URL rewrites to the root directory
+  RewriteBase /
+
+  # If the requested file is index.html, stop processing rules here and make no changes
+  RewriteRule ^index\.html$ - [L]
+
+  # Condition: Check if the requested path does NOT match an existing physical file on the server
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  # Condition: Check if the requested path does NOT match an existing physical directory on the server
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # If both conditions match, redirect any other request (like Angular sub-routes) to index.html and stop
+  RewriteRule . /index.html [L]
+
+</IfModule>
