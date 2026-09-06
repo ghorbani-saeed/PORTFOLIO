@@ -1,4 +1,4 @@
-import { Component, signal ,OnInit, inject } from '@angular/core';
+import { Component, signal, OnInit, inject } from '@angular/core';
 import { RouterOutlet, Router } from '@angular/router';
 import { Header } from './shared/components/header/header';
 import { Footer } from './shared/components/footer/footer';
@@ -6,7 +6,7 @@ import { Footer } from './shared/components/footer/footer';
 /**
  * Root component of the application.
  * Defines the main layout structure including Header, RouterOutlet, and Footer.
-*/
+ */
 @Component({
   selector: 'app-root',
   imports: [Header, RouterOutlet, Footer],
@@ -17,11 +17,10 @@ import { Footer } from './shared/components/footer/footer';
 //   /** Application title for the portfolio identity */
 //   protected readonly title = signal('PORTFOLIO');
 // }
-
 export class App implements OnInit {
   /** Application title for the portfolio identity */
   protected readonly title = signal('PORTFOLIO');
-  
+
   private router = inject(Router);
 
   ngOnInit() {
