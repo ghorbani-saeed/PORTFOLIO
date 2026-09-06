@@ -9,4 +9,5 @@ export const routes: Routes = [
   { path: '', component: LandingPageComponent  },
   { path: 'legal-notice', component: LegalNotice },
   { path: 'privacy-policy', component: PrivacyPolicy },
+  { path: '**', redirectTo: '' }
 ];
