@@ -148,7 +148,9 @@
     "PRIVACY_TEXT_START": "Ich habe die",
     "PRIVACY_LINK": "Datenschutzerklärung",
     "PRIVACY_TEXT_END": "gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.",
-    "SUBMIT": "Nachricht senden"
+    "SUBMIT": "Nachricht senden",
+    "SUCCESS_MESSAGE": "Vielen Dank für deine Nachricht! Ich melde mich bald bei dir.",
+    "ERROR_MESSAGE_BOX": "Hoppla! Etwas ist schiefgelaufen. Bitte versuche es gleich noch einmal."
   },
   "FOOTER": {
     "LOGO_ARIA": "Zur Startseite",

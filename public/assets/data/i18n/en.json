@@ -147,7 +147,9 @@
     "PRIVACY_TEXT_START": "I have read the",
     "PRIVACY_LINK": "privacy policy",
     "PRIVACY_TEXT_END": "and agree to the processing of my data as outlined.",
-    "SUBMIT": "Send message"
+    "SUBMIT": "Send message",
+    "SUCCESS_MESSAGE": "Thanks for reaching out! I will get back to you soon.",
+    "ERROR_MESSAGE_BOX": "Oops! Something went wrong. Please give it another try in a moment."
   },
   "FOOTER": {
     "LOGO_ARIA": "Go to homepage",

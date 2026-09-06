@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { PortfolioDataService } from '../../shared/services/userDatabankService/portfolio-data.service';
 @Component({
   selector: 'app-feedback',
@@ -17,6 +17,8 @@ import { PortfolioDataService } from '../../shared/services/userDatabankService/
  * and the display logic for status overlay notifications.
 */
 export class FeedbackComponent implements OnDestroy {
+  /** Injecting the TranslateService to retrieve localized overlay messages */
+translate = inject(TranslateService);
   /** Injecting the HttpClient for making backend API requests */
   http = inject(HttpClient);
 
@@ -141,7 +143,12 @@ export class FeedbackComponent implements OnDestroy {
   private showoverlay(type: 'success' | 'error'): void {
     this.clearoverlayTimer();
     this.overlayType = type;
-    this.overlayMessage = type === 'success' ? "Thanks for reaching out!" : "Oops! Something went wrong. Please give it another try in a moment.";
+    if (type === 'success') {
+      this.overlayMessage = this.translate.instant('CONTACT.SUCCESS_MESSAGE');
+    } else {
+      this.overlayMessage = this.translate.instant('CONTACT.ERROR_MESSAGE_BOX');
+    }
+
     this.overlayVisible = true;
     this.lockPageScroll();
     this.overlayTimerId = setTimeout(() => {

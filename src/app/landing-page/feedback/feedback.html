@@ -26,6 +26,7 @@
               id="contact-name"
               placeholder=" "
               required
+              pattern="[a-zA-ZÀ-ÿÄÖÜäöüß][a-zA-ZÀ-ÿÄÖÜäöüß0-9\s\-']*"
               #nameModel="ngModel"
               [(ngModel)]="formData.senderName"
             />
