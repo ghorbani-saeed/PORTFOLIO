@@ -302,7 +302,10 @@
     &__project--reverse &__details {
       transform: none;
     }
-
-   
+  }
+}
+@include styles.view-lg {
+  .portfolio__hover-arrow-box {
+    display: none;
   }
 }
