@@ -31,9 +31,9 @@
 
   &__return-link {
     display: block;
-    position: fixed;
+    position: static;
     top: calc(styles.$header-height + 2rem);
-    right: 2rem;
+    right: styles.$g-pad-x;
     width: 8rem; 
     height: 3.2rem;
     font-size: 1em;
