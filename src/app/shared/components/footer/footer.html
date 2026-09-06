@@ -32,10 +32,7 @@
             [attr.alt]="'FOOTER.SOCIAL_GITHUB_ALT' | translate"
           />
         </a>
-        <a
-          [href]="userDBS.mailtoUrl"
-          [attr.aria-label]="'FOOTER.SOCIAL_MAIL_ARIA' | translate"
-        >
+        <a [href]="userDBS.mailtoUrl" [attr.aria-label]="'FOOTER.SOCIAL_MAIL_ARIA' | translate">
           <img
             class="footer__social-icon"
             src="/assets/img/icons/07-footer/mail.svg"
@@ -46,7 +43,6 @@
           [href]="userDBS.ownerProfile.linkedinUrl"
           target="_blank"
           rel="noreferrer"
-         
           [attr.aria-label]="'FOOTER.SOCIAL_LINKEDIN_ARIA' | translate"
         >
           <img
@@ -56,7 +52,7 @@
           />
         </a>
       </div>
-      <a class="footer__legal-link" routerLink="/legal-notice" fragment="legal-notice">{{
+      <a class="footer__legal-link" routerLink="/legal-notice">{{
         'FOOTER.LEGAL_NOTICE' | translate
       }}</a>
     </div>
