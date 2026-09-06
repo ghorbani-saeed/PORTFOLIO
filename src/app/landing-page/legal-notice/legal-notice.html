@@ -6,13 +6,11 @@
       </a>
     </div>
 
-    <h1 class="legal-notice__hero-heading" id="legal-notice-main-title">Legal Notice</h1>
-
-    <h2 class="legal-notice__caption">{{ 'LEGAL.TITLE' | translate }}</h2>
-
+    <h1 class="legal-notice__hero-heading" id="legal-notice-main-title">{{ 'LEGAL.TITLE' | translate }}</h1>
+    
     <section class="legal-notice__section" aria-labelledby="legal-imprint">
       <h3 class="legal-notice__subheading" id="legal-imprint">
-        {{ 'LEGAL.IMPRINT_TITLE' | translate }}
+        {{ 'LEGAL.IMPRINT' | translate }}
       </h3>
       <p class="legal-notice__paragraph">{{ 'LEGAL.IMPRINT_TEXT' | translate }}</p>
       <div class="legal-notice__operator-info">
@@ -35,6 +33,7 @@
       <h3 class="legal-notice__subheading" id="legal-responsible">
         {{ 'LEGAL.RESPONSIBLE_TITLE' | translate }}
       </h3>
+      <p class="legal-notice__paragraph">{{ 'LEGAL.IMPRINT_TEXT' | translate }}</p>
       <div class="legal-notice__operator-info">
         <p class="legal-notice__paragraph">{{ userDBS.ownerProfile.fullName }}</p>
         <p class="legal-notice__paragraph">{{ userDBS.ownerProfile.street }}</p>

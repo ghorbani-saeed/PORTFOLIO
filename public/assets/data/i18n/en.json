@@ -1,6 +1,7 @@
 {
   "POLICY": {
     "TITLE": "Privacy Policy",
+    "IMPRINT_TEXT": "Imprint",
     "BACK_ARIA": "Back to main page",
     "BACK_ICON_ALT": "Arrow Left",
     "SECTION_1_TITLE": "1. Introduction",
@@ -27,7 +28,8 @@
     "SECTION_11_TEXT": "Last updated: xx, 2026"
   },
   "LEGAL": {
-    "TITLE": "Imprint",
+    "TITLE": "Legal Notice",
+    "IMPRINT": "Imprint",
     "BACK_ARIA": "Back to main page",
     "BACK_ICON_ALT": "Arrow Right to Links",
     "IMPRINT_TITLE": "Information according to Section 5 DDG",
