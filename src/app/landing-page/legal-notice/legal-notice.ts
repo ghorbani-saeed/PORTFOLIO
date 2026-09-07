@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
-import { RouterLink, ActivatedRoute } from '@angular/router';
+import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 import { PortfolioDataService } from '../../shared/services/userDatabankService/portfolio-data.service';
 
@@ -19,12 +19,26 @@ export class LegalNotice implements OnInit {
   userDBS = inject(PortfolioDataService);
   private viewportScroller = inject(ViewportScroller);
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
+  
   ngOnInit(): void {
     this.viewportScroller.setOffset([0, 100]);
+
+    if (this.router.url.includes('#')) {
+      const cleanUrl = this.router.url.split('#')[0];
+      this.router.navigateByUrl(cleanUrl, { replaceUrl: true });
+    }
+
     this.route.fragment.subscribe((fragment) => {
-      if (fragment) {
+      if (fragment && fragment !== 'top') {
         this.viewportScroller.scrollToAnchor(fragment);
       }
+    });
+  }
+ scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
     });
   }
 }
