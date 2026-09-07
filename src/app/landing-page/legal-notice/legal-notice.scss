@@ -2,6 +2,9 @@
 @use '../../../styles/arrows' as arrows;
 @use '../../../styles/headline-text' as headline-text;
 
+html {
+  scroll-padding-top: 100px; // Ersetze 100px durch die exakte Höhe deines fixierten Headers
+}
 .legal-notice {
   min-height: calc(100dvh - styles.$header-height - styles.$footer-height);
   padding: clamp(1.5rem, 7vw, 7rem) styles.$g-pad-x clamp(6rem, 10vw, 9rem);

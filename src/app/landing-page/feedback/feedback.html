@@ -17,6 +17,7 @@
         #contactForm="ngForm"
         (ngSubmit)="onSubmit(contactForm)"
       >
+        <!-- Name Feld -->
         <div class="feedback__group">
           <div class="feedback__container">
             <input
@@ -35,15 +36,17 @@
             }}</label>
             <span class="feedback__status-icon-container" aria-hidden="true"></span>
           </div>
+
           <p
             class="feedback__field-error"
-            [class.feedback__field-error--active]="nameModel.invalid && nameModel.touched"
-            [attr.aria-hidden]="!(nameModel.invalid && nameModel.touched)"
+            [class.feedback__field-error--active]="nameModel.invalid && (nameModel.touched || emailModel.touched || msgModel.touched || privacyModel.touched || contactForm.submitted)"
+            [attr.aria-hidden]="!(nameModel.invalid && (nameModel.touched || emailModel.touched || msgModel.touched || privacyModel.touched || contactForm.submitted))"
           >
             {{ 'CONTACT.ERROR_NAME' | translate }}
           </p>
         </div>
 
+        <!-- E-Mail Feld -->
         <div class="feedback__group">
           <div class="feedback__container">
             <input
@@ -64,21 +67,14 @@
           </div>
           <p
             class="feedback__field-error"
-            [class.feedback__field-error--active]="
-              emailModel.invalid &&
-              (emailModel.dirty || emailModel.touched || contactForm.submitted)
-            "
-            [attr.aria-hidden]="
-              !(
-                emailModel.invalid &&
-                (emailModel.dirty || emailModel.touched || contactForm.submitted)
-              )
-            "
+            [class.feedback__field-error--active]="emailModel.invalid && (emailModel.dirty || emailModel.touched || nameModel.touched || msgModel.touched || privacyModel.touched || contactForm.submitted)"
+            [attr.aria-hidden]="!(emailModel.invalid && (emailModel.dirty || emailModel.touched || nameModel.touched || msgModel.touched || privacyModel.touched || contactForm.submitted))"
           >
             {{ 'CONTACT.ERROR_EMAIL' | translate }}
           </p>
         </div>
 
+        <!-- Nachrichten Feld -->
         <div class="feedback__group">
           <div class="feedback__container">
             <textarea
@@ -96,15 +92,17 @@
             }}</label>
             <span class="feedback__status-icon-container" aria-hidden="true"></span>
           </div>
+          
           <p
             class="feedback__field-error"
-            [class.feedback__field-error--active]="msgModel.invalid && msgModel.touched"
-            [attr.aria-hidden]="!(msgModel.invalid && msgModel.touched)"
+            [class.feedback__field-error--active]="msgModel.invalid && (msgModel.touched || nameModel.touched || emailModel.touched || privacyModel.touched || contactForm.submitted)"
+            [attr.aria-hidden]="!(msgModel.invalid && (msgModel.touched || nameModel.touched || emailModel.touched || privacyModel.touched || contactForm.submitted))"
           >
             {{ 'CONTACT.ERROR_MESSAGE' | translate }}
           </p>
         </div>
 
+        <!-- Checkbox / Datenschutz -->
         <div class="feedback__group">
           <div class="feedback__checkbox">
             <div class="feedback__checkbox-input-container">
@@ -112,9 +110,11 @@
                 class="feedback__checkbox-input"
                 type="checkbox"
                 name="privacy"
+                id="contact-privacy"
                 required
                 #privacyModel="ngModel"
                 [(ngModel)]="formData.acceptedTerms"
+                (change)="privacyModel.control.markAsTouched()"
               />
               <img
                 class="feedback__checkbox-input-check-icon"
@@ -122,37 +122,25 @@
                 [attr.alt]="'CONTACT.CHECK_ICON_ALT' | translate"
               />
             </div>
-            <span class="feedback__checkbox-text">
+            <label class="feedback__checkbox-text" for="contact-privacy">
               {{ 'CONTACT.PRIVACY_TEXT_START' | translate }}
-              <a class="feedback____anchor" routerLink="/privacy-policy" fragment="policy">{{
+              <a class="feedback____anchor" routerLink="/privacy-policy" fragment="policy" (click)="$event.stopPropagation()">{{
                 'CONTACT.PRIVACY_LINK' | translate
               }}</a>
               {{ 'CONTACT.PRIVACY_TEXT_END' | translate }}
-            </span>
+            </label>
           </div>
+
           <p
             class="feedback__field-error"
-            [class.feedback__field-error--active]="
-              nameModel.valid &&
-              emailModel.valid &&
-              msgModel.valid &&
-              privacyModel.invalid &&
-              contactForm.submitted
-            "
-            [attr.aria-hidden]="
-              !(
-                nameModel.valid &&
-                emailModel.valid &&
-                msgModel.valid &&
-                privacyModel.invalid &&
-                contactForm.submitted
-              )
-            "
+            [class.feedback__field-error--active]="privacyModel.invalid && (privacyModel.touched || nameModel.touched || emailModel.touched || msgModel.touched || contactForm.submitted)"
+            [attr.aria-hidden]="!(privacyModel.invalid && (privacyModel.touched || nameModel.touched || emailModel.touched || msgModel.touched || contactForm.submitted))"
           >
             {{ 'CONTACT.ERROR_PRIVACY' | translate }}
           </p>
         </div>
 
+        <!-- Submit Button -->
         <button
           class="feedback__action-btn"
           type="submit"
@@ -170,7 +158,7 @@
       </form>
     </div>
     
-    <!-- Schlankerer und längerer Pfeil -->
+    <!-- Jump to top -->
     <a class="feedback__jump-top" href="#top" aria-hidden="true">
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2L5 11H10V22H14V11H19L12 2Z" />
