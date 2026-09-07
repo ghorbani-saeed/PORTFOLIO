@@ -86,6 +86,7 @@
             fragment="about"
             (click)="closeMenu()"
           >
+            <img class="nav-worm" src="assets/img/icons/01-navbar/Rectangle.png" alt="rectangle icon" />
             <span>{{ 'HEADER.NAV_ABOUT' | translate }}</span>
           </a>
 
@@ -95,6 +96,7 @@
             fragment="skills"
             (click)="closeMenu()"
           >
+            <img class="nav-worm" src="assets/img/icons/01-navbar/Rectangle.png" alt="rectangle icon" />
             <span>{{ 'HEADER.NAV_SKILLS' | translate }}</span>
           </a>
 
@@ -104,8 +106,20 @@
             fragment="portfolio"
             (click)="closeMenu()"
           >
+            <img class="nav-worm" src="assets/img/icons/01-navbar/Rectangle.png" alt="rectangle icon" />
             <span>{{ 'HEADER.NAV_PORTFOLIO' | translate }}</span>
           </a>
+
+          <a
+            class="menu-overlay__nav-link"
+            [routerLink]="['/']"
+            fragment="contact"
+            (click)="closeMenu()"
+          >
+            <img class="nav-worm" src="assets/img/icons/01-navbar/Rectangle.png" alt="rectangle icon" />
+            <span>{{ 'HEADER.NAV_CONTACT' | translate }}</span>
+          </a>
+
         </nav>
 
         <section class="menu-overlay__footer" [attr.aria-label]="'HEADER.FOOTER_ARIA' | translate">

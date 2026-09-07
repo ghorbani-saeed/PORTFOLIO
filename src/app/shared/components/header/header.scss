@@ -168,9 +168,10 @@
     .nav-worm {
       position: absolute;
       top: 50%;
-      left: -3rem;
-      width: 4rem;
-      height: 4rem;
+      left: -2.5rem;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: auto;
       fill: none;
       stroke: #109a7a;
       stroke-width: 4;
