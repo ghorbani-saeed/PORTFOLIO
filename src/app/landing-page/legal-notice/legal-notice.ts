@@ -15,6 +15,7 @@ import { PortfolioDataService } from '../../shared/services/userDatabankService/
   styleUrl: './legal-notice.scss',
 })
 export class LegalNotice implements OnInit {
+  
   /** Access to the central portfolio data service */
   userDBS = inject(PortfolioDataService);
   private viewportScroller = inject(ViewportScroller);

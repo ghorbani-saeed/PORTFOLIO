@@ -34,13 +34,14 @@ html {
 
   &__return-link {
     display: block;
-    position: static;
-    top: calc(styles.$header-height + 2rem);
+    position: sticky;
+    top: calc(styles.$header-height + 1rem);
+    margin-left: auto;
     right: styles.$g-pad-x;
     width: 8rem; 
     height: 3.2rem;
     font-size: 1em;
-    z-index: 9999;
+    z-index: 2;
     transform: translateX(0);
     transition: transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
@@ -153,3 +154,4 @@ html {
     }
   }
 }
+

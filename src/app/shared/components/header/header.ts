@@ -56,7 +56,7 @@ export class Header {
     this.isMenuOpen = false;
     document.body.style.overflow = '';
   }
-
+  
   @HostListener('document:keydown.escape')
   onEsc() {
     if (!this.isMenuOpen) return;
