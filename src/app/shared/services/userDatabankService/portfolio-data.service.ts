@@ -75,7 +75,7 @@ export class PortfolioDataService {
         title: 'Pokedex',
         previewImg: '/assets/img/projects-photos/pokedex.jpeg',
         langKey: 'PORTFOLIO.PROJECTS.POKEDEX.DESCRIPTION',
-        repoUrl: 'https://github.com/ghorbani-saeed/Fotogram',
+        repoUrl: 'https://github.com/ghorbani-saeed/Pokedex',
         liveUrl: 'https://ghorbani-saeed.github.io/Pokedex/',
       },
     ];
